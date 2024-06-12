@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.css": "css",
+        "*.cs": "csharp",
+        "*.html":"html",
+        "*.js":"javascript",
+        "*.py":"python",
+        "*.sln":"sln",
+        "*.csproj":"xml",
+        "*.props":"xml",
+        "*.targets":"xml",
+        "*.cshtml":"aspnetcorerazor",
+        "*.json":"json",
+        "*.xml":"xml",
+    },
+}

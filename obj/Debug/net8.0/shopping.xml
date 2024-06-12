@@ -1,0 +1,4333 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>shopping</name>
+    </assembly>
+    <members>
+        <member name="M:CodeGenerator.CodeBaseClass.Dispose">
+            <summary>
+            解構子,實現IDisposable中的Dispose方法
+            </summary>
+        </member>
+        <member name="M:CodeGenerator.CodeBaseClass.Dispose(System.Boolean)">
+            <summary>
+            解構子
+            </summary>
+            <param name="disposing">disposing</param>
+        </member>
+        <member name="M:CodeGenerator.CodeBaseClass.Finalize">
+            <summary>
+            CodeBaseClass 解構子
+            </summary>
+        </member>
+        <member name="P:AdoNetService.conn">
+            <summary>
+            連線物件
+            </summary>
+        </member>
+        <member name="P:AdoNetService.cmd">
+            <summary>
+            命令物件
+            </summary>
+        </member>
+        <member name="P:AdoNetService.ConnName">
+            <summary>
+            連線設定檔名稱
+            </summary>
+        </member>
+        <member name="P:AdoNetService.CommandText">
+            <summary>
+            SQL 指令
+            </summary>
+        </member>
+        <member name="P:AdoNetService.CommandType">
+            <summary>
+            SQL 命令類型
+            </summary>
+        </member>
+        <member name="P:AdoNetService.ProcedureName">
+            <summary>
+            StoreProcedure 名稱
+            </summary>
+        </member>
+        <member name="P:AdoNetService.RowAffected">
+            <summary>
+            執行指令後影響的筆數
+            </summary>
+        </member>
+        <member name="P:AdoNetService.ErrorMessage">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="P:AdoNetService.HasRows">
+            <summary>
+            回傳執行後是否有記錄
+            </summary>
+        </member>
+        <member name="M:AdoNetService.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:AdoNetService.#ctor(System.String,System.Data.CommandType)">
+            <summary>
+            建構子
+            </summary>
+            <param name="commName">ConnectionString 名稱</param>
+            <param name="commType">命令類別</param>
+        </member>
+        <member name="M:AdoNetService.#ctor(System.Data.CommandType)">
+            <summary>
+            建構子
+            </summary>
+            <param name="commType">命令類別</param>
+        </member>
+        <member name="M:AdoNetService.InitComponents">
+            <summary>
+            初始化物件
+            </summary>
+        </member>
+        <member name="M:AdoNetService.Open">
+            <summary>
+            資料庫連線
+            </summary>
+        </member>
+        <member name="M:AdoNetService.Close">
+            <summary>
+            資料庫關閉連線
+            </summary>
+        </member>
+        <member name="M:AdoNetService.SetConnectionString">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="M:AdoNetService.Execute(System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.Execute(System.String,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandText">SQL 命令</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.Execute(System.Data.CommandType,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandType">命令類型</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.Execute(System.String,System.Data.CommandType,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandText">SQL 命令</param>
+            <param name="commandType">命令類型</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetDataSet">
+            <summary>
+            執行 SQL 指令並取回 DataSet,並自動關閉資料庫連線
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetDataSet(System.Boolean)">
+            <summary>
+            執行 SQL 指令並取回 DataSet
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetDataTable">
+            <summary>
+            執行 SQL 指令並取回 DataTable,並自動關閉資料庫連線
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetDataTable(System.Boolean)">
+            <summary>
+            執行 SQL 指令並取回 DataTable
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetValueString(System.String)">
+            <summary>
+            取得指定欄位的字串型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetValueDateTime(System.String)">
+            <summary>
+            取得指定欄位的日期型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetValueDecimal(System.String)">
+            <summary>
+            取得指定欄位的數字型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.GetValueInt(System.String)">
+            <summary>
+            取得指定欄位的整數型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdoNetService.ParametersAdd(System.String,System.Object,System.Boolean)">
+            <summary>
+            加入參數
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <param name="value">參數值</param>
+            <param name="clearFirst">是否先清除所有參數再加入</param>
+        </member>
+        <member name="M:BaseClass.Dispose">
+            <summary>
+            解構子,實現IDisposable中的Dispose方法
+            </summary>
+        </member>
+        <member name="M:BaseClass.Dispose(System.Boolean)">
+            <summary>
+            解構子
+            </summary>
+            <param name="disposing">disposing</param>
+        </member>
+        <member name="M:BaseClass.Finalize">
+            <summary>
+            BaseClass 解構子
+            </summary>
+        </member>
+        <member name="T:BaseController">
+            <summary>
+            底層控制器類別
+            </summary>
+        </member>
+        <member name="M:BaseController.GetSessionValue(System.String,System.String)">
+            <summary>
+            讀取 Session 字串值，不使用 Json 反序列化
+            </summary>
+            <param name="keyName">Session 名稱</param>
+            <param name="defaultValue">預設值</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseController.SetSessionValue(System.String,System.String)">
+            <summary>
+            設定 Session 字串值，不使用 Json 序列化
+            </summary>
+            <param name="keyName">Session 名稱</param>
+            <param name="value">Session 字串值</param> 
+        </member>
+        <member name="M:BaseController.GetSessionObjectValue``1(System.String)">
+            <summary>
+            讀取 Session 字串值，使用 Json 反序列化
+            </summary>
+            <param name="keyName">Session 名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseController.SetSessionObjectValue``1(System.String,System.String)">
+            <summary>
+            設定 Session 字串值，使用 Json 序列化
+            </summary>
+            <param name="keyName">Session 名稱</param>
+            <param name="value">Session 字串值</param>
+        </member>
+        <member name="T:DapperRepository">
+            <summary>
+            Dapper Repository 類別
+            </summary>
+        </member>
+        <member name="F:DapperRepository._defuaultConnectionName">
+            <summary>
+            預設連線字串名稱
+            </summary>
+        </member>
+        <member name="M:DapperRepository.#ctor">
+            <summary>
+            Dapper Repository 建構子
+            </summary>
+        </member>
+        <member name="M:DapperRepository.#ctor(System.String)">
+            <summary>
+            Dapper Repository 建構子
+            </summary>
+            <param name="connectionName">連線字串名稱</param>
+        </member>
+        <member name="M:DapperRepository.#ctor(System.Data.CommandType)">
+            <summary>
+            Dapper Repository 建構子
+            </summary>
+            <param name="commandType">命令類型 (SQL 語法/預儲程序)</param>
+        </member>
+        <member name="M:DapperRepository.#ctor(System.String,System.Data.CommandType)">
+            <summary>
+            Dapper Repository 建構子
+            </summary>
+            <param name="connectionName">連線字串名稱</param>
+            <param name="commandType">命令類型 (SQL 語法/預儲程序)</param>
+        </member>
+        <member name="P:DapperRepository.ConnectionName">
+            <summary>
+            連線字串名稱
+            </summary>
+        </member>
+        <member name="P:DapperRepository.ConnectionString">
+            <summary>
+            連線字串
+            </summary>
+        </member>
+        <member name="P:DapperRepository.ErrorMessage">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="P:DapperRepository.CommandType">
+            <summary>
+            命令類型 (SQL 語法/預儲程序)
+            </summary>
+        </member>
+        <member name="M:DapperRepository.GetConnectionString(System.String)">
+            <summary>
+            取得連線字串
+            </summary>
+            <param name="connectionName">連線字串名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.CheckConnectionName(System.String)">
+            <summary>
+            檢查 connectionName 中的 connectionString 是否連線正常
+            </summary>
+            <param name="connectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.CheckConnectionString(System.String)">
+            <summary>
+            檢查 connectionString 是否連線正常
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.Execute(System.String)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)
+            </summary>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.Execute(System.String,Dapper.DynamicParameters)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)
+            </summary>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ExecuteAsync(System.String)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)(非同步)
+            </summary>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ExecuteAsync(System.String,Dapper.DynamicParameters)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)(非同步)
+            </summary>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadSingle``1(System.String)">
+            <summary>
+            讀取單筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadSingle``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取單筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadSingleAsync``1(System.String)">
+            <summary>
+            讀取單筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadSingleAsync``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取單筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAll``1(System.String)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAll``1(System.String,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAll``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAll``1(System.String,Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAllAsync``1(System.String)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAllAsync``1(System.String,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAllAsync``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ReadAllAsync``1(System.String,Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.IsDuplicated``1(``0,System.String,System.String)">
+            <summary>
+            檢查目前 Entity 內指定欄位值是否重覆(同步)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="columnName"></param>
+            <param name="conditional"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.IsDuplicatedAsync``1(``0,System.String,System.String)">
+            <summary>
+            檢查目前 Entity 內指定欄位值是否重覆(非同步)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="columnName"></param>
+            <param name="conditional"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLSelectCommand``1(``0)">
+            <summary>
+            動態取得 SQL Select 語法 (不含 Join 的簡單語法)
+            </summary>
+            <typeparam name="TEntity">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLSelectCommandList(System.String,System.Int32)">
+            <summary>
+            動態取得 SQL Select 語法 (不含 Join 的簡單語法)
+            </summary>
+            <param name="entityName">物件變數</param>
+            <param name="rowLength">每列長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLSelectWhereById``1(``0,System.String)">
+            <summary>
+            以表格主鍵的值取得 SQL Select WHERE 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="sqlWhere">目前的 Where 條件式</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetStringColumnList``1(``0)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetStringColumnList(System.String)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <param name="entityName">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetStringColumnList(System.String,System.Int32)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <param name="entityName">物件變數</param>
+            <param name="rowLength">每列長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLWhereBySearchColumn``1(``0,System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            取得查詢模糊搜尋條件參數
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">物件變數</param>
+            <param name="columns">欄位</param>
+            <param name="sqlWhere">目前的 Where 條件</param>
+            <param name="searchText">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLInsertCommand``1(``0)">
+            <summary>
+            動態取得 SQL Insert 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLInsertParameters``1(``0)">
+            <summary>
+            動態取得 SQL Insert 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLDeleteCommand``1(``0)">
+            <summary>
+            動態取得 SQL Delete 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLDeleteParameters``1(``0)">
+            <summary>
+            動態取得 SQL Delete 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLDeleteParameters``1(``0,System.Int32)">
+            <summary>
+            動態取得 SQL Delete 參數
+            </summary>
+            <typeparam name="T">物件變數</typeparam>
+            <param name="entity">型別</param>
+            <param name="id">主鍵值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLUpdateCommand``1(``0)">
+            <summary>
+            動態取得 SQL Update 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLUpdateParameters``1(``0)">
+            <summary>
+            動態取得 SQL Update 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetSQLSelectKeyParm``1(``0,System.Object)">
+            <summary>
+            返回新增或修改參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="value">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetCreateEditParm``1(``0)">
+            <summary>
+            返回新增或修改參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetDeleteParm``1(``0,System.Int32)">
+            <summary>
+            返回刪除參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="id">Key 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetValueByKey``1(``0,System.Object,System.String)">
+            <summary>
+            使用 Key 值取得指定欄位值
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="keyValue">Key 值</param>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetValueByColumn``1(``0,System.String,System.Object,System.String)">
+            <summary>
+            使用指定搜尋欄位值取得另一指定欄位值
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="searchName">搜尋欄位</param>
+            <param name="searchValue">搜尋欄位值</param>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetKeyColumnName``1(``0)">
+            <summary>
+            取得 Key 欄位名稱
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.ModelToParm``1(``0,System.String)">
+            <summary>
+            Model 中的值填入參數 (參數名與 Model 的屬性值相同)
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="query">SQL Select 語法</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.GetPropertyType(System.String,System.String)">
+            <summary>
+            取得屬性型態
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.IsKeyAttribute(System.String,System.String)">
+            <summary>
+            檢查是否為 [Key]
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperRepository.IsNotMappedAttribute(System.String,System.String)">
+            <summary>
+            檢查是否為 [NotMapped]
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="P:DapperSql`1.dpr">
+            <summary>
+            Dapper 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DapperSql`1.EntityObject">
+            <summary>
+            Entity Object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DapperSql`1.EntityName">
+            <summary>
+            Entity Name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DapperSql`1.ConnName">
+            <summary>
+            連線字串名稱
+            </summary>
+        </member>
+        <member name="P:DapperSql`1.DefaultOrderByColumn">
+            <summary>
+            預設 SQL 排序指令
+            </summary>
+        </member>
+        <member name="P:DapperSql`1.DefaultOrderByDirection">
+            <summary>
+            預設 SQL 排序方式指令
+            </summary>
+        </member>
+        <member name="P:DapperSql`1.OrderByColumn">
+            <summary>
+            OrderBy 排序指令
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:DapperSql`1.OrderByDirection">
+            <summary>
+            OrderBy 排序方式
+            </summary>
+        </member>
+        <member name="M:DapperSql`1.GetSQLSelect">
+            <summary>
+            SQL 查詢欄位及表格指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSearchColumns">
+            <summary>
+            取得模擬搜尋的欄位集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSQLWhere">
+            <summary>
+            SQL 查詢條件式指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSQLOrderBy">
+            <summary>
+            SQL 查詢排序指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDropDownList(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            取得下拉式選單資料集
+            </summary>
+            <param name="valueColumn">資料欄位名稱</param>
+            <param name="textColumn">顯示欄位名稱</param>
+            <param name="orderColumn">排序欄位名稱</param>/// 
+            <param name="textIncludeValue">顯示欄位名稱是否顯示資料欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSQLInsert">
+            <summary>
+            SQL 新增指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSQLDelete">
+            <summary>
+            SQL 刪除指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetSQLUpdate">
+            <summary>
+            SQL 修改指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetData(System.Int32)">
+            <summary>
+            取得單筆資料(同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(Dapper.DynamicParameters)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(Dapper.DynamicParameters,System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataList(Dapper.DynamicParameters,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.CreateEdit(`0,System.Int32)">
+            <summary>
+            新增或修改資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <param name="id">Key 欄位值</param>
+        </member>
+        <member name="M:DapperSql`1.Create(`0)">
+            <summary>
+            新增資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+        </member>
+        <member name="M:DapperSql`1.Edit(`0)">
+            <summary>
+            更新資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+        </member>
+        <member name="M:DapperSql`1.Delete(System.Int32)">
+            <summary>
+            刪除資料(同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+        </member>
+        <member name="M:DapperSql`1.GetDataAsync(System.Int32)">
+            <summary>
+            取得單筆資料(非同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(Dapper.DynamicParameters)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(System.String)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.String)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.CreateEditAsync(`0,System.Int32)">
+            <summary>
+            新增或修改資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.CreateAsync(`0)">
+            <summary>
+            新增資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.EditAsync(`0)">
+            <summary>
+            更新資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:DapperSql`1.DeleteAsync(System.Int32)">
+            <summary>
+            刪除資料(非同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="T:EFGenericRepository`1">
+            <summary>
+            實作Entity Framework Generic Repository 的 Class。
+            </summary>
+            <typeparam name="TEntity">EF Model 裡面的Type</typeparam>
+        </member>
+        <member name="M:EFGenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            建構EF一個Entity的Repository，需傳入此Entity的Context。
+            </summary>
+            <param name="inContext">Entity所在的Context</param>
+        </member>
+        <member name="M:EFGenericRepository`1.#ctor">
+            <summary>
+            建構EF一個Entity的Repository，預設使用 dbEntities 為 Entity的Contex
+            </summary>
+        </member>
+        <member name="M:EFGenericRepository`1.Create(`0)">
+            <summary>
+            新增一筆資料 (同步)
+            </summary>
+            <param name="entity">要新增的 Entity</param>
+        </member>
+        <member name="M:EFGenericRepository`1.CreateAsync(`0)">
+            <summary>
+            新增一筆資料 (非同步)
+            </summary>
+            <param name="entity">要新增的 Entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadSingle(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得第一筆符合條件的內容 (同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>第一筆符合條件的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadSingleAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得第一筆符合條件的內容 (非同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>第一筆符合條件的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadAll">
+            <summary>
+            取得 Entity 全部筆數資料 (同步)
+            </summary>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadAllAsync">
+            <summary>
+            取得 Entity 全部筆數資料 (非同步)
+            </summary>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得 Entity 全部筆數資料 (同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.ReadAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得 Entity 全部筆數資料 (非同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:EFGenericRepository`1.Insert(`0,System.Boolean)">
+            <summary>
+            新增一筆資料 (同步)
+            </summary>
+            <param name="entity">要新增的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.InsertAsync(`0,System.Boolean)">
+            <summary>
+            新增一筆資料 (同步)
+            </summary>
+            <param name="entity">要新增的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.Update(`0,System.Boolean)">
+            <summary>
+            更新一筆資料 (同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.UpdateAsync(`0,System.Boolean)">
+            <summary>
+            更新一筆資料 (同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.Update(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[],System.Boolean)">
+            <summary>
+            更新一筆Entity的內容。只更新有指定的Property。
+            </summary>
+            <param name="entity">要更新的內容。</param>
+            <param name="updateProperties">需要更新的欄位。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[],System.Boolean)">
+            <summary>
+            更新一筆Entity的內容。只更新有指定的Property。
+            </summary>
+            <param name="entity">要更新的內容。</param>
+            <param name="updateProperties">需要更新的欄位。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.Delete(`0,System.Boolean)">
+            <summary>
+            刪除一筆資料內容。
+            </summary>
+            <param name="entity">要被刪除的Entity。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.DeleteAsync(`0,System.Boolean)">
+            <summary>
+            刪除一筆資料內容。
+            </summary>
+            <param name="entity">要被刪除的Entity。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:EFGenericRepository`1.SaveChanges">
+            <summary>
+            儲存異動。
+            </summary>
+        </member>
+        <member name="M:EFGenericRepository`1.SaveChangesAsync">
+            <summary>
+            儲存異動。
+            </summary>
+        </member>
+        <member name="P:LoginAttribute.RoleList">
+            <summary>
+            角色列表, 如 User,Admin
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:LoginAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            覆寫驗證程式
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:DataTableExtensions">
+            <summary>
+            DataTable 型別擴充功能
+            </summary>
+        </member>
+        <member name="M:DataTableExtensions.DataTableToList``1(System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            DataTable 型別轉成 List 型別
+            </summary>
+            <param name="table">DataTable</param>
+            <param name="mappings">Dictionary對應設定</param>
+            <typeparam name="T">泛型型別</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DataTableExtensions.CreateItemFromRow``1(System.Data.DataRow,System.Collections.Generic.IList{System.Reflection.PropertyInfo})">
+            <summary>
+            從 DataRow 建立 Item
+            </summary>
+            <param name="row">DataRow 物件</param>
+            <param name="properties">PropertyInfo 集合</param>
+            <typeparam name="T">泛型型別</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DataTableExtensions.CreateItemFromRow``1(System.Data.DataRow,System.Collections.Generic.IList{System.Reflection.PropertyInfo},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            從 DataRow 建立 Item
+            </summary>
+            <param name="row">DataRow 物件</param>
+            <param name="properties">PropertyInfo 集合</param>
+            <param name="mappings">Dictionary 對應設定</param>
+            <typeparam name="T">泛型型別</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Extension">
+            <summary>
+            DateTime 擴充方法
+            </summary>
+            <summary>
+            Int 擴充方法
+            </summary>
+            <summary>
+            .NetFrameWork string 的擴充功能
+            </summary>
+        </member>
+        <member name="M:Extension.ezToRocDateString(System.DateTime,System.Char)">
+            <summary>
+            將 DateTime 物件格式化成中華民國年份的日期字串(年/月/日 時：分:秒)
+            <para>範例：</para>
+            <para>string strDate = DateTime.Now.ezToRocDateString('/');</para>
+            <para>回傳：</para>
+            <para>strDate = "102/12/31 23:59:59"</para>
+            </summary>
+            <param name="date">日期</param>
+            <param name="separator">分隔字元</param>
+            <returns>中華民國年份的日期字串</returns>
+        </member>
+        <member name="M:Extension.ezToRocShortDateString(System.DateTime,System.Char)">
+            <summary>
+            將 DateTime 物件格式化成中華民國年份的日期字串(年/月/日)
+            <para>範例：</para>
+            <para>string strDate = DateTime.Now.ezToRocShortDateString('/');</para>
+            <para>回傳：</para>
+            <para>strDate = "102/12/31"</para>
+            </summary>
+            <param name="date">日期</param>
+            <param name="separator">分隔字元</param>
+            <returns>中華民國年份的日期字串</returns>
+        </member>
+        <member name="M:Extension.ezToDateString(System.DateTime,System.Char)">
+            <summary>
+            將 DateTime 物件格式化成西元年份的日期字串(年/月/日 時：分:秒)
+            <para>範例：</para>
+            <para>string strDate = DateTime.Now.ezToDateString('/');</para>
+            <para>回傳：</para>
+            <para>strDate = "2013/12/31 23:59:59"</para>
+            </summary>
+            <param name="date">日期</param>
+            <param name="separator">分隔字元</param>
+            <returns>西元年份的日期字串</returns>
+        </member>
+        <member name="M:Extension.ezToShortDateString(System.DateTime,System.Char)">
+            <summary>
+            將 DateTime 物件格式化成西元年份的日期字串(年/月/日)
+            <para>範例：</para>
+            <para>string strDate = DateTime.Now.ezToShortDateString('/');</para>
+            <para>回傳：</para>
+            <para>strDate = "2013/12/31"</para>
+            </summary>
+            <param name="date">日期</param>
+            <param name="separator">分隔字元</param>
+            <returns>西元年份的日期字串</returns>
+        </member>
+        <member name="M:Extension.ezDateDiff(System.DateTime,System.String,System.DateTime)">
+            <summary>
+            查詢兩個日期差異值
+            <para>範例：</para>
+            <para>DateTime date1 = DateTime.Now.AddHours(0);</para>
+            <para>DateTime date2 = DateTime.Now.AddHours(24).AddMonths(3);</para>
+            <para>double DiffDays = date1.ezDateDiff("day", date2);</para>
+            </summary>
+            <param name="startdate">日期一</param>
+            <param name="datepart">類別</param>
+            <param name="enddate">日期二</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezDays(System.DateTime,System.DateTime)">
+            <summary>
+            取得兩個日期之間的「天數」（不足一天者採「無條件刪去法」） 
+            </summary>
+            <param name="date">日期一</param>
+            <param name="date2">日期二</param>
+            <returns>天數</returns>
+        </member>
+        <member name="M:Extension.ezTotalDays(System.DateTime,System.DateTime)">
+            <summary>
+            取得兩個日期之間的「天數」（回傳型別為 double 雙精確度） 
+            </summary>
+            <param name="date">日期一</param>
+            <param name="date2">日期二</param>
+            <returns>天數</returns>
+        </member>
+        <member name="M:Extension.ezTotalHours(System.DateTime,System.DateTime)">
+            <summary>
+            取得兩個日期之間的「小時數」（回傳型別為 double 雙精確度）
+            </summary>
+            <param name="date">日期一</param>
+            <param name="date2">日期二</param>
+            <returns>小時數</returns>
+        </member>
+        <member name="M:Extension.ezTotalMinutes(System.DateTime,System.DateTime)">
+            <summary>
+            取得兩個日期之間的「分鐘數」（回傳型別為 double 雙精確度）
+            </summary>
+            <param name="date">日期一</param>
+            <param name="date2">日期二</param>
+            <returns>分鐘數</returns>
+        </member>
+        <member name="M:Extension.ezWeekFirstDate(System.DateTime)">
+            <summary>
+            取得週一的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezWeekLastDate(System.DateTime)">
+            <summary>
+            取得週日的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezYearFirstDate(System.DateTime)">
+            <summary>
+            取得年初的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezYearLastDate(System.DateTime)">
+            <summary>
+            取得年底的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezMonthFirstDate(System.DateTime)">
+            <summary>
+            取得月初的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezMonthLastDate(System.DateTime)">
+            <summary>
+            取得月底的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezMonthDays(System.DateTime)">
+            <summary>
+            取得當月最大天數
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezSeasonFirstDate(System.DateTime)">
+            <summary>
+            取得季初的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.SeasonLastDate(System.DateTime)">
+            <summary>
+            取得季末的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.YearFirstDate(System.DateTime)">
+            <summary>
+            取得年初的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.YearLastDate(System.DateTime)">
+            <summary>
+            取得年末的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.TaiwanDate(System.DateTime)">
+            <summary>
+            取得中華民國格式的日期字串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.Today(System.DateTime,System.String,System.Boolean)">
+            <summary>
+            取得指定的日期格式字串
+            </summary>
+            <param name="date"></param>
+            <param name="FormatCode"></param>
+            <param name="ShowTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezSquare(System.Int32)">
+            <summary>
+            取得平方值
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezCube(System.Int32)">
+            <summary>
+            取得立方值
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezChr(System.Int32)">
+            <summary>
+            取得ASCII碼對應字元
+            </summary>
+            <param name="i">ASCII碼</param>
+            <returns>對應字元</returns>
+        </member>
+        <member name="M:Extension.ezToInt32(System.String)">
+            <summary>
+            將字串轉換成整數
+            <para>範例：</para>
+            <para>string s = "32";</para>
+            <para>int i = s.ezToInt32();</para>
+            <para>回傳：</para>
+            <para>i = 32</para>
+            </summary>
+            <param name="StringName">字串</param>
+            <returns>整數</returns>
+        </member>
+        <member name="M:Extension.ezRight(System.String,System.Int32)">
+            <summary>
+            取文字右方指定長度字串
+            </summary>
+            <param name="s">文字</param>
+            <param name="length">指定長度</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:Extension.ezLeft(System.String,System.Int32)">
+            <summary>
+            取文字左方指定長度字串
+            </summary>
+            <param name="s">文字</param>
+            <param name="length">指定長度</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:Extension.ezMid(System.String,System.Int32,System.Int32)">
+            <summary>
+            取文字指定開始位置起算，並指長度之字串
+            </summary>
+            <param name="s">文字</param>
+            <param name="start">開始起算位置</param>
+            <param name="length">指定長度</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:Extension.ezStrip(System.String,System.Char)">
+            <summary>
+            除去文字中指定字元.
+            <para>範例：</para>
+            <para>string s = "abcde";</para>
+            <para>s = s.ezStrip('b');</para>
+            <para>回傳：</para>
+            <para>s = "acde"</para>
+            </summary>
+            <param name="s">文字</param>
+            <param name="character">指定字元</param>
+            <returns>除去文字中指定字元後的文字</returns>
+        </member>
+        <member name="M:Extension.ezStrip(System.String,System.Char[])">
+            <summary>
+            除去文字中指定的字元陣列.
+            <para>範例：</para>
+            <para>string s = "abcde";</para>
+            <para>s = s.ezStrip('a', 'd');</para>
+            <para>回傳：</para>
+            <para>s = "bce"</para>
+            </summary>
+            <param name="s">文字</param>
+            <param name="chars">指定字元陣列</param>
+            <returns>除去文字中指定字元陣列後的文字</returns>
+        </member>
+        <member name="M:Extension.ezStrip(System.String,System.String)">
+            <summary>
+            除去文字中指定文字
+            <para>範例：</para>
+            <para>string s = "abcde";</para>
+            <para>s = s.ezStrip("bcd");</para>
+            <para>回傳：</para>
+            <para>s = "ae"</para>
+            </summary>
+            <param name="s">文字</param>
+            <param name="subString">指定文字</param>
+            <returns>除去文字中指定文字後的文字</returns>
+        </member>
+        <member name="M:Extension.ezSplit(System.String,System.String)">
+            <summary>
+            將文字依指定字串分隔成陣列
+            </summary>
+            <param name="s">文字</param>
+            <param name="SplitWord">指定字串</param>
+            <returns>字串陣列</returns>
+        </member>
+        <member name="M:Extension.ezSplitWords(System.String)">
+            <summary>
+            將文字分隔非字元的字串成陣列
+            </summary>
+            <param name="s">文字</param>
+            <returns>字串陣列</returns>
+        </member>
+        <member name="M:Extension.ezSplitLine(System.String)">
+            <summary>
+            將文字分隔斷行字(\r\n)元的字串成陣列
+            </summary>
+            <param name="s">文字</param>
+            <returns>字串陣列</returns>
+        </member>
+        <member name="M:Extension.ezCompare(System.String,System.String)">
+            <summary>
+            文字指定另一文字來相比對，看是否相符
+            </summary>
+            <param name="s">文字</param>
+            <param name="CompareString">比對的文字</param>
+            <returns>相符為true , 不符為false</returns>
+        </member>
+        <member name="M:Extension.ezCompare(System.String,System.String,System.Boolean)">
+            <summary>
+            文字指定另一文字來相比對，並指定是否需要判斷大小寫，看是否相符
+            </summary>
+            <param name="s">文字</param>
+            <param name="CompareString">比對的文字</param>
+            <param name="ignoreCase">是否判斷大小寫</param>
+            <returns>相符為true , 不符為false</returns>
+        </member>
+        <member name="M:Extension.ezWordCount(System.String)">
+            <summary>
+            查詢字串共有幾段字句
+            </summary>
+            <param name="s">文字</param>
+            <returns>字句數</returns>
+        </member>
+        <member name="M:Extension.ezTrimAndReduce(System.String)">
+            <summary>
+            去除字串前後空白及中間空白部份重覆空白僅留一個空白
+            <para>範例：</para>
+            <para>string text = "　I'm　　wearing　the　cheese.　It isn't　wearing me!　"</para>
+            <para>text = text.ezTrimAndReduce();</para>
+            <para>回傳：</para>
+            <para>text = "I'm wearing the cheese. It isn't wearing me!";</para>
+            </summary>
+            <param name="s">文字</param>
+            <returns>去除空白後的文字</returns>
+        </member>
+        <member name="M:Extension.ezConvertWhitespacesToSingleSpaces(System.String)">
+            <summary>
+            去除字串中間空白部份重覆空白僅留一個空白
+            <para>範例：</para>
+            <para>string text = "　I'm　　wearing　the　cheese.　It isn't　wearing me!　"</para>
+            <para>text = text.ezConvertWhitespacesToSingleSpaces();</para>
+            <para>回傳：</para>
+            <para>text = "　I'm wearing the cheese. It isn't wearing me!　";</para>
+            </summary>
+            <param name="s">文字</param>
+            <returns>去除空白後的文字</returns>
+        </member>
+        <member name="M:Extension.ezIsNull(System.String)">
+            <summary>
+            判斷文字是否為 Null 值
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsNullOrEmpty(System.String)">
+            <summary>
+            判斷文字是否為 Null 值或空值
+            </summary>
+            <param name="s">文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsNullOrWhiteSpace(System.String)">
+            <summary>
+            判斷文字是否為 Null 值或空白字串
+            </summary>
+            <param name="s">文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsMatch(System.String,System.String)">
+            <summary>
+            判斷文字是否為與另一個字串為相等
+            </summary>
+            <param name="s">文字</param>
+            <param name="pattern">比較的字串</param>
+            <returns>true為相等，false為不相等</returns>
+        </member>
+        <member name="M:Extension.ezReverse(System.String)">
+            <summary>
+            字串反轉
+            </summary>
+            <param name="s">字串</param>
+            <returns>反轉後的字串</returns>
+        </member>
+        <member name="M:Extension.ezIsInteger(System.String)">
+            <summary>
+            判斷字串是為為整數字串
+            </summary>
+            <param name="s">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsDouble(System.String)">
+            <summary>
+            判斷字符串是否可以轉換為數字
+            </summary>
+            <param name="s">要判斷的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsDateTime(System.String)">
+            <summary>
+            判斷字符串是否可轉換為DateTime
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezRepeat(System.String,System.Int32)">
+            <summary>
+            產生重覆字串
+            </summary>
+            <param name="s">重覆的字串</param>
+            <param name="length">重覆的次數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezCutText(System.String,System.Int32)">
+            <summary>
+            將多餘的文字字串截掉並用其他符號替代
+            </summary>
+            <param name="s">傳入字串</param>
+            <param name="length">字串的長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezTrimZero(System.String,System.Int32)">
+            <summary>
+            去掉有小數的文字後面的 0 , 可指定保留的小數位數
+            </summary>
+            <param name="s">傳入字串</param>
+            <param name="length">保留的小數位數</param>
+        </member>
+        <member name="M:Extension.ezAsc(System.String)">
+            <summary>
+            取得字元對應的ASCII碼
+            </summary>
+            <param name="s">來源字元</param>
+            <returns>ASCII碼</returns>
+        </member>
+        <member name="M:Extension.ezStartWith(System.String,System.String)">
+            <summary>
+            查詢是否為什麼字開頭的字串
+            </summary>
+            <param name="s">來源字元</param>
+            <param name="StringTarget">開頭的字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezCutString(System.String,System.Int32)">
+            <summary>
+            截取字串
+            </summary>
+            <param name="s">來源字元</param>
+            <param name="len">長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezRightAddString(System.String,System.String,System.Boolean)">
+            <summary>
+            字串右方加入指定字串,可設定有方已有指定字串,則不加入
+            </summary>
+            <param name="s">來源字元</param>
+            <param name="AddString">加入指定字串</param>
+            <param name="ExistsNonAdd">字串右方已存在則不加入</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsRightString(System.String,System.String)">
+            <summary>
+            回傳字串右方是否為指定的字串
+            </summary>
+            <param name="s">來源字元</param>
+            <param name="RightString">指定的字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extension.ezIsLeftString(System.String,System.String)">
+            <summary>
+            回傳字串左方是否為指定的字串
+            </summary>
+            <param name="s">來源字元</param>
+            <param name="LeftString">指定的字串</param>
+            <returns></returns>
+        </member>
+        <member name="P:HtmlHelperExtensions._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HtmlHelperExtensions._context">
+            <summary>
+            HttpContext 物件
+            </summary>
+        </member>
+        <member name="M:HtmlHelperExtensions.Image(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,System.String,System.String,System.String)">
+            <summary>
+            圖片 Html Helper
+            </summary>
+            <param name="htmlHelper">htmlHelper 物件</param>
+            <param name="src">圖片網址</param>
+            <param name="alt">替代文字</param>
+            <param name="klass">Class 樣式表名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:HtmlHelperExtensions.ColumnSort(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,System.String,System.String)">
+            <summary>
+            欄位加入排序功能
+            </summary>
+            <param name="htmlHelper">htmlHelper 物件</param>
+            <param name="columnName">欄位名稱</param>
+            <param name="dispalyText">欄位標題</param>
+            <returns></returns>
+        </member>
+        <member name="T:ModelStateExtensions">
+            <summary>
+            ModelState 擴充功能
+            </summary>
+        </member>
+        <member name="M:ModelStateExtensions.ClearError(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)">
+            <summary>
+            清除指定欄位錯誤資訊
+            </summary>
+            <param name="m">ModelState</param>
+            <param name="fieldName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:ModelStateExtensions.ClearAllErrors(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            清除所有欄位錯誤資訊
+            </summary>
+            <param name="m">ModelState</param>
+            <returns></returns>
+        </member>
+        <member name="M:ModelStateExtensions.GetFirstErrorData(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            取得第一個錯誤資訊，錯誤訊息必項是 {欄位名稱},{錯誤代碼}
+            例如：[Required(ErrorMessage = "EmpNo,Required")]
+            </summary>
+            <param name="m">ModelState</param>
+            <returns></returns>
+        </member>
+        <member name="T:SessionExtensions">
+            <summary>
+            Session 功能擴充程式
+            </summary>
+        </member>
+        <member name="M:SessionExtensions.Set``1(Microsoft.AspNetCore.Http.ISession,System.String,System.String)">
+            <summary>
+            設定 Session 值
+            </summary>
+            <param name="session">Session 物件</param>
+            <param name="key">Session 名稱</param>
+            <param name="value">Session 值</param>
+        </member>
+        <member name="M:SessionExtensions.Get``1(Microsoft.AspNetCore.Http.ISession,System.String)">
+            <summary>
+            取得 Session 值
+            </summary>
+            <param name="session">Session 物件</param>
+            <param name="key">Session 名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:SessionExtensions.SetObject``1(Microsoft.AspNetCore.Http.ISession,System.String,``0)">
+            <summary>
+            設定 Session 值
+            </summary>
+            <param name="session">Session 物件</param>
+            <param name="key">Session 名稱</param>
+            <param name="value">Session 值</param>
+            <typeparam name="T">泛型物件</typeparam>
+        </member>
+        <member name="M:SessionExtensions.GetObject``1(Microsoft.AspNetCore.Http.ISession,System.String)">
+            <summary>
+            取得 Session 值
+            </summary>
+            <param name="session">Session 物件</param>
+            <param name="key">Session 名稱</param>
+            <typeparam name="T">泛型物件</typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:IAdoNetSqlClient.conn">
+            <summary>
+            連線物件
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.cmd">
+            <summary>
+            命令物件
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.ConnName">
+            <summary>
+            連線設定檔名稱
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.CommandText">
+            <summary>
+            SQL 命令
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.CommandType">
+            <summary>
+            SQL 命令類型
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.ProcedureName">
+            <summary>
+            StoreProcedure 名稱
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.RowAffected">
+            <summary>
+            執行指令後影響的筆數
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.ErrorMessage">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="P:IAdoNetSqlClient.HasRows">
+            <summary>
+            回傳執行後是否有記錄
+            </summary>
+        </member>
+        <member name="M:IAdoNetSqlClient.InitComponents">
+            <summary>
+            初始化物件
+            </summary>
+        </member>
+        <member name="M:IAdoNetSqlClient.Open">
+            <summary>
+            資料庫連線
+            </summary>
+        </member>
+        <member name="M:IAdoNetSqlClient.Close">
+            <summary>
+            資料庫關閉連線
+            </summary>
+        </member>
+        <member name="M:IAdoNetSqlClient.SetConnectionString">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="M:IAdoNetSqlClient.Execute(System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.Execute(System.String,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandText">SQL 命令</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.Execute(System.Data.CommandType,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandType">命令類型</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.Execute(System.String,System.Data.CommandType,System.Boolean)">
+            <summary>
+            執行 SQL 命令
+            </summary>
+            <param name="commandText">SQL 命令</param>
+            <param name="commandType">命令類型</param>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetDataSet">
+            <summary>
+            執行 SQL 指令並取回 DataSet,並自動關閉資料庫連線
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetDataSet(System.Boolean)">
+            <summary>
+            執行 SQL 指令並取回 DataSet
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetDataTable">
+            <summary>
+            執行 SQL 指令並取回 DataTable,並自動關閉資料庫連線
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetDataTable(System.Boolean)">
+            <summary>
+            執行 SQL 指令並取回 DataTable
+            </summary>
+            <param name="closeDb">執行後關閉資料庫</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetValueDateTime(System.String)">
+            <summary>
+            取得指定欄位的日期型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetValueDecimal(System.String)">
+            <summary>
+            取得指定欄位的數字型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetValueInt(System.String)">
+            <summary>
+            取得指定欄位的整數型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.GetValueString(System.String)">
+            <summary>
+            取得指定欄位的字串型態值
+            </summary>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IAdoNetSqlClient.ParametersAdd(System.String,System.Object,System.Boolean)">
+            <summary>
+            加入參數
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <param name="value">參數值</param>
+            <param name="clearFirst">是否先清除所有參數再加入</param>
+        </member>
+        <member name="T:IDapperRepository">
+            <summary>
+            Dapper Repository 介面
+            </summary>
+        </member>
+        <member name="P:IDapperRepository.ConnectionName">
+            <summary>
+            連線字串名稱
+            </summary>
+        </member>
+        <member name="P:IDapperRepository.ConnectionString">
+            <summary>
+            連線字串
+            </summary>
+        </member>
+        <member name="P:IDapperRepository.ErrorMessage">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="P:IDapperRepository.CommandType">
+            <summary>
+            命令類型 (SQL 語法/預儲程序)
+            </summary>
+        </member>
+        <member name="M:IDapperRepository.GetConnectionString(System.String)">
+            <summary>
+            取得連線字串
+            </summary>
+            <param name="connectionName">連線字串名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.CheckConnectionName(System.String)">
+            <summary>
+            檢查 connectionName 中的 connectionString 是否連線正常
+            </summary>
+            <param name="connectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.CheckConnectionString(System.String)">
+            <summary>
+            檢查 connectionString 是否連線正常
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.Execute(System.String)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)
+            </summary>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.Execute(System.String,Dapper.DynamicParameters)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)
+            </summary>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ExecuteAsync(System.String)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)(非同步)
+            </summary>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ExecuteAsync(System.String,Dapper.DynamicParameters)">
+            <summary>
+            執行命令 (SQL 語法/預儲程序)(非同步)
+            </summary>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadSingle``1(System.String)">
+            <summary>
+            讀取單筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadSingle``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取單筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadSingleAsync``1(System.String)">
+            <summary>
+            讀取單筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadSingleAsync``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取單筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAll``1(System.String)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAll``1(System.String,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAll``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAll``1(System.String,Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param> 
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAllAsync``1(System.String)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAllAsync``1(System.String,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param> 
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAllAsync``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.ReadAllAsync``1(System.String,Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            讀取多筆記錄(非同步)
+            </summary>
+            <typeparam name="T">回傳泛型類型</typeparam>
+            <param name="query">命令字串</param>
+            <param name="parameters">參數變數物件</param>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">筆頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.IsDuplicated``1(``0,System.String,System.String)">
+            <summary>
+            檢查目前 Entity 內指定欄位值是否重覆(同步)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="columnName"></param>
+            <param name="conditional"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.IsDuplicatedAsync``1(``0,System.String,System.String)">
+            <summary>
+            檢查目前 Entity 內指定欄位值是否重覆(非同步)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="columnName"></param>
+            <param name="conditional"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLSelectCommand``1(``0)">
+            <summary>
+            動態取得 SQL Select 語法 (不含 Join 的簡單語法)
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLSelectCommandList(System.String,System.Int32)">
+            <summary>
+            動態取得 SQL Select 語法 (不含 Join 的簡單語法)
+            </summary>
+            <param name="entityName">物件變數</param>
+            <param name="rowLength">每列長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLSelectWhereById``1(``0,System.String)">
+            <summary>
+            以表格主鍵的值取得 SQL Select WHERE 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="sqlWhere">目前的 Where 條件式</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetStringColumnList``1(``0)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetStringColumnList(System.String)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <param name="entityName">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetStringColumnList(System.String,System.Int32)">
+            <summary>
+            取得表格內所有是文字型態的欄位集合
+            </summary>
+            <param name="entityName">物件變數</param>
+            <param name="rowLength">每列長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLWhereBySearchColumn``1(``0,System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            取得查詢模糊搜尋條件參數
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">物件變數</param>
+            <param name="columns">欄位</param>
+            <param name="sqlWhere">目前的 Where 條件</param>
+            <param name="searchText">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLInsertCommand``1(``0)">
+            <summary>
+            動態取得 SQL Insert 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLInsertParameters``1(``0)">
+            <summary>
+            動態取得 SQL Insert 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLDeleteCommand``1(``0)">
+            <summary>
+            動態取得 SQL Delete 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLDeleteParameters``1(``0)">
+            <summary>
+            動態取得 SQL Delete 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLUpdateCommand``1(``0)">
+            <summary>
+            動態取得 SQL Update 語法
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLUpdateParameters``1(``0)">
+            <summary>
+            動態取得 SQL Update 參數
+            </summary>
+            <param name="entity">型別</param>
+            <typeparam name="T">物件變數</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetSQLSelectKeyParm``1(``0,System.Object)">
+            <summary>
+            返回新增或修改參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="value">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetCreateEditParm``1(``0)">
+            <summary>
+            返回新增或修改參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetDeleteParm``1(``0,System.Int32)">
+            <summary>
+            返回刪除參數
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="id">Key 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetValueByKey``1(``0,System.Object,System.String)">
+            <summary>
+            使用 Key 值取得指定欄位值
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="keyValue">Key 值</param>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetValueByColumn``1(``0,System.String,System.Object,System.String)">
+            <summary>
+            使用指定搜尋欄位值取得另一指定欄位值
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <param name="searchName">搜尋欄位</param>
+            <param name="searchValue">搜尋欄位值</param>
+            <param name="columnName">指定欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetKeyColumnName``1(``0)">
+            <summary>
+            取得 Key 欄位名稱
+            </summary>
+            <typeparam name="T">型別</typeparam>
+            <param name="entity">物件變數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.GetPropertyType(System.String,System.String)">
+            <summary>
+            取得屬性型態
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.IsKeyAttribute(System.String,System.String)">
+            <summary>
+            檢查是否為 [Key]
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperRepository.IsNotMappedAttribute(System.String,System.String)">
+            <summary>
+            檢查是否為 [NotMapped]
+            </summary>
+            <param name="entityName">物件名稱</param>
+            <param name="propName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="T:IDapperSql`1">
+            <summary>
+            使用 Dapper 來執行 SQL 指令功能
+            </summary>
+            <typeparam name="TEntity">泛型表格物件</typeparam>
+        </member>
+        <member name="P:IDapperSql`1.ConnName">
+            <summary>
+            連線字串名稱
+            </summary>
+        </member>
+        <member name="P:IDapperSql`1.DefaultOrderByColumn">
+            <summary>
+            預設 SQL 排序指令
+            </summary>
+        </member>
+        <member name="P:IDapperSql`1.DefaultOrderByDirection">
+            <summary>
+            預設 SQL 排序方式指令
+            </summary>
+        </member>
+        <member name="P:IDapperSql`1.OrderByColumn">
+            <summary>
+            OrderBy 排序指令
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:IDapperSql`1.OrderByDirection">
+            <summary>
+            OrderBy 排序方式
+            </summary>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLSelect">
+            <summary>
+            SQL 查詢欄位及表格指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSearchColumns">
+            <summary>
+            取得模擬搜尋的欄位集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLWhere">
+            <summary>
+            SQL 查詢條件式指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLOrderBy">
+            <summary>
+            SQL 查詢排序指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDropDownList(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            取得下拉式選單資料集
+            </summary>
+            <param name="valueColumn">資料欄位名稱</param>
+            <param name="textColumn">顯示欄位名稱</param>
+            <param name="orderColumn">排序欄位名稱</param>/// 
+            <param name="textIncludeValue">顯示欄位名稱是否顯示資料欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLInsert">
+            <summary>
+            SQL 新增指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLDelete">
+            <summary>
+            SQL 刪除指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetSQLUpdate">
+            <summary>
+            SQL 修改指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetData(System.Int32)">
+            <summary>
+            取得單筆資料(同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataAsync(System.Int32)">
+            <summary>
+            取得單筆資料(非同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(Dapper.DynamicParameters)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(Dapper.DynamicParameters,System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataList(Dapper.DynamicParameters,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(Dapper.DynamicParameters)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(System.String)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.String)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.GetDataListAsync(Dapper.DynamicParameters,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得多筆資料(非同步呼叫)
+            </summary>
+            <param name="parm">參數</param>
+            <param name="searchString">模糊搜尋文字</param>
+            <param name="page">當前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.CreateEdit(`0,System.Int32)">
+            <summary>
+            新增或修改資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <param name="id">Key 欄位值</param>
+        </member>
+        <member name="M:IDapperSql`1.CreateEditAsync(`0,System.Int32)">
+            <summary>
+            新增或修改資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.Create(`0)">
+            <summary>
+            新增資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+        </member>
+        <member name="M:IDapperSql`1.CreateAsync(`0)">
+            <summary>
+            新增資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.Edit(`0)">
+            <summary>
+            更新資料(同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+        </member>
+        <member name="M:IDapperSql`1.EditAsync(`0)">
+            <summary>
+            更新資料(非同步呼叫)
+            </summary>
+            <param name="model">資料模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IDapperSql`1.Delete(System.Int32)">
+            <summary>
+            刪除資料(同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+        </member>
+        <member name="M:IDapperSql`1.DeleteAsync(System.Int32)">
+            <summary>
+            刪除資料(非同步呼叫)
+            </summary>
+            <param name="id">Key 欄位值</param>
+            <returns></returns>
+        </member>
+        <member name="T:IEFGenericRepository`1">
+            <summary>
+            代表一個Repository的interface。
+            </summary>
+            <typeparam name="TEntity">任意model的class</typeparam>
+        </member>
+        <member name="M:IEFGenericRepository`1.Create(`0)">
+            <summary>
+            新增一筆資料 (同步)
+            </summary>
+            <param name="entity">要新增的 Entity</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.CreateAsync(`0)">
+            <summary>
+            新增一筆資料 (非同步)
+            </summary>
+            <param name="entity">要新增的 Entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadSingle(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得第一筆符合條件的內容 (同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>第一筆符合條件的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadSingleAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得第一筆符合條件的內容 (非同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>第一筆符合條件的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadAll">
+            <summary>
+            取得 Entity 全部筆數資料 (同步)
+            </summary>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadAllAsync">
+            <summary>
+            取得 Entity 全部筆數資料 (非同步)
+            </summary>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得 Entity 全部筆數資料 (同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.ReadAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            取得 Entity 全部筆數資料 (非同步)
+            </summary>
+            <param name="predicate">要取得的 Where 條件式</param>
+            <returns>Entity 全部筆數的資料</returns>
+        </member>
+        <member name="M:IEFGenericRepository`1.Insert(`0,System.Boolean)">
+            <summary>
+            新增一筆資料 (同步)
+            </summary>
+            <param name="entity">要新增的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.InsertAsync(`0,System.Boolean)">
+            <summary>
+            新增一筆資料 (非同步)
+            </summary>
+            <param name="entity">要新增的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.Update(`0,System.Boolean)">
+            <summary>
+            更新一筆資料 (同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.UpdateAsync(`0,System.Boolean)">
+            <summary>
+            更新一筆資料 (非同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.Update(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[],System.Boolean)">
+            <summary>
+            更新一筆資料 (同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="updateProperties">更新的屬性</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[],System.Boolean)">
+            <summary>
+            更新一筆資料 (非同步)
+            </summary>
+            <param name="entity">要更新的內容</param>
+            <param name="updateProperties">更新的屬性</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.Delete(`0,System.Boolean)">
+            <summary>
+            刪除一筆資料 (同步)
+            </summary>
+            <param name="entity">要被刪除的Entity。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.DeleteAsync(`0,System.Boolean)">
+            <summary>
+            刪除一筆資料 (非同步)
+            </summary>
+            <param name="entity">要被刪除的Entity。</param>
+            <param name="saveChange">是否執行後存檔</param>
+        </member>
+        <member name="M:IEFGenericRepository`1.SaveChanges">
+            <summary>
+            儲存異動 (同步)
+            </summary>
+        </member>
+        <member name="M:IEFGenericRepository`1.SaveChangesAsync">
+            <summary>
+            儲存異動 (非同步)
+            </summary>
+        </member>
+        <member name="T:ActionService">
+            <summary>
+            Action 服務類別
+            </summary>
+        </member>
+        <member name="P:ActionService._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ActionService._context">
+            <summary>
+            HttpContext 物件
+            </summary> 
+        </member>
+        <member name="P:ActionService.Area">
+            <summary>
+            取得目前的 Area 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Controller">
+            <summary>
+            取得目前的 Controller 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Action">
+            <summary>
+            取得目前的 Action 名稱
+            </summary>
+        </member>
+        <member name="M:ActionService.SetActionName(enAction)">
+            <summary>
+            設定目前的 Action 名稱(或自行指定)
+            </summary>
+            <param name="action">Action 代號</param>
+        </member>
+        <member name="M:ActionService.SetActionName(System.String)">
+            <summary>
+            設定Action 名稱
+            </summary>
+            <param name="actionName">Action 名稱</param>
+        </member>
+        <member name="M:ActionService.SetSubActionName(System.String)">
+            <summary>
+            設定事件副標題
+            </summary>
+            <param name="subActionName">副標題</param>
+        </member>
+        <member name="M:ActionService.ActionInit">
+            <summary>
+            Action 初始化
+            </summary>
+        </member>
+        <member name="P:ActionService.id">
+            <summary>
+            取得目前的 id 值
+            </summary>
+        </member>
+        <member name="P:ActionService.Page">
+            <summary>
+            取得目前的頁數
+            </summary>
+        </member>
+        <member name="P:ActionService.Http">
+            <summary>
+            取得目前的 Http 通訊協定是 Http 還是 Https，如 https
+            </summary>
+        </member>
+        <member name="P:ActionService.Host">
+            <summary>
+            取得目前的 Domain Name，如 localhsot:2283
+            </summary>
+        </member>
+        <member name="P:ActionService.HttpHost">
+            <summary>
+            取得目前的 Http 及 Domain Name 組合，如 https://localhsot:2283
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ActionService.RowId">
+            <summary>
+            Row ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ActionService.RowData">
+            <summary>
+            Row Data
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ActionService.ViewActionName">
+            <summary>
+            View Action 名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ActionService.Home">
+            <summary>
+            Home Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Init">
+            <summary>
+            Init Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Index">
+            <summary>
+            Index Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.CreateEdit">
+            <summary>
+            CreateEdit Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Delete">
+            <summary>
+            Delete Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Sort">
+            <summary>
+            Sort Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.Search">
+            <summary>
+            Search Action 名稱
+            </summary>
+        </member>
+        <member name="P:ActionService.SearchText">
+            <summary>
+            SearchText 名稱
+            </summary>
+        </member>
+        <member name="M:ActionService.PageInfo(System.Int32,System.Int32)">
+            <summary>
+            PageInfo 名稱
+            </summary>
+        </member>
+        <member name="M:ActionService.SetPrgInfo(System.String,System.String)">
+            <summary>
+            設定 Action 程式參數
+            </summary>
+            <param name="prgNo">程式代號</param>
+            <param name="prgName">程式名稱</param>
+        </member>
+        <member name="M:ActionService.CurrentActionLinkUrl(System.String)">
+            <summary>
+            取得目前控制器的指定 Action 的網址 
+            </summary>
+            <param name="actionName">Action 名稱</param>
+            <returns></returns>
+        </member>
+        <member name="T:AppService">
+            <summary>
+            應用程式參數類別
+            </summary>
+        </member>
+        <member name="P:AppService.AppName">
+            <summary>
+            應用程式名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.AppVersion">
+            <summary>
+            應用程式版本
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.AppDescription">
+            <summary>
+            應用程式版本
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.AppKeywords">
+            <summary>
+            應用程式版本
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.Designer">
+            <summary>
+            網站設計者
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.AdminName">
+            <summary>
+            系統管理者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.AdminEmail">
+            <summary>
+            系統管理者電子信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.CompTel">
+            <summary>
+            系統管理者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.CompEmail">
+            <summary>
+            系統管理者電子信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AppService.DebugMode">
+            <summary>
+            除錯模型
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:AppService.GetApplicationString(System.String)">
+            <summary>
+            取得連線字串
+            </summary>
+            <param name="KeyName">參數名稱</param>
+            <returns></returns>
+        </member>
+        <member name="T:CalendarService">
+            <summary>
+            FullCalendar 相關功能類別
+            </summary>
+        </member>
+        <member name="P:CalendarService._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CalendarService._context">
+            <summary>
+            HttpContext 物件
+            </summary>
+        </member>
+        <member name="P:CalendarService.Id">
+            <summary>
+            記錄 Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarService.TargetCode">
+            <summary>
+            行事曆類別
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarService.TargetCodeName">
+            <summary>
+            行事曆類別名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarService.TargetNo">
+            <summary>
+            行事曆編號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarService.TargetName">
+            <summary>
+            行事曆編號名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:GoogleCalendarId">
+            <summary>
+            Google 行事曆 Id
+            </summary>
+        </member>
+        <member name="T:CalendarEvent">
+            <summary>
+            行事曆行程
+            </summary>
+        </member>
+        <member name="P:CalendarEvent.id">
+            <summary>
+            行程 Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.groupId">
+            <summary>
+            群組 Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.title">
+            <summary>
+            行程標題
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.url">
+            <summary>
+            行程網址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.start">
+            <summary>
+            開始時間
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.end">
+            <summary>
+            結束時間
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.allDay">
+            <summary>
+            全天行程
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CalendarEvent.description">
+            <summary>
+            行程詳細說明
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CartService._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CartService._context">
+            <summary>
+            HttpContext 物件
+            </summary>
+        </member>
+        <member name="P:CartService.OrderNo">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:CartService.LotNo">
+            <summary>
+            購物批號 LotNo
+            </summary>
+        </member>
+        <member name="P:CartService.LotCreateTime">
+            <summary>
+            購物批號建立時間
+            </summary>
+        </member>
+        <member name="M:CartService.NewLotNo">
+            <summary>
+            更新購物批號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CartService.MergeCart">
+            <summary>
+            登入時將現有遊客的購物車加入客戶的購物車
+            </summary>
+        </member>
+        <member name="M:CartService.AddCart(System.String)">
+            <summary>
+            加入購物車
+            </summary>
+            <param name="productNo">商品編號</param>
+        </member>
+        <member name="M:CartService.AddCart(System.String,System.Int32)">
+            <summary>
+            加入購物車
+            </summary>
+            <param name="productNo">商品編號</param>
+            <param name="buyQty">數量</param>
+        </member>
+        <member name="M:CartService.AddCart(System.String,System.String,System.Int32)">
+            <summary>
+            加入購物車
+            </summary>
+            <param name="productNo">商品編號</param>
+            <param name="prod_Spec">商品規格</param>
+            <param name="buyQty">數量</param>
+        </member>
+        <member name="M:CartService.UpdateCart(System.Int32,System.Int32)">
+            <summary>
+            更新購物車
+            </summary>
+            <param name="id">row ID</param>
+            <param name="qty">數量</param>
+        </member>
+        <member name="M:CartService.DeleteCart(System.Int32)">
+            <summary>
+            刪除購物車
+            </summary>
+            <param name="id">row ID</param>
+        </member>
+        <member name="M:CartService.CartPayment(vmOrders)">
+            <summary>
+            消費者付款
+            </summary>
+        </member>
+        <member name="T:CryptographyService">
+            <summary>
+            加解密功能服務
+            </summary>
+        </member>
+        <member name="M:CryptographyService.StringToSHA256(System.String)">
+            <summary>
+            一般文字轉成 SHA256 加密文字
+            </summary>
+            <param name="input">一般文字</param>
+            <returns>SHA256 加密文字</returns> 
+        </member>
+        <member name="M:CryptographyService.CompareSHA256String(System.String,System.String)">
+            <summary>
+            比較一般文字及已加密文字是否相同
+            </summary>
+            <param name="normalString">一般文字</param>
+            <param name="sha256String">已加密文字</param>
+            <returns></returns>
+        </member>
+        <member name="T:CssService">
+            <summary>
+            CSS 統一標準樣式設定
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonPrimary">
+            <summary>
+            Bootstrap Button primary
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonSuccess">
+            <summary>
+            Bootstrap Button success
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonDanger">
+            <summary>
+            Bootstrap Button danger
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonWarning">
+            <summary>
+            Bootstrap Button warning
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonInfo">
+            <summary>
+            Bootstrap Button info
+            </summary>
+        </member>
+        <member name="P:CssService.ButtonSecondary">
+            <summary>
+            Bootstrap Button secondary
+            </summary>
+        </member>
+        <member name="P:CssService.CreateButton">
+            <summary>
+            新增按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.EditButton">
+            <summary>
+            修改按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.DeleteButton">
+            <summary>
+            刪除按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.DetailButton">
+            <summary>
+            明細按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.PrintButton">
+            <summary>
+            列印按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.UploadButton">
+            <summary>
+            上傳按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.SubmitButton">
+            <summary>
+            送出按鈕樣式
+            </summary>
+        </member>
+        <member name="P:CssService.ReturnButton">
+            <summary>
+            返回按鈕樣式
+            </summary>
+        </member>
+        <member name="T:EnumService`1">
+            <summary>
+            Enum 服務類別
+            </summary>
+            <typeparam name="T">Enum 物件</typeparam>
+        </member>
+        <member name="M:EnumService`1.DropdownList">
+            <summary>
+            將 Enum 轉成 SelectListItem 陣列集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnumService`1.DropdownNameValueList">
+            <summary>
+            將 Enum 轉成 SelectListItem 陣列集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnumService`1.NameList">
+            <summary>
+            將 Enum 的 Name 轉成字串集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnumService`1.ValueList">
+            <summary>
+            將 Enum 的Value 轉成整數集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnumService`1.NameExists(System.String)">
+            <summary>
+            檢查指定的 Name 是否存在
+            </summary>
+            <param name="name">指定的 Name</param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumService`1.ValueExists(System.Int32)">
+            <summary>
+            檢查指定的 Value 是否存在
+            </summary>
+            <param name="value">指定的 Value</param>
+            <returns></returns>
+        </member>
+        <member name="P:GmailService.MessageText">
+            <summary>
+            訊息文字
+            </summary>
+        </member>
+        <member name="P:GmailService.SenderName">
+            <summary>
+            寄件者姓名
+            </summary>
+        </member>
+        <member name="P:GmailService.SenderEmail">
+            <summary>
+            寄件者電子信箱
+            </summary>
+        </member>
+        <member name="P:GmailService.UserName">
+            <summary>
+            寄件者 (Google 帳號)
+            </summary>
+        </member>
+        <member name="P:GmailService.AppPassword">
+            <summary>
+            Google 帳號應用程式密碼
+            </summary>
+        </member>
+        <member name="P:GmailService.ReceiverName">
+            <summary>
+            收件者姓名
+            </summary>
+        </member>
+        <member name="P:GmailService.ReceiverEmail">
+            <summary>
+            收件者 Email
+            </summary>
+        </member>
+        <member name="P:GmailService.Subject">
+            <summary>
+            信件主旨
+            </summary>
+        </member>
+        <member name="P:GmailService.Body">
+            <summary>
+            信件內文
+            </summary>
+        </member>
+        <member name="P:GmailService.HostUrl">
+            <summary>
+            寄件伺服器位址
+            </summary>
+        </member>
+        <member name="P:GmailService.HostPort">
+            <summary>
+            通訊連接埠號碼
+            </summary>
+        </member>
+        <member name="P:GmailService.UseSSL">
+            <summary>
+            啟用 SSL 機制
+            </summary>
+        </member>
+        <member name="M:GmailService.Send">
+            <summary>
+            送出信件
+            </summary>
+        </member>
+        <member name="T:MailObject">
+            <summary>
+            電子信箱資料格式
+            </summary>
+        </member>
+        <member name="P:MailObject.MailTime">
+            <summary>
+            寄件者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.FromName">
+            <summary>
+            寄件者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.FromEmail">
+            <summary>
+            寄件者電子信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.ToName">
+            <summary>
+            收件者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.ToEmail">
+            <summary>
+            收件者電子信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.Subject">
+            <summary>
+            信件主旨
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.UserNo">
+            <summary>
+            使用者編號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.UserName">
+            <summary>
+            使用者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.Password">
+            <summary>
+            使用者密碼
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.ValidateCode">
+            <summary>
+            驗證碼
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.ReturnUrl">
+            <summary>
+            返回網址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.MailSubject">
+            <summary>
+            電子郵內主旨
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MailObject.MailContent">
+            <summary>
+            電子郵內文件
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:JWTServices">
+            <summary>
+            JWT 服務類別
+            </summary>
+        </member>
+        <member name="M:JWTServices.GenCliams(JWTCliam,System.Int32,System.String@)">
+            <summary>
+            建置資訊聲明集合
+            </summary>
+            <param name="jWTCliam">Token資訊聲明內容物件</param>
+            <param name="expireMinutes">過期分鐘數</param>
+            <param name="messateText">錯誤訊息</param>
+            <returns>一組收集資訊聲明集合</returns>
+        </member>
+        <member name="T:JWTBase">
+            <summary>
+            JWT 底層介面
+            </summary>
+        </member>
+        <member name="M:JWTBase.GetJWT(JWTCliam,System.String,System.String,System.Int32)">
+            <summary>
+             產生JWT Token
+            </summary>
+            <param name="jWTCliam">Token 資訊聲明內容物件</param>
+            <param name="secretKey">加密金鑰，用來做加密簽章用</param>
+            <param name="issuer">Token 發行者資訊</param>
+            <param name="expireMinutes">Token 有效期限(分鐘)</param>
+            <returns>回應內容物件，內容屬性jwt放置Token字串</returns>
+        </member>
+        <member name="T:JWTCliam">
+            <summary>
+            JWT 聲明資訊模型類別
+            </summary>
+        </member>
+        <member name="P:JWTCliam.Iss">
+            <summary>
+            聲明資訊-發行者
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Sub">
+            <summary>
+            聲明資訊-User內容
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Aud">
+            <summary>
+            聲明資訊-接收者
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Exp">
+            <summary>
+            聲明資訊-有效期限
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Nbf">
+            <summary>
+            聲明資訊-起始時間
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Iat">
+            <summary>
+            聲明資訊-發行時間
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.Jti">
+            <summary>
+            聲明資訊-獨立識別ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:JWTCliam.UserName">
+            <summary>
+            使用者名稱
+            </summary>
+        </member>
+        <member name="T:TokenLogin">
+            <summary>
+            驗證 WebAPI 使用者模型
+            </summary>
+        </member>
+        <member name="P:TokenLogin.Name">
+            <summary>
+            使用者名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:TokenLogin.Password">
+            <summary>
+            使用者密碼
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:TokenLogin.ExpireMinutes">
+            <summary>
+            Token 過期分鐘數
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:TokenStatus.IsSuccess">
+            <summary>
+            Token是否有成功產生狀態
+            </summary>
+            <value>布林值</value>
+        </member>
+        <member name="P:TokenStatus.JWT">
+            <summary>
+            Token
+            </summary>
+            <value>字串</value>
+        </member>
+        <member name="P:TokenStatus.MessageText">
+            <summary>
+            處理訊息
+            </summary>
+            <value>字串</value>
+        </member>
+        <member name="T:SharedResource">
+            <summary>
+            將共享資源進行分組的虛擬類別
+            </summary>
+        </member>
+        <member name="T:CultureObject">
+            <summary>
+            語系物件
+            </summary>
+        </member>
+        <member name="P:CultureObject.Name">
+            <summary>
+            語系名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CultureObject.Caption">
+            <summary>
+            語系名稱標題
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CultureObject.FlagName">
+            <summary>
+            flag-incons 的國旗代號 
+            可至 https://flagicons.lipis.dev/ 網站查詢
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:LanguageService">
+            <summary>
+            多國語系用類別
+            </summary>
+        </member>
+        <member name="F:LanguageService._localizer">
+            <summary>
+            多國語系字串處理物件
+            </summary>
+        </member>
+        <member name="F:LanguageService.CultureList">
+            <summary>
+            語系名稱陣列
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LanguageService.#ctor(Microsoft.Extensions.Localization.IStringLocalizerFactory)">
+            <summary>
+            多國語系建構子，注入 IStringLocalizerFactory
+            </summary>
+            <param name="factory"></param>
+        </member>
+        <member name="M:LanguageService.GetResourceValue(System.String)">
+            <summary>
+            以 Key 值來讀取多國語系文字
+            </summary>
+            <param name="keyName">Key 值</param>
+            <returns></returns>
+        </member>
+        <member name="P:LanguageService.CurrentLanguageName">
+            <summary>
+            取得目前的語系名稱
+            </summary>
+        </member>
+        <member name="P:LanguageService.CurrentLanguageCaption">
+            <summary>
+            取得目前的語系名稱標題
+            </summary>
+        </member>
+        <member name="M:SendMailService.UserRegister(MailObject)">
+            <summary>
+            會員註冊寄發驗證的電子郵件
+            </summary>
+            <param name="mailObject">電子郵件物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SendMailService.UserForget(MailObject)">
+            <summary>
+            帳號忘記密碼寄發密碼重設的電子郵件
+            </summary>
+            <param name="mailObject">電子郵件物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SendMailService.UserResetPassword(MailObject)">
+            <summary>
+            帳號重設密碼寄發驗證的電子郵件
+            </summary>
+            <param name="mailObject">電子郵件物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SendMailService.ContactUs(MailObject)">
+             <summary>
+            連絡我們的電子郵件
+             </summary>
+             <param name="mailObject">電子郵件物件</param>
+             <returns></returns>
+        </member>
+        <member name="M:SendMailService.Subscription(System.String,System.Boolean)">
+             <summary>
+            訂閱
+             </summary>
+             <param name="email">電子信箱</param>
+             <param name="isAddEmail">是否訂閱/退訂</param>
+             <returns></returns>
+        </member>
+        <member name="T:SessionService">
+            <summary>
+            Session 類別
+            </summary>
+        </member>
+        <member name="P:SessionService._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SessionService._context">
+            <summary>
+            HttpContext 物件
+            </summary>
+        </member>
+        <member name="P:SessionService.UserNo">
+            <summary>
+            登入使用者代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.UserName">
+            <summary>
+            登入使用者姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.RoleNo">
+            <summary>
+            登入使用者角色
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IsLogin">
+            <summary>
+            是否已經登入
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.BaseNo">
+            <summary>
+            主檔編號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.UserImage">
+            <summary>
+            使用者圖片
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.DeptNo">
+            <summary>
+            登入使用者部門代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.DeptName">
+            <summary>
+            登入使用者部門名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.TitleNo">
+            <summary>
+            登入使用者職稱代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.TitleName">
+            <summary>
+            登入使用者職稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.ModuleNo">
+            <summary>
+            模組代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.ModuleName">
+            <summary>
+            模組名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PrgNo">
+            <summary>
+            程式代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PrgName">
+            <summary>
+            程式名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PrgInfo">
+            <summary>
+            程式資訊
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.Page">
+            <summary>
+            目前頁數
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PageCount">
+            <summary>
+            總頁數
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PageSize">
+            <summary>
+            每頁筆數
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.PageInfo">
+            <summary>
+            分頁資訊
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.ActionNo">
+            <summary>
+            動作代號
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.ActionName">
+            <summary>
+            動作名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.SubActionName">
+            <summary>
+            子標題名稱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.CardSize">
+            <summary>
+            卡片寛度
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.SearchText">
+            <summary>
+            搜尋文字
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.SortColumn">
+            <summary>
+            排序欄位
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.SortDirection">
+            <summary>
+            排序方式 (asc / desc) 小寫
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IsPageSize">
+            <summary>
+            是否有分頁功能
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IsSearch">
+            <summary>
+            是否有搜尋功能
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.Id">
+            <summary>
+            記錄 Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.StringValue1">
+            <summary>
+            字串變數1
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.StringValue2">
+            <summary>
+            字串變數2
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.StringValue3">
+            <summary>
+            字串變數3
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IntValue1">
+            <summary>
+            數字變數1
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IntValue2">
+            <summary>
+            數字變數2
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.IntValue3">
+            <summary>
+            數字變數3
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.CategoryNo">
+            <summary>
+            Category No
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.CategoryName">
+            <summary>
+            Category Name
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.CategoryImage">
+            <summary>
+            Category Image
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.MessageText">
+            <summary>
+            Message Text
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.SortNo">
+            <summary>
+            Message Text
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SessionService.ProductNo">
+            <summary>
+            prodNo
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SessionService.SetProductNo(System.String)">
+            <summary>
+            設定商品編號
+            </summary>
+        </member>
+        <member name="M:SessionService.SetPrgInit(System.String)">
+            <summary>
+            設定程式預設事件
+            </summary>
+            <param name="subActionName">副標題</param>
+        </member>
+        <member name="M:SessionService.SetProgramInfo(System.String,System.String)">
+            <summary>
+            設定程式資訊
+            </summary>
+            <param name="prgNo">程式編號</param>
+            <param name="prgName">程式名稱</param>
+        </member>
+        <member name="M:SessionService.SetProgramInfo(System.String,System.String,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            設定程式資訊
+            </summary>
+            <param name="prgNo">程式編號</param>
+            <param name="prgName">程式名稱</param>
+            <param name="isPageSize">是否有分頁</param>
+            <param name="isSearch">是否有搜尋</param>
+            <param name="pageSize">每頁筆數</param>
+        </member>
+        <member name="M:SessionService.SetPageInfo(System.Int32,System.Int32)">
+            <summary>
+            取得分頁資訊
+            </summary>
+            <param name="page">目前頁數</param>
+            <param name="pageCount">總頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:SessionService.SetActionInfo(enAction,enCardSize,System.Int32,System.String)">
+            <summary>
+            設定動作資訊
+            </summary>
+            <param name="action">表單動作</param>
+            <param name="cardSize">卡片寛度大小</param>
+            <param name="id">Id</param>
+            <param name="subActionName">子標題名稱</param>
+        </member>
+        <member name="M:SessionService.GetActionName(enAction)">
+            <summary>
+            取得動作名稱
+            </summary>
+            <param name="action">動作</param>
+            <returns></returns>
+        </member>
+        <member name="T:enAction">
+            <summary>
+            表單動作枚舉類型
+            </summary>
+        </member>
+        <member name="T:enCardSize">
+            <summary>
+            卡片寛度大小枚舉類型
+            </summary>
+        </member>
+        <member name="T:ShopService">
+            <summary>
+            購物商城服務類別
+            </summary>
+        </member>
+        <member name="M:ShopService.GetProductImage(System.String)">
+            <summary>
+            取得商品主要圖片位置
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopService.GetProductImage(System.String,System.String)">
+            <summary>
+            取得商品指定圖片位置
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <param name="imgName">商品圖片名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopService.GetProductsImageList(System.String)">
+            <summary>
+            取得商品所有圖片清單，不含主要商品圖片
+            </summary>
+            <param name="prodNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.Index">
+            <summary>
+            購物車列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.AddCart(System.String,System.Int32)">
+            <summary>
+            加入購物車
+            </summary>
+            <param name="id">商品編號</param>
+            <param name="qty">數量</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.UpdateCart(System.String,System.Int32)">
+            <summary>
+            更新購物車
+            </summary>
+            <param name="id">商品編號</param>
+            <param name="qty">數量</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.UpdateQty(System.String,System.Int32)">
+            <summary>
+            更新購物車數量
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <param name="qty">數量</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.DeleteCart(System.Int32)">
+            <summary>
+            刪除購物車
+            </summary>
+            <param name="id">購物車Id</param>
+        </member>
+        <member name="M:shopping.Controllers.CartController.AddCart">
+            <summary>
+            加入購物車
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.UserController.Logout">
+            <summary>
+            登出系統
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:shopping.Controllers.UserController.Login">
+            <summary>
+            登入系統
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.UserController.Login(vmLogin)">
+            <summary>
+            登入系統
+            </summary>
+            <param name="model">使用者輸入的資料模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.GetDataList">
+            <summary>
+            取得目前購物車明細
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.MergeCart">
+            <summary>
+            遊客購物車合併至會員購物車
+            </summary>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.AddCart(System.String,System.String,System.Int32)">
+            <summary>
+            加入商品至目前批號購物車中
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <param name="prodSpec">商品規格(空白可自抓)</param>
+            <param name="qty">數量</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.UpdateCart(System.Int32,System.Int32)">
+            <summary>
+            更新購物車
+            </summary>
+            <param name="id">Id</param>
+            <param name="qty">數量</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.UpdateCart(System.String,System.Int32)">
+            <summary>
+            更新購物車
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <param name="qty">數量</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.DeleteCart(System.Int32)">
+            <summary>
+            刪除購物車
+            </summary>
+            <param name="id">Id</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.DeleteCart">
+            <summary>
+            刪除目前批號購物車
+            </summary>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.GetCartCount">
+            <summary>
+            取得目前批號購物車筆數
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.GetCartTotal">
+            <summary>
+            取得目前批號購物車合計
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlCategorys.SetCategoryName(System.String)">
+            <summary>
+            取得單筆資料(同步呼叫)
+            </summary>
+            <param name="categoryNo">分類代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlCategorys.GetData(System.String)">
+            <summary>
+            取得單筆資料(同步呼叫)
+            </summary>
+            <param name="categoryNo">分類代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrderDetails.CreateNewOrderDetail(System.String)">
+            <summary>
+            購物車資訊新增到訂單明細
+            </summary>
+            <param name="orderNo">訂單編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrderDetails.GeOrderDetailList(System.String)">
+            <summary>
+            取得訂單明細
+            </summary>
+            <param name="orderNo">訂單編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.CreateNewOrder(vmOrders)">
+            <summary>
+            結帳付款產生訂單表頭
+            </summary>
+            <param name="model">付款資訊</param>
+            <returns>訂單編號</returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.GetOrderList">
+            <summary>
+            取得會員訂單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.CancelOrder(System.String)">
+            <summary>
+            取消訂單
+            </summary>
+            <param name="sheetNo">訂單編號</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetData(System.String)">
+            <summary>
+            取得單筆資料(同步呼叫)
+            </summary>
+            <param name="prodNo">商品代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetVendorData(System.String)">
+            <summary>
+            取得商家商品資料(同步呼叫)
+            </summary>
+            <param name="userNo">使用者代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetDataList(System.String,System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="sortNo">排序方式</param>
+            <param name="searchString">模糊搜尋文字(空白或不傳入表示不搜尋)</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetDataList(System.String,System.String,System.String)">
+            <summary>
+            取得多筆資料(同步呼叫)
+            </summary>
+            <param name="categoryNo">Category No</param>
+            <param name="sortNo">排序方式</param>
+            <param name="searchString">模糊搜尋文字(空白或不傳入表示不搜尋)</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetCategoryDataList(System.String)">
+            <summary>
+            取得指定分類商品資料(同步呼叫)
+            </summary>
+            <param name="categoryNo">分類代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.CreateNewProduct(vmProductCreate)">
+            <summary>
+            建立商品資訊
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.CreateProdID(System.String)">
+            <summary>
+            建立商品代號(同步呼叫)
+            </summary>
+            <param name="gender">商品代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.CreateBarcodeNo">
+            <summary>
+            建立商品條碼(同步呼叫)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProducts.DeleteProduct(System.String)">
+             <summary>
+            刪除商品(同步呼叫)
+             </summary>
+             <param name="prodNo">商品代號</param>
+             <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.CheckLogin(vmLogin)">
+            <summary>
+            檢查使用者登入是否正確
+            </summary>
+            <param name="model">使用者輸入資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.CheckMailValidateCode(System.String)">
+            <summary>
+            檢查郵件驗證碼
+            </summary>
+            <param name="validateCode">驗證碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.GetValidateUser(System.String)">
+            <summary>
+            檢查郵件驗證碼
+            </summary>
+            <param name="validateCode">驗證碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.CheckRegisterUserNo(System.String)">
+            <summary>
+            檢查登入帳號是否有重覆
+            </summary>
+            <param name="userNo">登入帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.CheckRegisterEmail(System.String)">
+            <summary>
+            檢查電子信箱是否有重覆
+            </summary>
+            <param name="userEmail">電子信箱</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.RegisterNewUser(vmRegister)">
+            <summary>
+            新增未審核的使用者記錄
+            </summary>
+            <param name="model">註冊資料</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.RegisterConfirm(System.String)">
+            <summary>
+            註冊電子信箱驗證
+            </summary>
+            <param name="validateCode">驗證碼</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.Forget(System.String)">
+            <summary>
+            忘記密碼設定新密碼並變更狀態為未審核
+            </summary>
+            <param name="userNo">登入帳號或電子信箱</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.ForgetConfirm(System.String)">
+            <summary>
+            忘記密碼設定新密碼並變更狀態為已審核
+            </summary>
+            <param name="validateCode">驗證碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.UpdateUserProfile(shopping.Models.Users)">
+            <summary>
+            更新使用者我的帳號資料
+            </summary>
+            <param name="model">我的帳號資料</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.ResetPassword(vmResetPassword)">
+            <summary>
+            重設密碼設定變更狀態為未審核,存入新密碼
+            </summary>
+            <param name="model">重設密碼資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.ResetPasswordConfirm(System.String)">
+            <summary>
+            重設密碼設定新密碼並變更狀態為已審核
+            </summary>
+            <param name="validateCode">驗證碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:dmCartTotal">
+            <summary>
+            購物車合計
+            </summary>
+        </member>
+        <member name="P:dmCartTotal.Amount">
+            <summary>
+            購物車小計
+            </summary>
+        </member>
+        <member name="P:dmCartTotal.Freight">
+            <summary>
+            運費金額
+            </summary>
+        </member>
+        <member name="P:dmCartTotal.Total">
+            <summary>
+            購物車合計
+            </summary>
+        </member>
+        <member name="T:vmForget">
+            <summary>
+            忘記密碼用 ViewModel
+            </summary>
+        </member>
+        <member name="T:vmLogin">
+            <summary>
+            登入用 ViewModel
+            </summary>
+        </member>
+        <member name="T:vmOrders">
+            <summary>
+            結帳訂單資訊
+            </summary>
+        </member>
+        <member name="T:vmProductCreate">
+            <summary>
+            上架商品用 ViewModel
+            </summary>
+        </member>
+        <member name="T:vmRegister">
+            <summary>
+            註冊用 ViewModel
+            </summary>
+        </member>
+        <member name="T:vmResetPassword">
+            <summary>
+            重設密碼用的 ViewModel
+            </summary>
+        </member>
+    </members>
+</doc>

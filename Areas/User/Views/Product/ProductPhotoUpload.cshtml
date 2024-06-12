@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = SessionService.ActionName;
+    if (SessionService.RoleNo == "Member")
+    { Layout = "_LayoutLite"; }
+    else
+    { Layout = "_LayoutAdmin"; }
+}
+
+
+<div class="card card-size-medium mt-5">
+    <div class="card header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@SessionService.ActionName</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-10">
+                    <label for="files">預覽照片</label>
+                    <input type="file" id="file" name="file" class="form-control " value="預覽照片" /> 
+                </div>
+                <div class="col-md-10">
+                    <label for="files1">內頁照片1</label>
+                    <input type="file" id="file1" name="file1" class="form-control" value="內頁照片1"/> 
+                </div>
+                <div class="col-md-10">
+                    <label for="files2">內頁照片2</label>
+                    <input type="file" id="file2" name="file2" class="form-control"value="內頁照片2"/> 
+                </div>
+                <div class="col-md-10">
+                    <label for="files3">內頁照片3</label>
+                    <input type="file" id="file3" name="file3" class="form-control"value="內頁照片3"/> 
+                </div>
+                <div class="col-md-10">
+                    <label for="files4" >內頁照片4</label>
+                    <input type="file" id="file4" name="file4" class="form-control"value="內頁照片4"/> 
+                </div>
+                <div class="row">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2" style="text-align: right;">
+                        <button type="submit" class="btn btn-primary">上傳檔案</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("返回商品頁", "index", "Product" , new { area = "User" } , new {@class = "btn btn-success"})
+            </div>
+        </div>
+    </div>
+</div>

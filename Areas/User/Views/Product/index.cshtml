@@ -1,0 +1,44 @@
+@using shopping.Models;
+@model IEnumerable<shopping.Models.Products>
+
+@{
+    ViewData["Title"] = "index";
+    Layout = "_LayoutAdmin";
+    string ProductImageUrl = "";
+
+}
+
+<!--商品列 -->
+<div class="r-m row right-m d-flex justify-content-center">
+    <div class="r-m1">
+        <div class="r-m2 row d-flex">
+            @foreach (var item in Model)
+            {
+                ProductImageUrl = $"~/images/products/{item.ProdNo}/{item.ProdNo}.jpg";
+                <div class="product col-lg-3 col-md-3">
+                    <div class="product-img h-70">
+                        <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                            <img class="a h-100 w-100" src="@Url.Content(ProductImageUrl)" alt="" />
+                        </a>
+                    </div>
+                    <div class="product-name mh-25">
+                        <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})" class="mh-75">
+                            @item.ProdName
+                        </a>
+                        <span class="mh-25">NT$&#032;@item.SalePrice</span>
+                    </div>
+                    <div class="product-editDelete mh-5">
+                        <a href="@Url.Action("ProductEdit" , "Product" , new {area = "User" , id = item.ProdNo})">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                        <a href="@Url.Action("ProductPhotoUpload" , "Product" , new {area = "User" , prodNo = item.ProdNo})">
+                            <i class="fa-regular fa-image"></i>
+                        </a>
+                        <a href="@Url.Action("Delete" , "Product" , new {area = "User" , id = item.ProdNo})">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>

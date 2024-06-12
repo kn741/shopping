@@ -1,0 +1,42 @@
+@model vmForget
+
+@{
+    ViewData["Title"] = ActionService.ViewActionName;
+    Layout = "_LayoutLite";
+}
+
+<div class="card card-size-small mt-5">
+    <div class="card header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@SessionService.ActionName</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card body p-2">
+        <form asp-action="Forget">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row form-group">
+                <label asp-for="UserNo" class="control-label col-md-3"></label>
+                <div class="col-md-9">
+                    <input asp-for="UserNo" class="form-control" />
+                    <span asp-validation-for="UserNo" class="text-danger"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="float-start">
+                        <input type="submit" value="提交送出" class="btn btn-primary" /> 
+                    </div>
+                    <div class="float-end">
+                        @Html.ActionLink("返回登入頁", "Login", ActionService.Controller , new {area = ActionService.Area} , new {@class = "btn btn-success"}) 
+                    </div>              
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,181 @@
+@model IEnumerable<shopping.Models.Carts>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    using var cart = new z_sqlCarts();
+    int int_amount = cart.GetCartTotal();
+    int int_freight = (int_amount > 0) ? 60 : 0;
+    int int_total = int_amount + int_freight;
+}
+
+<main id="container">
+    <div class="row wrapper">
+        <div class="col-lg-12">
+            <!-- 購物車 -->
+            <div id="cart">
+                <div class="cart-page-area">
+                    <form method="post" action="#">
+                        <div class="table-responsive mb-20">
+                            <table class="shop_table-2 cart">
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">圖片</th>
+                                        <th class="product-price">商品編號</th>
+                                        <th class="product-name">商品名稱</th>
+                                        <th class="product-price">單價</th>
+                                        <th class="product-quantity">數量</th>
+                                        <th class="product-subtotal">小計</th>
+                                        <th class="product-remove">刪除</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="cart_item">
+                                            <td class="item-img">
+                                                <a
+                                                    href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                                                    <img src="@Url.Content(ShopService.GetProductImage(item.ProdNo))"
+                                                        alt="" />
+                                                </a>
+                                            </td>
+                                            <td class="item-price prodno">
+                                                @item.ProdNo
+                                            </td>
+                                            <td class="item-title">
+                                                <a
+                                                    href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                                                    @item.ProdName
+                                                </a>
+                                            </td>
+                                            <td class="item-price order-price">
+                                                @item.OrderPrice
+                                            </td>
+                                            <td class="item-qty">
+                                                <div class="cart-quantity">
+                                                    <div class="cart-plus-minus">
+                                                        <div class="dec qtybutton">-</div>
+                                                        <input value="@item.OrderQty" name="qtybutton"
+                                                            class="cart-plus-minus-box" type="text" />
+                                                        <div class="inc qtybutton">+</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="total-price order-amount"><strong>@("$"+item.OrderAmount)</strong></td>
+                                            <td class="remove-item">
+                                                <a
+                                                    href="@Url.Action("DeleteCart" , "Cart" , new {area = "" , id = item.Id})">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cart-bottom-area">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-7">
+                                    <div class="update-coupne-area">
+                                        <ul>
+                                            <li>
+                                                1.&nbsp;&nbsp;二手衣物可能會有磨損或瑕疵，請在購買前詳細閱讀商品描述和照片。
+                                            </li>
+                                            <li>
+                                                2.&nbsp;&nbsp;請注意商品尺寸，以免收到尺寸不合適的商品。如有需要，請先詢問客服或索取更詳細的尺寸資訊。
+                                            </li>
+                                            <li>
+                                                3.&nbsp;&nbsp;部分二手衣物可能需要進行清洗或修補，請自行考慮是否有能力進行相應的處理。
+                                            </li>
+                                            <li>
+                                                4.&nbsp;&nbsp;請確認收件地址和聯繫方式的正確性，以免發生物流問題或無法聯繫到您。
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-5">
+                                    <div class="cart-total-area">
+                                        <div class="sub-shipping">
+                                            <p class="clearfix">小計<span id="amount">$@int_amount</span></p>
+                                            <p class="clearfix">運費<span id="freight">$@int_freight</span></p>
+                                        </div>
+                                        <div class="process-cart-total">
+                                            <p>總計<span id="total">$@int_total</span></p>
+                                        </div>
+                                        <div class="col-lg-12 d-flex justify-content-between mt-4 text-center">
+                                            <div class="col-lg-6" style="width: 45%">
+                                                <a class="btn-def btn2"
+                                                    href="@Url.Action("Index" , "Category" , new {area = ""})"
+                                                    style="display: block">繼續購物</a>
+                                            </div>
+                                            <div class="col-lg-6" style="width: 45%">
+                                                <a class="btn-def btn2 btnmy"
+                                                    href="@Url.Action("Payment" , "Shop" , new {area = ""})"
+                                                    style="display: block">填寫付款資訊</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Styles {
+    <!-- 依需要引用不同樣式表 -->
+    <link rel="stylesheet" href="@Url.Content("~/lib/RewearFrontend/css/cart-payment.css")" />
+}
+
+@section ScriptsBody
+{
+    <script>
+        $(".qtybutton").on("click", function () {
+            var $button = $(this);
+            var $qty = $button.parent().find("input");
+            var $price = $button.parent().parent().parent().parent().find(".order-price");
+            var $amount = $button.parent().parent().parent().parent().find(".order-amount");
+            var prodno = $button.parent().parent().parent().parent().find(".prodno").text().trim();
+
+            var newQty = 0;
+            var price = parseFloat($price.text().trim());
+            var oldQty = $qty.val();
+
+            @* if ($button.text() == "+") {
+                newQty = parseFloat(oldQty) + 1;
+            } else {
+                if (oldQty > 0) {
+                    newQty = parseFloat(oldQty) - 1;
+                } else {
+                    newQty = 0;
+                }
+            } *@
+            var amount = oldQty * price;
+            $qty.val(oldQty);
+            $amount.text(amount);
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: '@Url.Action("UpdateQty", "Cart", new { area = "" })',
+                data: { "ProdNo": prodno, "Qty": oldQty },
+                dataType: "json",
+                success: function (result) {
+                    @* $(".total-price.order-amount").text("$"+result.value.Amount); *@
+                    $("#amount").text("$"+result.value.Amount);
+                    $("#freight").text("$"+result.value.Freight);
+                    $("#total").text("$"+result.value.Total);
+                    //window.location.reload();
+                },
+                error: function (result) {
+                    alert('無法異動資料!!');
+                }
+            });
+        });
+    </script>
+
+}
