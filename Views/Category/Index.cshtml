@@ -28,7 +28,7 @@
                 @foreach (var item1 in TopCategoryList)
                 {
                     <div class="box1">
-                        <a href="@Url.Action("Index" , "Category" , new {area = "" , category = item1.CategoryNo})"
+                        <a href="@Url.Action("Index" , "Category" , new {area = "" , id = item1.CategoryNo})"
                             class="link-title">@item1.CategoryName</a>
                         @{
                             DetailCategoryList = category.GetDetailCategoryList(item1.CategoryNo);
@@ -110,27 +110,27 @@
                         <div class="col d-flex justify-content-center">
                             <ul class="pagelink pagination pagination-sm">
                                 <li class="page-item">
-                                    <a href="@Url.Action("Index" , "Category" , new {area = "" , category = SessionService.StringValue1 , page = 1})"
+                                    <a href="@Url.Action("Index" , "Category" , new {area = "" , id = SessionService.StringValue1 , page = 1})"
                                         class="page-link">第一頁</a>
                                 </li>
                             @if (SessionService.Page > 1)
                             {
                                     <li class="page-item">
-                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , category = SessionService.StringValue1 , 
+                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , id = SessionService.StringValue1 , 
                             page = (SessionService.Page - 1)})" class="page-link">上一頁</a>
                                     </li>
                             }
                             @if (SessionService.Page < SessionService.PageCount)
                             {
                                     <li class="page-item">
-                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , category = SessionService.StringValue1 , 
+                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , id = SessionService.StringValue1 , 
                             page = (SessionService.Page + 1)})" class="page-link">下一頁</a>
                                     </li>
                             }
                             @if (SessionService.Page != SessionService.PageCount)
                             {
                                     <li class="page-item">
-                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , category = SessionService.StringValue1 , 
+                                        <a href="@Url.Action("Index" , "Category" , new {area = "" , id = SessionService.StringValue1 , 
                             page = (SessionService.PageCount)})" class="page-link">最後一頁</a>
                                     </li>
                             }

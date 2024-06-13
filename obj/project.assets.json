@@ -12115,11 +12115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
+      "projectUniqueName": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
       "projectName": "shopping",
-      "projectPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
+      "projectPath": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
       "packagesPath": "C:\\Users\\kanza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\obj\\",
+      "outputPath": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
