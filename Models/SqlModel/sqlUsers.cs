@@ -421,5 +421,27 @@ VALUES
             { str_value = "查無此驗證碼"; }
             return str_value;
         }
+        /// <summary>
+        /// 傳回付款結帳用會員資料
+        /// </summary>
+        /// <returns></returns>
+        public vmOrders GetPaymentUser(){
+            var model = new vmOrders();
+            string sql_query = GetSQLSelect();
+            sql_query += " WHERE Users.UserNo = @UserNo";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("UserNo",SessionService.UserNo);
+            var data = dpr.ReadSingle<Users>(sql_query,parm);
+            
+            if(data != null){
+                model.MemberEmail = data.ContactEmail;
+                model.MemberName = data.UserName;
+                model.MemberTel = data.ContactTel;
+                model.MemberAddress = data.ContactAddress;
+            }
+            
+            return model;
+        } 
+
     }
 }

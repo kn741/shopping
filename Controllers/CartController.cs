@@ -91,5 +91,17 @@ namespace shopping.Controllers
             
             return RedirectToAction("AddCart", "Cart", new { area = "",id = str_prodNo, qty = int_qty });
         }
+        /// <summary>
+        /// Payment頁面
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Login(RoleList = "Member,User")]
+        public IActionResult Payment(){
+            using var users = new z_sqlUsers();
+            var model = users.GetPaymentUser();
+            return View(model);
+        }
+
     }
 }

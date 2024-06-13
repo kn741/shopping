@@ -4011,6 +4011,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:shopping.Controllers.CartController.Payment">
+            <summary>
+            Payment頁面
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Controllers.UserController.Logout">
             <summary>
             登出系統
@@ -4277,6 +4283,12 @@
             重設密碼設定新密碼並變更狀態為已審核
             </summary>
             <param name="validateCode">驗證碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.GetPaymentUser">
+            <summary>
+            傳回付款結帳用會員資料
+            </summary>
             <returns></returns>
         </member>
         <member name="T:dmCartTotal">

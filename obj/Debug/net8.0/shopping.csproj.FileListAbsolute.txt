@@ -629,3 +629,4 @@ C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping\obj\Debug\net8.0\sh
 C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping\obj\Debug\net8.0\shopping.pdb
 C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping\obj\Debug\net8.0\shopping.genruntimeconfig.cache
 C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping\obj\Debug\net8.0\ref\shopping.dll
+C:\Users\kanza\OneDrive\Desktop\workspace\dotnet\project\shopping\obj\Debug\net8.0\shopping.sourcelink.json
