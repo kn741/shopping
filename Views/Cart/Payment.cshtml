@@ -4,172 +4,127 @@
     ViewData["Title"] = "Payment";
     Layout = "_Layout";
 }
-<main id="container">
-      <div class="row wrapper">
-        <div class="col-lg-12">
-          <div id="checkout">
-            <div class="checkout-area">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="billing-details">
-                        <div class="contact-text right-side">
-                          <h2>付款資訊</h2>
-                          <form action="#">
-                            <div class="row">
-                              <div class="col-lg-12 col-md-12">
-                                <div class="input-box mb-20">
-                                  <label>付款人姓名 <em>*</em></label>
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    class="info"
-                                    placeholder="付款人姓名"
-                                  />
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="input-box mb-20">
-                                  <label>電子信箱<em>*</em></label>
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    class="info"
-                                    placeholder="電子信箱"
-                                  />
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="input-box mb-20">
-                                  <label>連絡電話<em>*</em></label>
-                                  <input
-                                    type="text"
-                                    name="phone"
-                                    class="info"
-                                    placeholder="連絡電話"
-                                  />
-                                </div>
-                              </div>
-                              <div class="col-lg-12">
-                                <div class="input-box mb-20">
-                                  <label>聯絡地址<em>*</em></label>
-                                  <input
-                                    type="text"
-                                    name="add1"
-                                    class="info mb-10"
-                                    placeholder="聯絡地址"
-                                  />
-                                </div>
-                              </div>
-                              <div style="margin: 20px 0">
-                                <hr
-                                  style="border: 0px solid #000; margin: 20px 0"
-                                />
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="billing-details">
-                        <div class="right-side">
-                          <div class="ship-acc clearfix pb20">
-                            <div class="ship-toggle">
-                              <input type="checkbox" id="ship-toggle" checked />
-                              <label for="ship-toggle"
-                                >收件人資料與購買人資料不同</label
-                              >
-                            </div>
-                            <div class="ship-acc-body">
-                              <form action="#">
+@using (Html.BeginForm())
+{
+    <main id="container">
+        <div class="row wrapper">
+            <div class="col-lg-12">
+                <div id="checkout">
+                    <div class="checkout-area">
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <div class="row">
-                                  <div class="col-lg-12 col-md-12">
-                                    <div class="input-box mb-20">
-                                      <label>收件人姓名</label>
-                                      <input
-                                        type="text"
-                                        name="name"
-                                        class="info"
-                                        placeholder="收件人姓名"
-                                      />
+                                    <div class="col-lg-6">
+                                        <div class="billing-details">
+                                            <div class="contact-text right-side">
+                                                <h2>付款資訊</h2>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="input-box mb-20">
+                                                            <label>付款人姓名 <em>*</em></label>
+                                                            <input type="text" id="MemberName" name="MemberName" value="@Model.MemberName" class="info"
+                                                                placeholder="付款人姓名" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-box mb-20">
+                                                            <label>電子信箱<em>*</em></label>
+                                                            <input type="email" id="MemberEmail" name="MemberEmail" value="@Model.MemberEmail" class="info"
+                                                                placeholder="電子信箱" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-box mb-20">
+                                                            <label>連絡電話<em>*</em></label>
+                                                            <input type="text" id="MemberTel" name="MemberTel" value="@Model.MemberTel" class="info"
+                                                                placeholder="連絡電話" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="input-box mb-20">
+                                                            <label>聯絡地址<em>*</em></label>
+                                                            <input type="text" id="MemberAddress" name="MemberAddress" value="@Model.MemberAddress" class="info mb-10"
+                                                                placeholder="聯絡地址" />
+                                                        </div>
+                                                    </div>
+                                                    <div style="margin: 20px 0">
+                                                        <hr style="border: 0px solid #000; margin: 20px 0" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6">
-                                    <div class="input-box mb-20">
-                                      <label>電子信箱<em>*</em></label>
-                                      <input
-                                        type="email"
-                                        name="email"
-                                        class="info"
-                                        placeholder="電子信箱"
-                                      />
+                                    <div class="col-lg-6">
+                                        <div class="billing-details">
+                                            <div class="right-side">
+                                                <div class="ship-acc clearfix pb20">
+                                                    <div class="ship-toggle">
+                                                        <input type="checkbox" id="ship-toggle" checked />
+                                                        <label for="ship-toggle">收件人資料與購買人資料不同</label>
+                                                    </div>
+                                                    <div class="ship-acc-body">
+
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="input-box mb-20">
+                                                                    <label>收件人姓名</label>
+                                                                    <input type="text" id="ReciverName" name="ReciverName" class="info"
+                                                                        placeholder="收件人姓名" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="input-box mb-20">
+                                                                    <label>電子信箱<em>*</em></label>
+                                                                    <input type="email" id="ReciverEmail" name="ReciverEmail" class="info"
+                                                                        placeholder="電子信箱" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="input-box mb-20">
+                                                                    <label>連絡電話<em>*</em></label>
+                                                                    <input type="text" id="ReciverPhone" name="ReciverPhone" class="info"
+                                                                        placeholder="連絡電話" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="input-box mb-20">
+                                                                    <label>聯絡地址<em>*</em></label>
+                                                                    <input type="text" id="ReciverAddress" name="ReciverAddress" class="info mb-10"
+                                                                        placeholder="聯絡地址" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form">
+                                                    <div class="input-box">
+                                                        <label>備註:</label>
+                                                        <textarea class="area-tex" id="Remark" name="Remark" placeholder="備註"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 d-flex justify-content-around my-5 text-center">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <a class="btn-def btn2" href="@Url.Action("Index", "Cart",new { area = "" })"
+                                                            style="display: block">返回購物車</a>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <input type="submit" value="確認結帳資訊" style="display: block" class="btn-def btn2 btnmy"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6">
-                                    <div class="input-box mb-20">
-                                      <label>連絡電話<em>*</em></label>
-                                      <input
-                                        type="text"
-                                        name="phone"
-                                        class="info"
-                                        placeholder="連絡電話"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-12 col-md-12">
-                                    <div class="input-box mb-20">
-                                      <label>聯絡地址<em>*</em></label>
-                                      <input
-                                        type="text"
-                                        name="add1"
-                                        class="info mb-10"
-                                        placeholder="聯絡地址"
-                                      />
-                                    </div>
-                                  </div>
                                 </div>
-                              </form>
                             </div>
-                          </div>
-                          <div class="form">
-                            <div class="input-box">
-                              <label>備註:</label>
-                              <textarea class="area-tex"></textarea>
-                            </div>
-                          </div>
-                          <div
-                            class="col-lg-12 d-flex justify-content-around my-5 text-center"
-                          >
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                              <a
-                                class="btn-def btn2"
-                                href="shopping_cart.html"
-                                style="display: block"
-                                >返回購物車</a
-                              >
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                              <a
-                                class="btn-def btn2 btnmy"
-                                href="./pay_confirm.html"
-                                style="display: block"
-                                >確認結帳資訊</a
-                              >
-                            </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </main>
+}
 @section Styles {
     <!-- 依需要引用不同樣式表 -->
     <link rel="stylesheet" href="@Url.Content("~/lib/RewearFrontend/css/cart-payment.css")" />

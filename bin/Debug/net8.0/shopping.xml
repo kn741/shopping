@@ -3582,6 +3582,89 @@
             取得目前的語系名稱標題
             </summary>
         </member>
+        <member name="P:PaymentService._contextAccessor">
+            <summary>
+            HttpContextAccessor 物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PaymentService._context">
+            <summary>
+            HttpContext 物件
+            </summary>
+        </member>
+        <member name="P:PaymentService.MemberName">
+            <summary>
+            會員姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.MemberEmail">
+            <summary>
+            會員信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.MemberTel">
+            <summary>
+            會員電話
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.MemberAddress">
+            <summary>
+            會員地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.IsDiffenceMember">
+            <summary>
+            收件人資料與購買人資料不同
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.ReceiveName">
+            <summary>
+            收件人姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.ReceiveEmail">
+            <summary>
+            收件人信箱
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.ReceiveTel">
+            <summary>
+            收件人電話
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.ReceiveAddress">
+            <summary>
+            收件人地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.PaymentNo">
+            <summary>
+            付款方式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.ShippingNo">
+            <summary>
+            運送方式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:PaymentService.Remark">
+            <summary>
+            訂單備註
+            </summary>
+            <value></value>
+        </member>
         <member name="M:SendMailService.UserRegister(MailObject)">
             <summary>
             會員註冊寄發驗證的電子郵件
@@ -4014,6 +4097,12 @@
         <member name="M:shopping.Controllers.CartController.Payment">
             <summary>
             Payment頁面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Controllers.CartController.Payment(vmOrders)">
+            <summary>
+            Payment頁面(Post)
             </summary>
             <returns></returns>
         </member>

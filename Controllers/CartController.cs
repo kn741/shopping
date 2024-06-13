@@ -103,5 +103,31 @@ namespace shopping.Controllers
             return View(model);
         }
 
+         /// <summary>
+        /// Payment頁面(Post)
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Login(RoleList = "Member,User")]
+        public IActionResult Payment(vmOrders model){
+            if(string.IsNullOrEmpty(model.ReceiveName))model.ReceiveName = model.MemberName;
+            if(string.IsNullOrEmpty(model.ReceiveEmail))model.ReceiveEmail = model.MemberEmail;
+            if(string.IsNullOrEmpty(model.ReceiveAddress))model.ReceiveAddress = model.MemberAddress;
+            if(string.IsNullOrEmpty(model.ReceiveTel))model.ReceiveTel = model.MemberTel;
+            PaymentService.SetPaymentData(model);
+            return RedirectToAction("PaymentConfirm", "Cart", new { area = ""});
+        }
+
+        [HttpGet]
+        [Login(RoleList = "Member,User")]
+        public IActionResult PaymentConfirm(){
+            var model = PaymentService.GetPaymentData();
+            return View(model);
+        }
+        [HttpPost]
+        [Login(RoleList = "Member,User")]
+        public IActionResult PaymentConfirm(vmOrders model){
+            return RedirectToAction("Index", "Home", new { area = ""});
+        }
     }
 }
