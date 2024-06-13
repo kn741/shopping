@@ -7,19 +7,19 @@ public class vmProductCreate
 {
     [Display(Name = "商品名稱")]
     [Required(ErrorMessage = "商品名稱不可空白!!")]
-    public string? ProdName { get; set; } = "";
+    public string ProdName { get; set; } = "";
     [Display(Name = "廠牌名稱")]
     [Required(ErrorMessage = "廠牌名稱不可空白!!")]
-    public string? BrandName { get; set; } = "";
+    public string BrandName { get; set; } = "";
     [Display(Name = "廠牌系列")]
     [Required(ErrorMessage = "廠牌系列不可空白!!")]
-    public string? BrandSeriesName { get; set; } = "";
+    public string BrandSeriesName { get; set; } = "";
     [Display(Name = "商品狀態")]
     [Required(ErrorMessage = "商品狀態不可空白!!")]
-    public string? StatusNo { get; set; } = "";
+    public string StatusNo { get; set; } = "";
     [Display(Name = "商品分類")]
     [Required(ErrorMessage = "商品分類不可空白!!")]
-    public string? CategoryNo { get; set; } = "";
+    public string CategoryNo { get; set; } = "";
     [Display(Name = "商品價格")]
     [Required(ErrorMessage = "商品價格不可空白!!")]
     public decimal SalePrice { get; set; } = 0;
@@ -33,7 +33,7 @@ public class vmProductCreate
     [Required(ErrorMessage = "成本價格不可空白!!")]
     public decimal CostPrice { get; set; } = 0;
     [Display(Name = "商品描述")]
-    public string? ContentText { get; set; } = "";
+    public string ContentText { get; set; } = "";
     [Display(Name = "商品規格")]
-    public string? SpecificationText { get; set; } = "";
+    public string SpecificationText { get; set; } = "";
 }

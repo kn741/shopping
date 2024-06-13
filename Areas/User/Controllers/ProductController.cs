@@ -47,6 +47,7 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult ProductCreate(vmProductCreate model)
         {
+            if(!ModelState.IsValid){return View(model);}
             SessionService.SetProgramInfo("", "上架商品");
             string id = SessionService.UserNo;
             using var product = new z_sqlProducts();
@@ -75,6 +76,7 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult ProductEdit(Products model)
         {
+            if(!ModelState.IsValid){return View(model);}
             SessionService.SetProgramInfo("", "商品資訊編輯");
             string id = SessionService.UserNo;
             using var product = new z_sqlProducts();
