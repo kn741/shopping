@@ -76,6 +76,19 @@ namespace shopping.Controllers
             cart.DeleteCart(id);
             return RedirectToAction("Index", "Cart", new { area = "" });
         }
+
+        /// <summary>
+        /// 刪除購物車(複數)
+        /// </summary>
+        /// <param name="id">購物車Id</param>
+        [HttpGet]
+        public IActionResult DeleteMutipleCart(int[] id)
+        {
+            using var cart = new z_sqlCarts();
+            foreach (int item in id){cart.DeleteCart(item);}
+            return RedirectToAction("Index", "Cart", new { area = "" });
+        }
+
         /// <summary>
         /// 加入購物車
         /// </summary>

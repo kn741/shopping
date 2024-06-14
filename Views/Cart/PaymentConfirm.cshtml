@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "PaymentConfirm";
     Layout = "_Layout";
+    using var cart = new z_sqlCarts();
+    var carts = cart.GetDataList();
 }
 
 <main id="container">

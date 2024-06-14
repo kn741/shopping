@@ -26,7 +26,16 @@
                                         <th class="product-price">單價</th>
                                         <th class="product-quantity">數量</th>
                                         <th class="product-subtotal">小計</th>
-                                        <th class="product-remove">刪除</th>
+                                        @* <th class="product-remove">刪除</th> *@
+                                        <th class="">
+                                            <div class="btn-container d-flex flex-column align-items-center justify-content-center">
+                                                <a href="#" class="btn-def btn2" onclick="deleteSelectedItems()">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="DeleteCheckAll">
+                                            </div>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,12 +71,16 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="total-price order-amount"><strong>@("$"+item.OrderAmount)</strong></td>
-                                            <td class="remove-item">
+                                            <td class="total-price order-amount"><strong>@("$" + item.OrderAmount)</strong>
+                                            </td>
+                                            @* <td class="remove-item">
                                                 <a
                                                     href="@Url.Action("DeleteCart" , "Cart" , new {area = "" , id = item.Id})">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
+                                            </td> *@
+                                            <td class="remove-item-checkbox">
+                                                <input class="deleteCheck form-check-input" type="checkbox" value=@item.Id>
                                             </td>
                                         </tr>
                                     }
@@ -146,16 +159,16 @@
             var price = parseFloat($price.text().trim());
             var oldQty = $qty.val();
 
-            @* if ($button.text() == "+") {
-                newQty = parseFloat(oldQty) + 1;
+        @* if ($button.text() == "+") {
+            newQty = parseFloat(oldQty) + 1;
             } else {
-                if (oldQty > 0) {
-                    newQty = parseFloat(oldQty) - 1;
-                } else {
-                    newQty = 0;
-                }
+            if (oldQty > 0) {
+            newQty = parseFloat(oldQty) - 1;
+            } else {
+            newQty = 0;
+            }
             } *@
-            var amount = oldQty * price;
+                                                            var amount = oldQty * price;
             $qty.val(oldQty);
             $amount.text(amount);
             $.ajax({
@@ -165,10 +178,10 @@
                 data: { "ProdNo": prodno, "Qty": oldQty },
                 dataType: "json",
                 success: function (result) {
-                    @* $(".total-price.order-amount").text("$"+result.value.Amount); *@
-                    $("#amount").text("$"+result.value.Amount);
-                    $("#freight").text("$"+result.value.Freight);
-                    $("#total").text("$"+result.value.Total);
+        @* $(".total-price.order-amount").text("$"+result.value.Amount); *@
+                        $("#amount").text("$" + result.value.Amount);
+                    $("#freight").text("$" + result.value.Freight);
+                    $("#total").text("$" + result.value.Total);
                     //window.location.reload();
                 },
                 error: function (result) {
@@ -176,6 +189,32 @@
                 }
             });
         });
+
+        $("#DeleteCheckAll").change(function () {
+            var isChecked = $(this).prop("checked");
+            $(".deleteCheck").prop("checked", isChecked);
+        });
+
+        function deleteSelectedItems() {
+            var selectedIds = [];
+            $(".deleteCheck:checked").each(function () {
+                selectedIds.push(parseInt($(this).val()));
+            });
+            $.ajax({
+                url: '/Cart/DeleteMutipleCart',
+                type: 'GET',
+                traditional: true,
+                data: { id: selectedIds },
+                success: function (data) {
+                    window.location.reload();
+        @* console.log(data); *@
+                    },
+                error: function (xhr, status, error) {
+                    window.location.reload();
+                    console.error(error);
+                }
+            });
+        }
     </script>
 
 }

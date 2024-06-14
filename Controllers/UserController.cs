@@ -12,6 +12,7 @@ namespace shopping.Controllers
         {
             SessionService.IsLogin = false;
             SessionService.UserName = "遊客";
+            CartService.NewLotNo();
             return RedirectToAction("Login", "User", new { area = "" });
         }
 

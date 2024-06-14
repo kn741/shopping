@@ -4088,6 +4088,12 @@
             </summary>
             <param name="id">購物車Id</param>
         </member>
+        <member name="M:shopping.Controllers.CartController.DeleteMutipleCart(System.Int32[])">
+            <summary>
+            刪除購物車(複數)
+            </summary>
+            <param name="id">購物車Id</param>
+        </member>
         <member name="M:shopping.Controllers.CartController.AddCart">
             <summary>
             加入購物車
