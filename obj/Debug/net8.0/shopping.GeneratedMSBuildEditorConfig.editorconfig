@@ -17,203 +17,203 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = shopping
 build_property.RootNamespace = shopping
-build_property.ProjectDir = C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping\
+build_property.ProjectDir = C:\Users\kanza\OneDrive\Desktop\workspace\dotnet\project\shopping\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\kanza\OneDrive\Desktop\work\dotnet\project\shopping
+build_property.MSBuildProjectDirectory = C:\Users\kanza\OneDrive\Desktop\workspace\dotnet\project\shopping
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Areas/User/Views/Product/index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/Product/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWN0XGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Areas/User/Views/Product/ProductCreate.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/Product/ProductCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWN0XFByb2R1Y3RDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Areas/User/Views/Product/ProductEdit.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/Product/ProductEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWN0XFByb2R1Y3RFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Areas/User/Views/Product/ProductPhotoUpload.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/Product/ProductPhotoUpload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWN0XFByb2R1Y3RQaG90b1VwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Cart/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Cart/Payment.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Cart/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Cart/PaymentConfirm.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Cart/PaymentConfirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50Q29uZmlybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Category/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateArea.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateArea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVBcmVhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateController.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateController.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVDb250cm9sbGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateDbContext.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateDbContext.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVEYkNvbnRleHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateDbContextTables.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateDbContextTables.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVEYkNvbnRleHRUYWJsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateMetadata.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateMetadata.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVNZXRhZGF0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateMetadataTables.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateMetadataTables.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVNZXRhZGF0YVRhYmxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateRepository.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateRepository.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVSZXBvc2l0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateRepositorySort.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateRepositorySort.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVSZXBvc2l0b3J5U29ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateRepositoryTables.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateRepositoryTables.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVSZXBvc2l0b3J5VGFibGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateView.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/CreateViewList.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/CreateViewList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxDcmVhdGVWaWV3TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/CodeGenerator/Message.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/CodeGenerator/Message.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZUdlbmVyYXRvclxNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Home/Contact.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Home/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Home/Privacy.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Home/Question.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Home/Question.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Message/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Message/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Product/Detail.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Profile/Edit.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Profile/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Profile/Forget.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Profile/Forget.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxGb3JnZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Profile/Index.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Profile/PhotoUpload.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Profile/PhotoUpload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxQaG90b1VwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Profile/ResetPassword.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Profile/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/Error.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_LayoutCodeGenerator.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_LayoutCodeGenerator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDb2RlR2VuZXJhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_LayoutLite.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_LayoutLite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMaXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_PartialAlertMessage.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_PartialAlertMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQWxlcnRNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_PartialMenuMember.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_PartialMenuMember.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsTWVudU1lbWJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_PartialMenuMis.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_PartialMenuMis.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsTWVudU1pcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_PartialMenuUser.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_PartialMenuUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsTWVudVVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/User/Forget.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/User/Forget.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb3JnZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/User/Login.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/User/Register.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/_ViewImports.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/_ViewStart.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kanza/OneDrive/Desktop/work/dotnet/project/shopping/Views/Shared/_Layout.cshtml]
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-sqpyj181tw

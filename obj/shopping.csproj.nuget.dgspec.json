@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kanza\\OneDrive\\Desktop\\work\\dotnet\\project\\shopping\\shopping.csproj": {}
+    "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kanza\\OneDrive\\Desktop\\work\\dotnet\\project\\shopping\\shopping.csproj": {
+    "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kanza\\OneDrive\\Desktop\\work\\dotnet\\project\\shopping\\shopping.csproj",
+        "projectUniqueName": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
         "projectName": "shopping",
-        "projectPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\work\\dotnet\\project\\shopping\\shopping.csproj",
+        "projectPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
         "packagesPath": "C:\\Users\\kanza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\work\\dotnet\\project\\shopping\\obj\\",
+        "outputPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kanza\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kanza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -191,7 +198,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
