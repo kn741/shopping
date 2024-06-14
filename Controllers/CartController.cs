@@ -37,6 +37,20 @@ namespace shopping.Controllers
         }
 
         /// <summary>
+        /// 立即結帳
+        /// </summary>
+        /// <param name="id">商品編號</param>
+        /// <param name="qty">數量</param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Checkout(string id, int qty = 1)
+        {
+            using var cart = new z_sqlCarts();
+            cart.AddCart(id, "", qty);
+            return RedirectToAction("Payment", "Cart", new { area = "" });
+        }
+
+        /// <summary>
         /// 更新購物車
         /// </summary>
         /// <param name="id">商品編號</param>
@@ -85,7 +99,7 @@ namespace shopping.Controllers
         public IActionResult DeleteMutipleCart(int[] id)
         {
             using var cart = new z_sqlCarts();
-            foreach (int item in id){cart.DeleteCart(item);}
+            foreach (int item in id) { cart.DeleteCart(item); }
             return RedirectToAction("Index", "Cart", new { area = "" });
         }
 
@@ -97,12 +111,12 @@ namespace shopping.Controllers
         public IActionResult AddCart()
         {
             object obj_text = Request.Form["qtybutton"];
-            string str_qty = (obj_text == null)?"1" : obj_text.ToString();
+            string str_qty = (obj_text == null) ? "1" : obj_text.ToString();
             int int_qty = int.Parse(str_qty);
             obj_text = Request.Form["prodNo"];
-            string str_prodNo = (obj_text == null)? string.Empty : obj_text.ToString();
-            
-            return RedirectToAction("AddCart", "Cart", new { area = "",id = str_prodNo, qty = int_qty });
+            string str_prodNo = (obj_text == null) ? string.Empty : obj_text.ToString();
+
+            return RedirectToAction("AddCart", "Cart", new { area = "", id = str_prodNo, qty = int_qty });
         }
         /// <summary>
         /// Payment頁面
@@ -110,37 +124,41 @@ namespace shopping.Controllers
         /// <returns></returns>
         [HttpGet]
         [Login(RoleList = "Member,User")]
-        public IActionResult Payment(){
+        public IActionResult Payment()
+        {
             using var users = new z_sqlUsers();
             var model = users.GetPaymentUser();
             return View(model);
         }
 
-         /// <summary>
+        /// <summary>
         /// Payment頁面(Post)
         /// </summary>
         /// <returns></returns>
         [HttpPost]
         [Login(RoleList = "Member,User")]
-        public IActionResult Payment(vmOrders model){
-            if(string.IsNullOrEmpty(model.ReceiveName))model.ReceiveName = model.MemberName;
-            if(string.IsNullOrEmpty(model.ReceiveEmail))model.ReceiveEmail = model.MemberEmail;
-            if(string.IsNullOrEmpty(model.ReceiveAddress))model.ReceiveAddress = model.MemberAddress;
-            if(string.IsNullOrEmpty(model.ReceiveTel))model.ReceiveTel = model.MemberTel;
+        public IActionResult Payment(vmOrders model)
+        {
+            if (string.IsNullOrEmpty(model.ReceiveName)) model.ReceiveName = model.MemberName;
+            if (string.IsNullOrEmpty(model.ReceiveEmail)) model.ReceiveEmail = model.MemberEmail;
+            if (string.IsNullOrEmpty(model.ReceiveAddress)) model.ReceiveAddress = model.MemberAddress;
+            if (string.IsNullOrEmpty(model.ReceiveTel)) model.ReceiveTel = model.MemberTel;
             PaymentService.SetPaymentData(model);
-            return RedirectToAction("PaymentConfirm", "Cart", new { area = ""});
+            return RedirectToAction("PaymentConfirm", "Cart", new { area = "" });
         }
 
         [HttpGet]
         [Login(RoleList = "Member,User")]
-        public IActionResult PaymentConfirm(){
+        public IActionResult PaymentConfirm()
+        {
             var model = PaymentService.GetPaymentData();
             return View(model);
         }
         [HttpPost]
         [Login(RoleList = "Member,User")]
-        public IActionResult PaymentConfirm(vmOrders model){
-            return RedirectToAction("Index", "Home", new { area = ""});
+        public IActionResult PaymentConfirm(vmOrders model)
+        {
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
     }
 }

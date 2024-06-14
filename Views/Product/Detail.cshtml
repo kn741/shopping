@@ -131,7 +131,7 @@
                                         tabindex="0">加入購物車<i class="fa fa-cart-plus"></i></a> *@
                                 </div>
                                 <div class="float-start">
-                                    <a href="@Url.Action("Index","Payment",new {area=""})" data-tooltip="立即結帳" class="btn btn-outline-secondary">立即結帳</a>
+                                    <a href="@Url.Action("Checkout","Cart",new {area="", id=Model.ProdNo})" data-tooltip="立即結帳" class="btn btn-outline-secondary">立即結帳</a>
                                 </div>
                             </div>
                             }

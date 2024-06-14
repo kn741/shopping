@@ -4066,6 +4066,14 @@
             <param name="qty">數量</param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Controllers.CartController.Checkout(System.String,System.Int32)">
+            <summary>
+            立即結帳
+            </summary>
+            <param name="id">商品編號</param>
+            <param name="qty">數量</param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Controllers.CartController.UpdateCart(System.String,System.Int32)">
             <summary>
             更新購物車
