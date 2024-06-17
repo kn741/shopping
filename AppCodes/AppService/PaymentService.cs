@@ -244,4 +244,11 @@ public static class PaymentService{
         model.Remark = Remark;
         return model;
     }
+
+    public static string CreateOrder(vmOrders model){
+        using var order = new z_sqlOrders();
+        CartService.OrderNo = order.CreateNewOrder(model);
+        return CartService.OrderNo;
+    }
+
 }

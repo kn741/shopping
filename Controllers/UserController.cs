@@ -11,7 +11,8 @@ namespace shopping.Controllers
         public IActionResult Logout()
         {
             SessionService.IsLogin = false;
-            SessionService.UserName = "遊客";
+            SessionService.UserNo = "";
+            SessionService.UserName = "";
             CartService.NewLotNo();
             return RedirectToAction("Login", "User", new { area = "" });
         }
@@ -53,9 +54,10 @@ namespace shopping.Controllers
             var data = user.GetData(model.UserNo);
             if (data.RoleNo == "Mis" || data.RoleNo == "User")
                 return RedirectToAction("Index", "Home", new { area = "Admin" });
-            if (data.RoleNo == "Member")
+            if (data.RoleNo == "Member"){
+                CartService.MergeCart();
                 return RedirectToAction("Index", "Home", new { area = "" });
-
+            }
             //角色不正確,引發自定義錯誤,並重新輸入
             ModelState.AddModelError("UserNo", "登入帳號角色設定不正確!!");
             model.UserNo = "";

@@ -4,7 +4,15 @@
     ViewData["Title"] = "PaymentConfirm";
     Layout = "_Layout";
     using var cart = new z_sqlCarts();
-    var carts = cart.GetDataList();
+    using var shipping = new z_sqlShippings();
+    using var payment = new z_sqlPayments();
+
+    var cartList = cart.GetDataList();
+    var shippingList = shipping.GetDropDownList();
+    var paymentList = payment.GetDropDownList();
+    int cartAmount = cartList.Sum(m => m.OrderAmount);
+    int cartFreight = (cartAmount > 0) ? 60 : 0;
+    int cartTotal = cartAmount + cartFreight;
 }
 
 <main id="container">
@@ -21,36 +29,44 @@
                                     <table class="checkout-area">
                                         <thead>
                                             <tr class="cart_item check-heading">
-                                                <td class="ctg-type">商品</td>
-                                                <td class="cgt-des">金額</td>
+                                                <td class="ctg-type text-nowrap">品名</td>
+                                                <td class="ctg-type text-nowrap">規格</td>
+                                                <td class="cgt-des text-nowrap">數量</td>
+                                                <td class="cgt-des text-nowrap">單價</td>
+                                                <td class="cgt-des text-nowrap">金額</td>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="cart_item check-item prd-name">
-                                                <td class="ctg-type">
-                                                    針織捲領長袖_女 ×
-                                                    <span>1</span>
-                                                </td>
-                                                <td class="cgt-des">$490</td>
-                                            </tr>
-                                            <tr class="cart_item check-item prd-name">
-                                                <td class="ctg-type">
-                                                    簡約圓領T恤_男 ×
-                                                    <span>1</span>
-                                                </td>
-                                                <td class="cgt-des">$300</td>
+                                            @foreach (var item in cartList)
+                                            {
+                                                <tr class="cart_item check-item prd-name">
+                                                    <td class="ctg-type">@item.ProdName</td>
+                                                    <td class="ctg-type">@item.ProdSpec</td>
+                                                    <td class="cgt-des">@item.OrderQty</td>
+                                                    <td class="cgt-des">$@item.OrderPrice</td>
+                                                    <td class="cgt-des">$@item.OrderAmount</td>
+                                                </tr>
+                                            }
+                                            <tr class="cart_item">
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type text-nowrap">小計</td>
+                                                <td class="cgt-des">$@cartAmount</td>
                                             </tr>
                                             <tr class="cart_item">
-                                                <td class="ctg-type">小計</td>
-                                                <td class="cgt-des">$790</td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type text-nowrap">運費</td>
+                                                <td class="cgt-des">$@cartFreight</td>
                                             </tr>
                                             <tr class="cart_item">
-                                                <td class="ctg-type">運費</td>
-                                                <td class="cgt-des">$60</td>
-                                            </tr>
-                                            <tr class="cart_item">
-                                                <td class="ctg-type crt-total">總計</td>
-                                                <td class="cgt-des prc-total">$850</td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type"></td>
+                                                <td class="ctg-type text-nowrap"></td>
+                                                <td class="ctg-type crt-total text-nowrap">總計</td>
+                                                <td class="cgt-des prc-total">$@cartTotal</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -61,30 +77,24 @@
                             <div class="pay-toggle">
                                 @using (Html.BeginForm())
                                 {
-                                        <div class="pay-type-total">
-                                            <div class="pay-type-title">付款方式:</div>
-                                            <div class="pay-type">
-                                                <input type="radio" id="pay-toggle01" name="pay" />
-                                                <label for="pay-toggle01">信用卡/VISA金融卡</label>
-                                            </div>
-                                            <div class="pay-type">
-                                                <input type="radio" id="pay-toggle02" name="pay" />
-                                                <label for="pay-toggle02">貨到付款</label>
-                                            </div>
-                                            <div class="pay-type">
-                                                <input type="radio" id="pay-toggle03" name="pay" />
-                                                <label for="pay-toggle03">轉帳匯款</label>
-                                            </div>
-                                        </div>
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-5 col-md-5 col-sm-3 my-3">
-                                                <a class="btn-def btn2" href="@Url.Action("Payment", "Cart",new{area=""})"
-                                                    style="display: block">返回付款資訊</a>
-                                            </div>
-                                            <div class="col-lg-5 col-md-5 col-sm-3 my-3">
-                                                <input type="submit" value="確認結帳資訊" style="display: block" class="btn-def btn2 btnmy"/>
-                                            </div>
-                                        </div>
+                                    <table>
+                                        <tr>
+                                            <td class="ne-2">付款方式：</td>
+                                            <td>@Html.DropDownListFor(m => m.PaymentNo, paymentList,new {@class="pay-type"})</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ne-2">出貨方式：</td>
+                                            <td>@Html.DropDownListFor(m => m.ShippingNo, shippingList,new {@class="pay-type"})</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="submit" value="確認結帳" class="btn btn-secondary me-2"/>
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("返回付款資訊", "Payment", "Cart",new {area = ""},new {@class="btn btn-secondary",@style="height: auto;"})     
+                                            </td>
+                                        </tr>
+                                    </table>
                                 }
                             </div>
                         </div>

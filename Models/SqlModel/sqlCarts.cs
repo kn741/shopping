@@ -59,7 +59,7 @@ LEFT OUTER JOIN Users ON Carts.MemberNo = Users.UserNo
         {
             //取得遊客購物車明細
             var data = GetDataList();
-
+        
             //更新購物車批號
             CartService.NewLotNo();
 

@@ -158,7 +158,15 @@ namespace shopping.Controllers
         [Login(RoleList = "Member,User")]
         public IActionResult PaymentConfirm(vmOrders model)
         {
-            return RedirectToAction("Index", "Home", new { area = "" });
+            //產生訂單
+            var data = PaymentService.GetPaymentData();
+            data.PaymentNo = model.PaymentNo;
+            data.ShippingNo = model.ShippingNo;
+            string str_order_No = PaymentService.CreateOrder(data);
+            //顯示訂單已完成
+            SessionService.MessageText = $"您的訂單已建立，訂單編號為：{str_order_No}，請注意到貨訊息!";
+            SessionService.StringValue1 = "ShopIndex";
+            return RedirectToAction("Index", "Message", new { area = "" });
         }
     }
 }

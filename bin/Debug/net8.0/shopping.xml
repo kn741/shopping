@@ -4242,6 +4242,13 @@
             </summary>
             <param name="sheetNo">訂單編號</param>
         </member>
+        <member name="M:shopping.Models.z_sqlPayments.GetDropDownList(System.Boolean)">
+            <summary>
+            下拉式選單
+            </summary>
+            <param name="textIncludeValue"></param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlProducts.GetData(System.String)">
             <summary>
             取得單筆資料(同步呼叫)
@@ -4306,6 +4313,13 @@
              </summary>
              <param name="prodNo">商品代號</param>
              <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlShippings.GetDropDownList(System.Boolean)">
+            <summary>
+            下拉式選單
+            </summary>
+            <param name="textIncludeValue"></param>
+            <returns></returns>
         </member>
         <member name="M:shopping.Models.z_sqlUsers.CheckLogin(vmLogin)">
             <summary>

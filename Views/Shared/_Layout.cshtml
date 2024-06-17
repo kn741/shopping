@@ -116,7 +116,7 @@
             <div class="fr a_login me-5">
                 <span class="icofont-ui-user login">
                     <span ps-3>
-                        @(string.IsNullOrEmpty(SessionService.UserName)?"遊客":SessionService.UserName)  
+                        @(!SessionService.IsLogin ? "遊客":SessionService.UserName)  
                     </span>
                 </span>
                 <div class="submenu">
