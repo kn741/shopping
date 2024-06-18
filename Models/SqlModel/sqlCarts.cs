@@ -71,22 +71,23 @@ LEFT OUTER JOIN Users ON Carts.MemberNo = Users.UserNo
         /// </summary>
         public void MergeCart()
         {
-            //取得遊客購物車明細
+            //保留遊客購物車批號
+            string old_LotNo = CartService.LotNo;
+             //取得遊客購物車明細
             var data = GetGuestDataList();
-            if (data != null && data.Count > 0){
-                //保留遊客購物車批號
-                string old_LotNo = CartService.LotNo;
-                
-                //更新購物車批號
-                CartService.NewLotNo();
+            //更新購物車批號
+            CartService.NewLotNo();
+            //將新批號寫入會員購物車
+            string str_query = "UPDATE Carts SET LotNo = @LotNo WHERE MemberNo = @MemberNo";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("LotNo", CartService.LotNo);
+            parm.Add("MemberNo", SessionService.UserNo);
+            dpr.Execute(str_query, parm);
 
-                //將新批號寫入會員購物車
-                string str_query = "UPDATE Carts SET LotNo = @LotNo WHERE MemberNo = @MemberNo";
-                DynamicParameters parm = new DynamicParameters();
-                parm.Add("LotNo", CartService.LotNo);
-                parm.Add("MemberNo", SessionService.UserNo);
-                dpr.Execute(str_query, parm);
-
+           
+            
+            if (data != null && data.Count > 0)
+            {
                 //將遊客購物車合併至會員購物車
                 foreach (var item in data)
                 {
@@ -94,10 +95,6 @@ LEFT OUTER JOIN Users ON Carts.MemberNo = Users.UserNo
                 }
                 //刪除遊客購物車
                 DeleteCart(old_LotNo);
-            }
-            else{
-                //更新購物車批號
-                CartService.NewLotNo();
             }
         }
         /// <summary>
