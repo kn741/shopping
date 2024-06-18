@@ -123,9 +123,9 @@
                     <ul>
                         @if (SessionService.IsLogin)
                         {
-                            <li><a href="@Url.Action("Init" , "Order" , new {area = "Member" , id = "unclosed"})">未結訂單查詢</a>
+                            <li><a href="@Url.Action("Index" , "Order" , new {area = "" , id = "unclose"})">未結訂單查詢</a>
                             </li>
-                            <li><a href="@Url.Action("Init" , "Order" , new {area = "Member" , id = "closed"})">已結訂單查詢</a>
+                            <li><a href="@Url.Action("Index" , "Order" , new {area = "" , id = "closed"})">已結訂單查詢</a>
                             </li>
                             <li><a href="@Url.Action("Index" , "Profile" , new {area = "" })">我的帳號</a>
                             </li>

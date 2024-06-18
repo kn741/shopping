@@ -4248,6 +4248,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:shopping.Models.z_sqlOrders.GetOrderList(System.Boolean)">
+            <summary>
+            取得會員訂單
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlOrders.CancelOrder(System.String)">
             <summary>
             取消訂單

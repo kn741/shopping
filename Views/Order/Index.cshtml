@@ -1,0 +1,91 @@
+@model IEnumerable<shopping.Models.Orders>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<div class="card card-size-max mt-5">
+    <div class="card header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@SessionService.ActionName</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        明細
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SheetNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SheetDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ShippingName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReceiverName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReceiverAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalAmount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Remark)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.ActionLink("明細", "Detail", "Order", new {area="", id=item.Id},new {@class="btn btn-success"})
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SheetNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SheetDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaymentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShippingName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReceiverName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReceiverAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remark)
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

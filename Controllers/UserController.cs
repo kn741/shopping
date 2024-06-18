@@ -24,7 +24,10 @@ namespace shopping.Controllers
         [HttpGet]
         [AllowAnonymous()]
         public IActionResult Login()
-        {
+        {   
+            //判斷是否已登入
+            if (SessionService.IsLogin) return RedirectToAction("Index", "Home", new { area = "" });
+            
             SessionService.SetProgramInfo("", "使用者");
             ActionService.SetActionName(enAction.Login);
             vmLogin model = new vmLogin();
@@ -68,6 +71,9 @@ namespace shopping.Controllers
         [AllowAnonymous()]
         public IActionResult Register()
         {
+            //判斷是否已登入
+            if (SessionService.IsLogin) return RedirectToAction("Index", "Home", new { area = "" });
+            
             SessionService.SetProgramInfo("", "使用者");
             ActionService.SetActionName(enAction.Register);
             vmRegister model = new vmRegister();

@@ -25,6 +25,7 @@ public class z_metaOrders
     [Display(Name = "訂單編號")]
     public string? SheetNo { get; set; }
     [Display(Name = "訂單日期")]
+    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
     public DateTime SheetDate { get; set; }
     [Display(Name = "狀態編號")]
     public string? StatusCode { get; set; }
