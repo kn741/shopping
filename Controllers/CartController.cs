@@ -26,13 +26,14 @@ namespace shopping.Controllers
         /// 加入購物車
         /// </summary>
         /// <param name="id">商品編號</param>
+        /// <param name="prodSpec">商品規格</param>
         /// <param name="qty">數量</param>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult AddCart(string id, int qty = 1)
+        public IActionResult AddCart(string id, string prodSpec = "",int qty = 1)
         {
             using var cart = new z_sqlCarts();
-            cart.AddCart(id, "", qty);
+            cart.AddCart(id, prodSpec, qty);
             return RedirectToAction("Index", "Cart", new { area = "" });
         }
 
@@ -110,13 +111,25 @@ namespace shopping.Controllers
         [HttpPost]
         public IActionResult AddCart()
         {
+            string str_prod_spec = "";
             object obj_text = Request.Form["qtybutton"];
             string str_qty = (obj_text == null) ? "1" : obj_text.ToString();
             int int_qty = int.Parse(str_qty);
             obj_text = Request.Form["prodNo"];
-            string str_prodNo = (obj_text == null) ? string.Empty : obj_text.ToString();
+            string str_prod_no = (obj_text == null) ? string.Empty : obj_text.ToString();
+            using var prodProperty = new z_sqlProductPropertys();
+            List<Propertys> PropertyList = prodProperty.GetProductPropertyList(str_prod_no);
 
-            return RedirectToAction("AddCart", "Cart", new { area = "", id = str_prodNo, qty = int_qty });
+            foreach (var item in PropertyList){
+                obj_text = Request.Form[item.PropertyNo];
+                if(obj_text!= null){
+                    string str_prop_value = obj_text.ToString();
+                    if(!string.IsNullOrEmpty(str_prod_spec))str_prod_spec+=",";
+                    str_prod_spec += item.PropertyName + ":" + str_prop_value;
+                }
+            }
+
+            return RedirectToAction("AddCart", "Cart", new { area = "", id = str_prod_no , prodSpec = str_prod_spec, qty = int_qty });
         }
         /// <summary>
         /// Payment頁面

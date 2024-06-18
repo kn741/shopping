@@ -135,3 +135,11 @@ a:active {
   order: -1;
   flex: 1;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.item-qty {
+  white-space: nowrap;
+}

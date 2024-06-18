@@ -53,27 +53,51 @@ LEFT OUTER JOIN Users ON Carts.MemberNo = Users.UserNo
         }
 
         /// <summary>
+        /// 取得遊客購物車明細
+        /// </summary>
+        /// <returns></returns>
+        public List<Carts> GetGuestDataList()
+        {
+            string str_query = GetSQLSelect();
+            str_query += " WHERE Carts.LotNo = @LotNo AND MemberNo = ''";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("LotNo", CartService.LotNo);
+            var model = dpr.ReadAll<Carts>(str_query, parm);
+            return model;
+        }
+
+        /// <summary>
         /// 遊客購物車合併至會員購物車
         /// </summary>
         public void MergeCart()
         {
             //取得遊客購物車明細
-            var data = GetDataList();
-        
-            //更新購物車批號
-            CartService.NewLotNo();
+            var data = GetGuestDataList();
+            if (data != null && data.Count > 0){
+                //保留遊客購物車批號
+                string old_LotNo = CartService.LotNo;
+                
+                //更新購物車批號
+                CartService.NewLotNo();
 
-            //將新批號寫入會員購物車
-            string str_query = "UPDATE Carts SET LotNo = @LotNo WHERE MemberNo = @MemberNo";
-            DynamicParameters parm = new DynamicParameters();
-            parm.Add("LotNo", CartService.LotNo);
-            parm.Add("MemberNo", SessionService.UserNo);
-            dpr.Execute(str_query, parm);
+                //將新批號寫入會員購物車
+                string str_query = "UPDATE Carts SET LotNo = @LotNo WHERE MemberNo = @MemberNo";
+                DynamicParameters parm = new DynamicParameters();
+                parm.Add("LotNo", CartService.LotNo);
+                parm.Add("MemberNo", SessionService.UserNo);
+                dpr.Execute(str_query, parm);
 
-            //將遊客購物車合併至會員購物車
-            foreach (var item in data)
-            {
-                AddCart(item.ProdNo, item.ProdSpec, item.OrderQty);
+                //將遊客購物車合併至會員購物車
+                foreach (var item in data)
+                {
+                    AddCart(item.ProdNo, item.ProdSpec, item.OrderQty);
+                }
+                //刪除遊客購物車
+                DeleteCart(old_LotNo);
+            }
+            else{
+                //更新購物車批號
+                CartService.NewLotNo();
             }
         }
         /// <summary>
@@ -117,7 +141,7 @@ VALUES
 ,@OrderAmount,@CreateTime,@Remark)
 ";
                 parm.Add("MemberNo", SessionService.UserNo);
-                parm.Add("VendorNo", "");
+                parm.Add("VendorNo", prodData.VendorNo);
                 parm.Add("CategoryNo", prodData.CategoryNo);
                 parm.Add("CategoryName", prodData.CategoryName);
                 parm.Add("ProdName", prodData.ProdName);
@@ -125,7 +149,7 @@ VALUES
                 parm.Add("OrderPrice", int_price);
                 parm.Add("OrderAmount", int_amount);
                 parm.Add("CreateTime", DateTime.Now);
-                parm.Add("Remark", "");
+                parm.Add("Remark", prodData.Remark);
             }
             else
             {
@@ -222,6 +246,17 @@ WHERE Id = @Id
             DynamicParameters parm = new DynamicParameters();
             str_query = "DELETE FROM Carts WHERE LotNo = @LotNo";
             parm.Add("LotNo", CartService.LotNo);
+            dpr.Execute(str_query, parm);
+        }
+        /// <summary>
+        /// 刪除指定批號購物車
+        /// </summary>
+        public void DeleteCart(string lotNo)
+        {
+            string str_query = "";
+            DynamicParameters parm = new DynamicParameters();
+            str_query = "DELETE FROM Carts WHERE LotNo = @LotNo";
+            parm.Add("LotNo", lotNo);
             dpr.Execute(str_query, parm);
         }
         /// <summary>

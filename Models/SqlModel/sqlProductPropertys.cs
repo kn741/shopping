@@ -43,6 +43,48 @@ namespace shopping.Models
             var model = dpr.ReadAll<ProductPropertys>(str_query, pram);
             return model;
         }
+        /// <summary>
+        /// 取得指定商品的屬性資料列表
+        /// </summary>
+        /// <param name="prodNo">商品編號</param>
+        /// <returns></returns>
+        public List<Propertys> GetProductPropertyList(string prodNo){
+            var model = new List<Propertys>();
+            string str_query = GetSQLSelect();
+            str_query += $" WHERE ProductPropertys.ProdNo = @ProdNo";
+            str_query += " ORDER BY ProductPropertys.PropertyNo";
+            DynamicParameters pram = new DynamicParameters();
+            pram.Add("ProdNo", prodNo);
+            model = dpr.ReadAll<ProductPropertys>(str_query, pram)
+                    .Select(x => new Propertys(){
+                        PropertyNo = x.PropertyNo,
+                        PropertyName = x.PropertyName    
+                    }).ToList();
+            return model;
+        }
+        /// <summary>
+        /// 取得指定商品的指定屬性的資料列表
+        /// </summary>
+        /// <param name="prodNo"></param>
+        /// <param name="propNo"></param>
+        /// <returns></returns>
+        public List<SelectListItem> GetProductPropertys(string prodNo , string propNo){
+            var model = new List<SelectListItem>();
+            string str_query = GetSQLSelect();
+            str_query += $" WHERE ProductPropertys.ProdNo = @ProdNo And ProductPropertys.PropertyNo = @PropNo";
+            DynamicParameters pram = new DynamicParameters();
+            pram.Add("ProdNo", prodNo);
+            pram.Add("PropNo", propNo);
+            var data = dpr.ReadSingle<ProductPropertys>(str_query, pram);
+            if(data!=null){
+
+                model = data.PropertyValue.Split(',').ToList().Select(x=>new SelectListItem(){
+                    Text = x,
+                    Value = x
+                }).ToList();
+            }
+            return model;
+        }
 
          public string GetProductSpec(string prodNo)
         {

@@ -6,8 +6,9 @@
     using var shopService = new ShopService();
     List<string> ImageList = shopService.GetProductsImageList(Model.ProdNo);
 
-    using var prodProperty = new z_sqlProductPropertys();
-    List<ProductPropertys> PropertyList = prodProperty.GetProductPropertys(Model.ProdNo);
+    var prodProperty = new z_sqlProductPropertys();
+    List<Propertys> PropertyList = prodProperty.GetProductPropertyList(Model.ProdNo);
+    var PropertyValueList = new List<SelectListItem>();
     
     string str_active = "active";
     string str_name = "";
@@ -90,20 +91,31 @@
                             </p>
                         </div>
                         <div class="bt">
+                            @using (Html.BeginForm("AddCart", "Cart",new {area = ""},FormMethod.Post)){
                             <div class="sp-bottom-des">
-                                @foreach (var item in PropertyList){
-                                    <label class="font-bold">@item.PropertyName：@item.PropertyValue</label>
-                                    <br />
-                                }
+                                <table>
+                                    @foreach (var item in PropertyList){
+                                        PropertyValueList = prodProperty.GetProductPropertys(Model.ProdNo,item.PropertyNo);
+
+                                        <tr>
+                                            <td>
+                                                <label class="font-bold">@item.PropertyName：</label>
+                                            </td>
+                                            <td>
+
+                                                @Html.DropDownList(item.PropertyNo, PropertyValueList,new{@class="form-select"})
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
                                 <label>
                                     <span class="font-bold">商品狀況</span>：@Model.StatusName &ensp;
-                                    <button class="dd" data-bs-toggle="tooltip" data-bs-html="true"
+                                    <label class="dd" data-bs-toggle="tooltip" data-bs-html="true"
                                         title="<div class='ss'>★ <b>全新</b>：未使用過，可能含原包裝袋或標籤<br><br> ★ <b>良好</b>：8~9成新，使用過1~2次，保存良好<br><br> ★ <b>輕度使用</b>：6~7成新，有輕微使用痕跡或瑕疵<br><br> ★ <b>尚可</b>：5成新(含)以下，有明顯使用痕跡或瑕疵</div>">
                                         <i class="fa-sharp fa-solid fa-circle-question color-lightgrey"></i>
-                                    </button>
+                                    </label>
                                 </label>
                             </div>
-                            @using (Html.BeginForm("AddCart", "Cart",new {area = ""},FormMethod.Post)){
                                 <input type="hidden" id="ProdNo" name="ProdNo" value="@Model.ProdNo" />
                                 <div class="quantity-area">
                                     <label class="font-bold">數量：</label>

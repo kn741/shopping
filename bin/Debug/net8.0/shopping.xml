@@ -4058,11 +4058,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:shopping.Controllers.CartController.AddCart(System.String,System.Int32)">
+        <member name="M:shopping.Controllers.CartController.AddCart(System.String,System.String,System.Int32)">
             <summary>
             加入購物車
             </summary>
             <param name="id">商品編號</param>
+            <param name="prodSpec">商品規格</param>
             <param name="qty">數量</param>
             <returns></returns>
         </member>
@@ -4145,6 +4146,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:shopping.Models.z_sqlCarts.GetGuestDataList">
+            <summary>
+            取得遊客購物車明細
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlCarts.MergeCart">
             <summary>
             遊客購物車合併至會員購物車
@@ -4181,6 +4188,11 @@
         <member name="M:shopping.Models.z_sqlCarts.DeleteCart">
             <summary>
             刪除目前批號購物車
+            </summary>
+        </member>
+        <member name="M:shopping.Models.z_sqlCarts.DeleteCart(System.String)">
+            <summary>
+            刪除指定批號購物車
             </summary>
         </member>
         <member name="M:shopping.Models.z_sqlCarts.GetCartCount">
@@ -4247,6 +4259,21 @@
             下拉式選單
             </summary>
             <param name="textIncludeValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProductPropertys.GetProductPropertyList(System.String)">
+            <summary>
+            取得指定商品的屬性資料列表
+            </summary>
+            <param name="prodNo">商品編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlProductPropertys.GetProductPropertys(System.String,System.String)">
+            <summary>
+            取得指定商品的指定屬性的資料列表
+            </summary>
+            <param name="prodNo"></param>
+            <param name="propNo"></param>
             <returns></returns>
         </member>
         <member name="M:shopping.Models.z_sqlProducts.GetData(System.String)">
