@@ -311,7 +311,7 @@ VALUES
             dpr.Execute(sql_query);
         }
 
-        public void UpdateProduct(Products model)
+        public void UpdateProduct(vmProductCreate model)
         {
             using var dpr = new DapperRepository();
             // using var cryp = new CryptographyService();
@@ -347,7 +347,7 @@ WHERE ProdNo = @ProdNo
             parm.Add("DiscountPrice",model.DiscountPrice);
             parm.Add("ContentText", model.ContentText);
             parm.Add("SpecificationText", model.SpecificationText);
-            parm.Add("ProdNo",model.ProdNo);
+            parm.Add("ProdNo",SessionService.StringValue1);
             dpr.Execute(sql_query, parm);
         }
 

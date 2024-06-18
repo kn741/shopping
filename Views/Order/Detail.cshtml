@@ -17,83 +17,159 @@
         </div>
     </div>
     <div class="card-body p-2">
-        <div>
+        <div class="card-form">
             <div class=row>
-                <div class="col-md-12">
+                <div class="col-md-12 p-2">
                     <div class="float-start">
                         @Html.ActionLink("返回訂單列表","Index","Order",new {area="",id=SessionService.StringValue1} , new { @class = "btn btn-success" })
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.SheetNo)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.SheetNo)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.SheetNo)
                 </div>
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.SheetDate)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.SheetDate)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.SheetDate)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.StatusName)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.StatusName)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.StatusName)
                 </div>
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.PaymentName)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.PaymentName)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.PaymentName)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.ShippingName)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.ShippingName)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.ShippingName)
                 </div>
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.ReceiverName)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.ReceiverName)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.ReceiverName)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.ReceiverEmail)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.ReceiverEmail)
+                    </span>    
                 </div>
-                <div class="col-md-10 border">
+                <div class="col-md-10 border border-secondary">
                     @Html.DisplayFor(model => model.Master.ReceiverEmail)
                 </div>
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.ReceiverAddress)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.ReceiverAddress)
+                    </span>    
                 </div>
-                <div class="col-md-10 border">
+                <div class="col-md-10 border border-secondary">
                     @Html.DisplayFor(model => model.Master.ReceiverAddress)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.TotalAmount)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.TotalAmount)
+                    </span>
                 </div>
-                <div class="col-md-4 text-end border">
+                <div class="col-md-4 text-end border border-secondary">
                     @Html.DisplayFor(model => model.Master.TotalAmount)
                 </div>
-                <div class="col-md-2 border">
-                    @Html.DisplayNameFor(model => model.Master.Remark)
+                <div class="col-md-2 border border-secondary">
+                    <span class="card-form-header">
+                        @Html.DisplayNameFor(model => model.Master.Remark)
+                    </span>
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-4 border border-secondary">
                     @Html.DisplayFor(model => model.Master.Remark)
                 </div>
+            </div>
+        </div>
+        <hr/>
+        <div>
+            <div class="overflow-scroll">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().ProdNo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().ProdName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().ProdSpec)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().OrderQty)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().OrderPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().OrderAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Details.FirstOrDefault().Remark)
+                        </td>
+                    </tr>
+                    @foreach (var item in Model.Details)
+                    {
+                        <tr>
+                            <td>
+                                @item.ProdNo
+                            </td>
+                            <td>
+                                @item.ProdName
+                            </td>
+                            <td>
+                                @item.ProdSpec
+                            </td>
+                            <td>
+                                @item.OrderQty
+                            </td>
+                            <td>
+                                @item.OrderPrice
+                            </td>
+                            <td>
+                                @item.OrderAmount
+                            </td>
+                            <td>
+                                @item.Remark
+                            </td>
+                        </tr>
+                    }
+                </table>
             </div>
         </div>
     </div>

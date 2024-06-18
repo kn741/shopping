@@ -2129,46 +2129,6 @@
       "PackagePath": "staticwebassets\\images\\product\\s02.jpg"
     },
     {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m01\\m01.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m01\\m01.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m01\\m0101.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m01\\m0101.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m01\\m0102.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m01\\m0102.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m01\\m0103.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m01\\m0103.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m01\\m0104.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m01\\m0104.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m02\\m02.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m02\\m02.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m02\\m0201.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m02\\m0201.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m02\\m0202.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m02\\m0202.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m02\\m0203.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m02\\m0203.jpg"
-    },
-    {
-      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m02\\m0204.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\m02\\m0204.jpg"
-    },
-    {
       "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m03\\m03.jpg",
       "PackagePath": "staticwebassets\\images\\products\\m03\\m03.jpg"
     },
@@ -2307,6 +2267,26 @@
     {
       "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m100\\m10004.jpg",
       "PackagePath": "staticwebassets\\images\\products\\m100\\m10004.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m101\\m101.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\m101\\m101.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m101\\m10101.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\m101\\m10101.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m101\\m10102.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\m101\\m10102.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m101\\m10103.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\m101\\m10103.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m101\\m10104.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\m101\\m10104.jpg"
     },
     {
       "Id": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\wwwroot\\images\\products\\m11\\m11.jpg",

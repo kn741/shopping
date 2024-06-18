@@ -65,8 +65,9 @@ namespace shopping.Areas.User.Controllers
             string UserNo = SessionService.UserNo;
             using var product = new z_sqlProducts();
             var model = product.GetData(id);
-            if (!model.VendorNo.Equals(UserNo))
+            if (model == null || !model.VendorNo.Equals(UserNo))
                 return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
+            SessionService.StringValue1 = model.ProdNo;
             return View(model);
         }
 
@@ -74,13 +75,14 @@ namespace shopping.Areas.User.Controllers
         [Area("User")]
         [HttpPost]
         [Login(RoleList = "User,Mis")]
-        public IActionResult ProductEdit(Products model)
+        public IActionResult ProductEdit(vmProductCreate model)
         {
             if(!ModelState.IsValid){return View(model);}
             SessionService.SetProgramInfo("", "商品資訊編輯");
             string id = SessionService.UserNo;
             using var product = new z_sqlProducts();
             product.UpdateProduct(model);
+            SessionService.StringValue1="";
             return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
 
