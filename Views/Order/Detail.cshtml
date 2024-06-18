@@ -1,0 +1,101 @@
+@model vmOrderDetail
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "_Layout";
+}
+
+<div class="card card-size-shopping mt-5">
+    <div class="card header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@SessionService.ActionName</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <div>
+            <div class=row>
+                <div class="col-md-12">
+                    <div class="float-start">
+                        @Html.ActionLink("返回訂單列表","Index","Order",new {area="",id=SessionService.StringValue1} , new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.SheetNo)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.SheetNo)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.SheetDate)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.SheetDate)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.StatusName)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.StatusName)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.PaymentName)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.PaymentName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.ShippingName)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.ShippingName)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.ReceiverName)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.ReceiverName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.ReceiverEmail)
+                </div>
+                <div class="col-md-10 border">
+                    @Html.DisplayFor(model => model.Master.ReceiverEmail)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.ReceiverAddress)
+                </div>
+                <div class="col-md-10 border">
+                    @Html.DisplayFor(model => model.Master.ReceiverAddress)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.TotalAmount)
+                </div>
+                <div class="col-md-4 text-end border">
+                    @Html.DisplayFor(model => model.Master.TotalAmount)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayNameFor(model => model.Master.Remark)
+                </div>
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Master.Remark)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

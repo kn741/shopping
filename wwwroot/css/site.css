@@ -143,3 +143,12 @@ a:active {
 .item-qty {
   white-space: nowrap;
 }
+.card-size-shopping{
+  max-width: 90%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin: auto;
+}
+.submenu{
+  z-index: 999;
+}

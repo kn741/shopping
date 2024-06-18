@@ -4235,6 +4235,13 @@
             <param name="orderNo">訂單編號</param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Models.z_sqlOrderDetails.GetOrderDetails(System.Int32)">
+            <summary>
+            用訂單表頭的ID取得所有訂單明細的列表
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlOrders.CreateNewOrder(vmOrders)">
             <summary>
             結帳付款產生訂單表頭
@@ -4259,6 +4266,12 @@
             取消訂單
             </summary>
             <param name="sheetNo">訂單編號</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.GetOrder(System.Int32)">
+            <summary>
+            用訂單表頭Id取得整筆訂單表投資料
+            </summary>
+            <param name="orderId"></param>
         </member>
         <member name="M:shopping.Models.z_sqlPayments.GetDropDownList(System.Boolean)">
             <summary>

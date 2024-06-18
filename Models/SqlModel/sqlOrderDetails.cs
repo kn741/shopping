@@ -20,12 +20,12 @@ namespace shopping.Models
         public override string GetSQLSelect()
         {
             string str_query = @"
-SELECT OrderDetails.Id, OrderDetails.ParentNo, OrderDetails.VendorNo, 
-OrderDetails.CategoryNo, Categorys.CategoryName,OrderDetails.ProdNo, 
-OrderDetails.ProdName, OrderDetails.ProdSpec, OrderDetails.OrderPrice, 
-OrderDetails.OrderQty, OrderDetails.OrderAmount, OrderDetails.Remark
-FROM OrderDetails 
-LEFT OUTER JOIN Categorys ON OrderDetails.CategoryNo = Categorys.CategoryNo 
+SELECT  OrderDetails.Id, OrderDetails.VendorNo, OrderDetails.CategoryNo, Categorys.CategoryName, OrderDetails.ProdNo, 
+        OrderDetails.ProdName, OrderDetails.ProdSpec, OrderDetails.OrderPrice, OrderDetails.OrderQty, 
+        OrderDetails.OrderAmount, OrderDetails.Remark,Orders.Id AS OrdersId
+FROM    OrderDetails
+LEFT OUTER JOIN Orders ON OrderDetails.ParentNo = Orders.SheetNo 
+LEFT OUTER JOIN Categorys ON OrderDetails.CategoryNo = Categorys.CategoryNo
 ";
             return str_query;
         }
@@ -82,6 +82,21 @@ VALUES
             sql_query += " WHERE OrderDetails.ParentNo = @ParentNo ";
             sql_query += " ORDER BY OrderDetails.ProdNo";
             parm.Add("ParentNo", orderNo);
+            var model = dpr.ReadAll<OrderDetails>(sql_query, parm);
+            return model;
+        }
+
+        /// <summary>
+        /// 用訂單表頭的ID取得所有訂單明細的列表
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
+        public List<OrderDetails> GetOrderDetails(int orderId = 0){
+            DynamicParameters parm = new DynamicParameters();
+            string sql_query = GetSQLSelect();
+            sql_query += " WHERE Orders.Id = @Id ";
+            sql_query += " ORDER BY OrderDetails.ProdNo";
+            parm.Add("Id", orderId);
             var model = dpr.ReadAll<OrderDetails>(sql_query, parm);
             return model;
         }

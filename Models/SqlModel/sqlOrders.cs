@@ -166,5 +166,18 @@ VALUES
             parm.Add("StatusCode", "CC");
             dpr.Execute(sql_query, parm);
         }
+        /// <summary>
+        /// 用訂單表頭Id取得整筆訂單表投資料
+        /// </summary>
+        /// <param name="orderId"></param>
+        public Orders GetOrder(int orderId=0){
+            var model = new Orders();
+            string sql_query = GetSQLSelect();
+            sql_query += " WHERE Orders.Id = @Id";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("Id", orderId);
+            model = dpr.ReadSingle<Orders>(sql_query, parm);
+            return model;
+        }
     }
 }

@@ -5,7 +5,7 @@
     Layout = "_Layout";
 }
 
-<div class="card card-size-max mt-5">
+<div class="card card-size-shopping mt-5">
     <div class="card header bg-secondary text-white">
         <div class="pt-2 px-2">
             <div class="float-start">
@@ -15,7 +15,8 @@
                 <h4>@SessionService.PrgInfo</h4>
             </div>
         </div>
-        <table class="table">
+        <div class="overflow-scroll">
+            <table class="table">
             <thead>
                 <tr>
                     <th>
@@ -84,8 +85,9 @@
                         @Html.DisplayFor(modelItem => item.Remark)
                     </td>
                 </tr>
-            }
-            </tbody>
-        </table>
+                }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
