@@ -20,7 +20,7 @@ namespace shopping.Areas.Admin.Controllers
         {
             SessionService.SetProgramInfo("", "儀表板", false, false, 0);
             SessionService.SetActionInfo(enAction.Dashboard, enCardSize.Max);
-            return View();
+            return RedirectToAction ("Index","Product",new {area = "User"});
         }
     }
 }
