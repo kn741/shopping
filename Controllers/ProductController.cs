@@ -14,6 +14,7 @@ namespace shopping.Controllers
         public ActionResult Detail(String id){
             using var product = new z_sqlProducts();
             var model = product.GetData(id);
+            if (model == null)return RedirectToAction("Index","Category",new { area = "" });
             return View(model);
         }
     }

@@ -176,9 +176,16 @@ namespace shopping.Controllers
             data.PaymentNo = model.PaymentNo;
             data.ShippingNo = model.ShippingNo;
             string str_order_No = PaymentService.CreateOrder(data);
+
+            var carts = new z_sqlCarts();
             //顯示訂單已完成
             SessionService.MessageText = $"您的訂單已建立，訂單編號為：{str_order_No}，請注意到貨訊息!";
             SessionService.StringValue1 = "ShopIndex";
+            
+            
+            //清除購物車
+            carts.DeleteCart();
+            
             return RedirectToAction("Index", "Message", new { area = "" });
         }
     }

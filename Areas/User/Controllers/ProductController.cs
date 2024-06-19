@@ -75,7 +75,7 @@ namespace shopping.Areas.User.Controllers
         [Area("User")]
         [HttpPost]
         [Login(RoleList = "User,Mis")]
-        public IActionResult ProductEdit(vmProductCreate model)
+        public IActionResult ProductEdit(Products model)
         {
             if(!ModelState.IsValid){return View(model);}
             SessionService.SetProgramInfo("", "商品資訊編輯");

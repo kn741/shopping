@@ -248,7 +248,12 @@ public static class PaymentService{
     public static string CreateOrder(vmOrders model){
         using var order = new z_sqlOrders();
         CartService.OrderNo = order.CreateNewOrder(model);
+        CreateOrderDetail(CartService.OrderNo);
         return CartService.OrderNo;
+    }
+    public static void CreateOrderDetail(string orderNo){
+        using var order = new z_sqlOrderDetails();
+        order.CreateNewOrderDetail(orderNo);
     }
 
 }

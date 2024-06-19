@@ -34,6 +34,10 @@ public class vmProductCreate
     public decimal CostPrice { get; set; } = 0;
     [Display(Name = "商品描述")]
     public string ContentText { get; set; } = "";
+
     [Display(Name = "商品規格")]
-    public string SpecificationText { get; set; } = "";
+    public string PropertyNo { get; set; } = "";
+
+    [Display(Name = "商品規格(值)")]
+    public string PropertyValue { get; set; } = "";
 }

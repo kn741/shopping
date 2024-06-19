@@ -249,10 +249,25 @@ VALUES
             parm.Add("DiscountPrice",model.DiscountPrice);
             parm.Add("InventoryQty", 1);
             parm.Add("ContentText", model.ContentText);
-            parm.Add("SpecificationText", model.SpecificationText);
+            parm.Add("SpecificationText", model.PropertyNo+":"+model.PropertyValue);
             parm.Add("Remark", "");
-
             dpr.Execute(sql_query, parm);
+            
+            //插入property table
+            sql_query = @"
+            IF NOT EXISTS(SELECT * FROM ProductPropertys WHERE ProdNo = @ProdNo AND PropertyNo = @PropertyNo)
+            BEGIN
+                INSERT INTO ProductPropertys(IsSelect, PropertyNo, PropertyValue, ProdNo)
+                VALUES(@IsSelect, @PropertyNo, @PropertyValue, @ProdNo)
+            END
+            ";
+            parm = new DynamicParameters();
+            parm.Add("ProdNo", prodNo);
+            parm.Add("PropertyNo", model.PropertyNo);
+            parm.Add("PropertyValue", model.PropertyValue);
+            parm.Add("IsSelect", true);
+            dpr.Execute(sql_query,parm);
+
             return prodNo;
         }
 
@@ -311,7 +326,7 @@ VALUES
             dpr.Execute(sql_query);
         }
 
-        public void UpdateProduct(vmProductCreate model)
+        public void UpdateProduct(Products model)
         {
             using var dpr = new DapperRepository();
             // using var cryp = new CryptographyService();
@@ -349,7 +364,8 @@ WHERE ProdNo = @ProdNo
             parm.Add("SpecificationText", model.SpecificationText);
             parm.Add("ProdNo",SessionService.StringValue1);
             dpr.Execute(sql_query, parm);
-        }
+            
 
+        }
     }
 }

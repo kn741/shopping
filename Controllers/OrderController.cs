@@ -38,7 +38,7 @@ namespace shopping.Controllers
             var order = new z_sqlOrders();
             var detail = new z_sqlOrderDetails();
             model.Master = order.GetOrder(id);
-            model.Details = detail.GetOrderDetails();
+            model.Details = detail.GetOrderDetails(id);
             SessionService.SetProgramInfo("", "訂單明細");
             ActionService.SetActionName(enAction.Detail);
             return View(model);
