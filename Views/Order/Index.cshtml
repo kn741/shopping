@@ -58,32 +58,53 @@
                         @Html.ActionLink("明細", "Detail", "Order", new {area="", id=item.Id},new {@class="btn btn-success"})
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.SheetNo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SheetDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StatusName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PaymentName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ShippingName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReceiverName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReceiverAddress)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TotalAmount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Remark)
-                    </td>
+                            @Html.DisplayNameFor(item => item.IsClosed)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.IsValid)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.SheetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.SheetDate)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.StatusName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.CustNo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.CustName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.PaymentName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.ShippingName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.ReceiverName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.ReceiverEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.ReceiverAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.OrderAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.TaxAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.TotalAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(item => item.Remark)
+                        </td>
                 </tr>
                 }
                 </tbody>

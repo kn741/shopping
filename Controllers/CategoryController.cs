@@ -45,5 +45,13 @@ namespace shopping.Controllers
             return RedirectToAction("Index", new { id = SessionService.StringValue1 });
         }
 
+        [HttpPost]
+        public IActionResult Search(string searchText)
+        {
+            object obj_text = Request.Form["SearchText"];
+            SessionService.SearchText = (obj_text==null)?"":obj_text.ToString();
+            return RedirectToAction("Index","Category", new {area="", id = SessionService.StringValue1 });
+        }
+
     }
 }

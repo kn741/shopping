@@ -142,16 +142,16 @@
             <!-- 搜索 -->
             <div class="search fl">
                 <!-- 搜索輸入框 -->
-                <form action="#" class="clearfix">
+                @using (Html.BeginForm("Search", "Category", new { area = "" }, FormMethod.Get)){
                     <!-- 搜索鍵 -->
                     <div class="icon-s fl">
                         <span class="icofont-search-1"></span>
                     </div>
                     <div class="searchBox fr">
                         <!-- 文字輸入框 -->
-                        <input type="search" />
+                        <input type="search" id="SearchText" name="SearchText" placeholder="搜尋商品" value="@SessionService.SearchText" />
                     </div>
-                </form>
+                }
             </div>
         </div>
     </div>

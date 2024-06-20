@@ -4358,6 +4358,12 @@
             <param name="categoryNo">分類代號</param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Models.z_sqlProducts.GetSortOrderBy">
+            <summary>
+            排序判斷
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlProducts.CreateNewProduct(vmProductCreate)">
             <summary>
             建立商品資訊
