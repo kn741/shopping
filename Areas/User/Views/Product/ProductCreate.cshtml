@@ -100,7 +100,7 @@
                 </div>
                 <div class="row form-group">
                     @Html.LabelFor(model => model.PropertyNo, htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9 row">
+                    <div class="col-md-9 row ms-1">
                         @Html.EditorFor(model => model.PropertyNo, new { htmlAttributes = new { @class = "form-control col", @placeholder = "ex: 顏色" } })
                         @Html.EditorFor(model => model.PropertyValue, new { htmlAttributes = new { @class = "form-control col",@placeholder = "ex: 藍色,綠色,紅色"} })
                         @Html.ValidationMessageFor(model => model.PropertyValue, "", new { @class = "text-danger" })

@@ -4061,13 +4061,19 @@
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.Init">
             <summary>
-            
+            init
             </summary>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.Index">
             <summary>
             會員未結訂單列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.OrderAll">
+            <summary>
+            會員訂單列表
             </summary>
             <returns></returns>
         </member>
@@ -4090,6 +4096,13 @@
             會員訂單明細
             </summary>
             <param name="model">訂單狀態模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Cancel(System.Int32)">
+            <summary>
+            取消訂單
+            </summary>
+            <param name="id">訂單Id</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Controllers.CartController.Index">
@@ -4307,6 +4320,12 @@
             </summary>
             <param name="sheetNo">訂單編號</param>
         </member>
+        <member name="M:shopping.Models.z_sqlOrders.CancelOrder(System.Int32)">
+            <summary>
+            取消訂單
+            </summary>
+            <param name="orderId">訂單Id</param>
+        </member>
         <member name="M:shopping.Models.z_sqlOrders.GetOrder(System.Int32)">
             <summary>
             用訂單表頭Id取得整筆訂單表頭資料
@@ -4315,13 +4334,13 @@
         </member>
         <member name="M:shopping.Models.z_sqlOrders.GetALLOrderList(System.Boolean)">
             <summary>
-            取得所有會員訂單
+            取得所有會員未結訂單
             </summary>
             <returns></returns>
         </member>
-        <member name="M:shopping.Models.z_sqlOrders.GetVendorOrderList(System.Boolean,System.String)">
+        <member name="M:shopping.Models.z_sqlOrders.GetALLOrderList">
             <summary>
-            取得商家訂單
+            取得所有會員訂單
             </summary>
             <returns></returns>
         </member>

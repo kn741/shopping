@@ -35,7 +35,7 @@ public class z_metaOrders
     public bool IsValid { get; set; }
     [Display(Name = "客戶編號")]
     public string? CustNo { get; set; }
-    [Display(Name = "客戶編號")]
+    [Display(Name = "客戶姓名")]
     public string? CustName { get; set; }
     [Display(Name = "付款方式編號")]
     public string? PaymentNo { get; set; }

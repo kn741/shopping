@@ -166,6 +166,19 @@ VALUES
             parm.Add("StatusCode", "CC");
             dpr.Execute(sql_query, parm);
         }
+
+        /// <summary>
+        /// 取消訂單
+        /// </summary>
+        /// <param name="orderId">訂單Id</param>
+        public void CancelOrder(int orderId)
+        {
+            string sql_query = "UPDATE Orders SET StatusCode = @StatusCode WHERE Id = @Id";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("Id", orderId);
+            parm.Add("StatusCode", "CC");
+            dpr.Execute(sql_query, parm);
+        }
         /// <summary>
         /// 用訂單表頭Id取得整筆訂單表頭資料
         /// </summary>
@@ -181,7 +194,7 @@ VALUES
         }
 
         /// <summary>
-        /// 取得所有會員訂單
+        /// 取得所有會員未結訂單
         /// </summary>
         /// <returns></returns>
         public List<Orders> GetALLOrderList(bool isClosed)
@@ -196,18 +209,14 @@ VALUES
             return model;
         }
         /// <summary>
-        /// 取得商家訂單
+        /// 取得所有會員訂單
         /// </summary>
         /// <returns></returns>
-        public List<Orders> GetVendorOrderList(bool isClosed,string vendorNo)
+        public List<Orders> GetALLOrderList()
         {
             var model = new List<Orders>();
             string sql_query = GetSQLSelect();
-            sql_query += " WHERE Orders.IsClosed = @IsClosed AND Orders.VendorNo = @VendorNo";
-            sql_query += " ORDER BY SheetNo DESC";
             DynamicParameters parm = new DynamicParameters();
-            parm.Add("IsClosed", isClosed);
-            parm.Add("VendorNo", vendorNo);
             model = dpr.ReadAll<Orders>(sql_query, parm);
             return model;
         }

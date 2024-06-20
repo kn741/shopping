@@ -23,7 +23,7 @@ namespace shopping.Areas.User.Controllers
             Configuration = configuration;
         }
         /// <summary>
-        /// 
+        /// init
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -49,6 +49,22 @@ namespace shopping.Areas.User.Controllers
             ActionService.SetActionName(enAction.Index);
             return View(model);
         }
+        /// <summary>
+        /// 會員訂單列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult OrderAll()
+        {
+            using var order = new z_sqlOrders();
+            var model = order.GetALLOrderList();
+            SessionService.SetProgramInfo("", "所有訂單");
+            ActionService.SetActionName(enAction.Index);
+            return View(model);
+        }
+
         /// <summary>
         /// 會員訂單明細
         /// </summary>
@@ -97,6 +113,20 @@ namespace shopping.Areas.User.Controllers
         {
             using var order = new z_sqlOrders();
             order.ChangeStatus(model.Id, model.StatusCode);
+            return RedirectToAction("Index", "Order", new { area = "User" });
+        }
+        /// <summary>
+        /// 取消訂單
+        /// </summary>
+        /// <param name="id">訂單Id</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult Cancel(int id=0)
+        {
+            using var order = new z_sqlOrders();
+            order.CancelOrder(id);
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
 

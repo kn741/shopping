@@ -39,7 +39,7 @@
                 <div class="row form-group">
                     <div class="col-md-12">
                         <div class="float-start">
-                            <input type="submit" value="變更狀態" class="btn btn-primary" />
+                            <input type="submit" value="變更狀態" class="btn btn-primary" onclick = "return confirm('是否確定要變更狀態?');" />
                         </div>
                         <div class="float-end">
                             @Html.ActionLink("返回列表",ActionService.Index, ActionService.Controller, new { 
