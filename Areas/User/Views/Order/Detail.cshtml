@@ -1,11 +1,11 @@
 @model vmOrderDetail
 
 @{
-    ViewData["Title"] = "Detail";
-    Layout = "_Layout";
+    ViewData["Title"] = "訂單明細";
+    Layout = "_LayoutAdmin";
 }
 
-<div class="card card-size-shopping">
+<div class="card card-size-max mt-5">
     <div class="card header bg-secondary text-white">
         <div class="pt-2 px-2">
             <div class="float-start">
@@ -21,7 +21,7 @@
             <div class=row>
                 <div class="col-md-12 p-2">
                     <div class="float-start">
-                        @Html.ActionLink("返回訂單列表","Index","Order",new {area="",id=SessionService.StringValue1} , new { @class = "btn btn-success" })
+                        @Html.ActionLink("返回訂單列表","Index","Order",new {area="User"} , new { @class = "btn btn-success" })
                     </div>
                 </div>
             </div>
@@ -174,4 +174,3 @@
         </div>
     </div>
 </div>
-

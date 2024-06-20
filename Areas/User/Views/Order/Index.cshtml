@@ -1,7 +1,7 @@
 @model IEnumerable<shopping.Models.Orders>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "未結訂單查詢";
     Layout = "_LayoutAdmin";
 }
 <div class="card border-secondary">
@@ -69,58 +69,60 @@
                     {
                         <tr>
                             <td>
+                                @Html.ActionLink("明細", "Detail", "Order", new { area = "User", id = item.Id },
+                                new { @class = "btn btn-primary"})
                                 @Html.ActionLink("狀態","Status", "Order", new { area = "User",id = item.Id}, 
                                 new{ @class = "btn btn-success" })
-                                @Html.ActionLink("取消", "Details", "Details", new { area = "", id = item.Id },
+                                @Html.ActionLink("取消", "Details", "Details", new { area = "User", id = item.Id },
                                 new { @class = "btn btn-danger", onclick = "return confirm('是否確定要取消?');" })
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.IsClosed)
+                                @Html.DisplayFor(modelItem => item.IsClosed)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.IsValid)
+                                @Html.DisplayFor(modelItem => item.IsValid)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.SheetNo)
+                                @Html.DisplayFor(modelItem => item.SheetNo)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.SheetDate)
+                                @Html.DisplayFor(modelItem => item.SheetDate)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.StatusName)
+                                @Html.DisplayFor(modelItem => item.StatusName)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.CustNo)
+                                @Html.DisplayFor(modelItem => item.CustNo)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.CustName)
+                                @Html.DisplayFor(modelItem => item.CustName)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.PaymentName)
+                                @Html.DisplayFor(modelItem => item.PaymentName)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.ShippingName)
+                                @Html.DisplayFor(modelItem => item.ShippingName)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.ReceiverName)
+                                @Html.DisplayFor(modelItem => item.ReceiverName)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.ReceiverEmail)
+                                @Html.DisplayFor(modelItem => item.ReceiverEmail)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.ReceiverAddress)
+                                @Html.DisplayFor(modelItem => item.ReceiverAddress)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.OrderAmount)
+                                @Html.DisplayFor(modelItem => item.OrderAmount)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.TaxAmount)
+                                @Html.DisplayFor(modelItem => item.TaxAmount)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.TotalAmount)
+                                @Html.DisplayFor(modelItem => item.TotalAmount)
                             </td>
                             <td>
-                                @Html.DisplayNameFor(item => item.Remark)
+                                @Html.DisplayFor(modelItem   => item.Remark)
                             </td>
                         </tr>
                     }
