@@ -4052,6 +4052,25 @@
             <param name="prodNo"></param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
+            <summary>
+            控制器建構子
+            </summary>
+            <param name="configuration">環境設定物件</param>
+            <param name="entities">EF資料管理物件</param>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Init">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Index">
+            <summary>
+            會員未結訂單列表
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Controllers.CartController.Index">
             <summary>
             購物車列表
@@ -4272,6 +4291,12 @@
             用訂單表頭Id取得整筆訂單表投資料
             </summary>
             <param name="orderId"></param>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.GetALLOrderList(System.Boolean)">
+            <summary>
+            取得所有會員訂單
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:shopping.Models.z_sqlPayments.GetDropDownList(System.Boolean)">
             <summary>

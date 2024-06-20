@@ -54,7 +54,7 @@
             <tbody>
             @foreach (var item in Model) {
                 <tr>
-                    <td>
+                    <td class="text-start">
                         @Html.ActionLink("明細", "Detail", "Order", new {area="", id=item.Id},new {@class="btn btn-success"})
                     </td>
                     <td>

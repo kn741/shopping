@@ -48,6 +48,7 @@ FROM Categorys WHERE ParentNo = '' ORDER BY SortNo , CategoryNo
         ";
             return dpr.ReadAll<Categorys>(str_query);
         }
+        
         public List<Categorys> GetDetailCategoryList(string parentNo)
         {
             using var dpr = new DapperRepository();

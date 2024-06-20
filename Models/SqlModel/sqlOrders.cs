@@ -179,5 +179,21 @@ VALUES
             model = dpr.ReadSingle<Orders>(sql_query, parm);
             return model;
         }
+
+        /// <summary>
+        /// 取得所有會員訂單
+        /// </summary>
+        /// <returns></returns>
+        public List<Orders> GetALLOrderList(bool isClosed)
+        {
+            var model = new List<Orders>();
+            string sql_query = GetSQLSelect();
+            sql_query += " WHERE Orders.IsClosed = @IsClosed";
+            sql_query += " ORDER BY SheetNo DESC";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("IsClosed", isClosed);
+            model = dpr.ReadAll<Orders>(sql_query, parm);
+            return model;
+        }
     }
 }
