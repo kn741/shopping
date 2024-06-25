@@ -220,7 +220,7 @@ VALUES
             sql_query += sql_where;
             if (!string.IsNullOrEmpty(SessionService.SearchText) && searchColumns.Count() > 0)
                 sql_query += dpr.GetSQLWhereBySearchColumn(EntityObject, searchColumns, sql_where, SessionService.SearchText);
-            sql_query += " ORDER BY SheetNo";
+            sql_query += GetSQLOrderBy();
             DynamicParameters parm = new DynamicParameters();
             parm.Add("IsClosed", isClosed);
             model = dpr.ReadAll<Orders>(sql_query, parm);

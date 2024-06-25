@@ -35,6 +35,8 @@ namespace shopping.Areas.User.Controllers
         {
             //初始化Session
             SessionService.SearchText = "";
+            SessionService.SortColumn = "";
+            SessionService.SortDirection = "";
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
 
@@ -146,6 +148,28 @@ namespace shopping.Areas.User.Controllers
         {
             object obj_text = Request.Form["SearchText"];
             SessionService.SearchText = (obj_text == null) ? string.Empty : obj_text.ToString();
+            return RedirectToAction("Index", "Order", new { area = "User" });
+        }
+
+        /// <summary>
+        /// 欄位排序
+        /// </summary>
+        /// <param name="id">指定排序的欄位</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult Sort(string id)
+        {
+            if (SessionService.SortColumn == id) 
+            {
+                SessionService.SortDirection = (SessionService.SortDirection == "asc") ? "desc" : "asc";
+            }
+            else
+            {
+                SessionService.SortColumn = id;
+                SessionService.SortDirection = "asc";
+            }
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
     }

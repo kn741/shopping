@@ -4111,6 +4111,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Sort(System.String)">
+            <summary>
+            欄位排序
+            </summary>
+            <param name="id">指定排序的欄位</param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Init">
             <summary>
             init
