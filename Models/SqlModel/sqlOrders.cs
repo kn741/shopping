@@ -180,10 +180,24 @@ VALUES
             dpr.Execute(sql_query, parm);
         }
         /// <summary>
+        /// 退貨訂單
+        /// </summary>
+        /// <param name="orderId">訂單編號</param>
+        public void ReturnOrder(int orderId)
+        {
+            string sql_query = "UPDATE Orders SET StatusCode = @StatusCode WHERE Id = @Id";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("Id", orderId);
+            parm.Add("StatusCode", "RT");
+            dpr.Execute(sql_query, parm);
+        }
+
+        /// <summary>
         /// 用訂單表頭Id取得整筆訂單表頭資料
         /// </summary>
         /// <param name="orderId"></param>
-        public Orders GetOrder(int orderId=0){
+        public Orders GetOrder(int orderId = 0)
+        {
             var model = new Orders();
             string sql_query = GetSQLSelect();
             sql_query += " WHERE Orders.Id = @Id";
@@ -199,10 +213,14 @@ VALUES
         /// <returns></returns>
         public List<Orders> GetALLOrderList(bool isClosed)
         {
+            var searchColumns = GetSearchColumns();
+            string sql_where = "WHERE Orders.isClosed = @IsClosed";
             var model = new List<Orders>();
             string sql_query = GetSQLSelect();
-            sql_query += " WHERE Orders.IsClosed = @IsClosed";
-            sql_query += " ORDER BY SheetNo DESC";
+            sql_query += sql_where;
+            if (!string.IsNullOrEmpty(SessionService.SearchText) && searchColumns.Count() > 0)
+                sql_query += dpr.GetSQLWhereBySearchColumn(EntityObject, searchColumns, sql_where, SessionService.SearchText);
+            sql_query += " ORDER BY SheetNo";
             DynamicParameters parm = new DynamicParameters();
             parm.Add("IsClosed", isClosed);
             model = dpr.ReadAll<Orders>(sql_query, parm);
@@ -225,7 +243,8 @@ VALUES
         /// </summary>
         /// <param name="orderId"></param>
         /// <param name="codeNo"></param>
-        public void ChangeStatus(int orderId, string codeNo){
+        public void ChangeStatus(int orderId, string codeNo)
+        {
             string sql_query = "UPDATE Orders SET StatusCode = @StatusCode WHERE Id = @Id";
             DynamicParameters parm = new DynamicParameters();
             parm.Add("Id", orderId);

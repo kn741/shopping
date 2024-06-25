@@ -9,18 +9,15 @@ using X.PagedList;
 
 namespace shopping.Areas.User.Controllers
 {
-    public class OrderController : Controller
+    
+    public class OrderQueryController : Controller
     {
+
         private readonly dbEntities db;
         private readonly IConfiguration Configuration;
 
-        /// <summary>
-        /// 控制器建構子
-        /// </summary>
-        /// <param name="configuration">環境設定物件</param>
-        /// <param name="entities">EF資料管理物件</param>
-        public OrderController(IConfiguration configuration, dbEntities entities)
-        {
+
+        public OrderQueryController(IConfiguration configuration, dbEntities entities){
             db = entities;
             Configuration = configuration;
         }
@@ -31,30 +28,29 @@ namespace shopping.Areas.User.Controllers
         [HttpGet]
         [Area("User")]
         [Login(RoleList = "User,Mis")]
-        public IActionResult Init()
-        {
-            //初始化Session
-            SessionService.SearchText = "";
+        public IActionResult Init(){
+
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
-
+        
         /// <summary>
         /// 會員未結訂單列表
         /// </summary>
+        /// <param name="page">目前頁數</param>
+        /// <param name="pageSize">每頁筆數</param>
         /// <returns></returns>
         [HttpGet]
         [Area("User")]
         [Login(RoleList = "User,Mis")]
-        public IActionResult Index(int page = 1, int pageSize = 5)
+        public IActionResult Index(int page = 1, int pageSize = 10)
         {
             using var order = new z_sqlOrders();
             var model = order.GetALLOrderList(false).ToPagedList(page, pageSize);
             ViewBag.PageInfo = $"第 {page} 頁，共 {model.PageCount}頁";
-            ViewBag.SearchText = SessionService.SearchText;
             SessionService.SetProgramInfo("", "未結訂單");
             ActionService.SetActionName(enAction.Index);
             return View(model);
-        }
+        }   
         /// <summary>
         /// 會員訂單列表
         /// </summary>
@@ -91,7 +87,7 @@ namespace shopping.Areas.User.Controllers
             return View(model);
         }
         /// <summary>
-        /// 會員訂單明細
+        /// 會員訂單狀態變更
         /// </summary>
         /// <param name="id">訂單表頭ID</param>
         /// <returns></returns>
@@ -105,10 +101,10 @@ namespace shopping.Areas.User.Controllers
             SessionService.SetProgramInfo("", "訂單狀態變更");
             ActionService.SetActionName(enAction.Edit);
             return View(model);
-        }
+        }   
 
         /// <summary>
-        /// 會員訂單明細
+        /// 會員訂單狀態變更
         /// </summary>
         /// <param name="model">訂單狀態模型</param>
         /// <returns></returns>
@@ -122,30 +118,17 @@ namespace shopping.Areas.User.Controllers
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
         /// <summary>
-        /// 取消訂單
+        /// 會員訂單退貨
         /// </summary>
         /// <param name="id">訂單Id</param>
         /// <returns></returns>
         [HttpGet]
         [Area("User")]
         [Login(RoleList = "User,Mis")]
-        public IActionResult Cancel(int id = 0)
+        public IActionResult Return(int id=0)
         {
             using var order = new z_sqlOrders();
-            order.CancelOrder(id);
-            return RedirectToAction("Index", "Order", new { area = "User" });
-        }
-        /// <summary>
-        /// 查詢
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        [Area("User")]
-        [Login(RoleList = "User,Mis")]
-        public IActionResult Search()
-        {
-            object obj_text = Request.Form["SearchText"];
-            SessionService.SearchText = (obj_text == null) ? string.Empty : obj_text.ToString();
+            order.ReturnOrder(id);
             return RedirectToAction("Index", "Order", new { area = "User" });
         }
     }

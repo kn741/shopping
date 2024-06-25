@@ -1,3 +1,5 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
 @model IEnumerable<shopping.Models.Orders>
 
 @{
@@ -10,6 +12,40 @@
     </div>
     <div class="card-body">
         <div class="overflow-scroll">
+            <div class="row mx-1">
+                <div class="col-md-12">
+                    <div class="float-start">
+                        @Html.PagedListPager((IPagedList)Model, x => Url.Action("Index", "Order", new
+                            {
+                                area = "User",
+                                page = x
+                            }))
+                    </div>
+                    <div class="float-start page-info">
+                        @ViewBag.PageInfo
+                    </div>
+                    <div class="float-end">
+                        @using (Html.BeginForm("Search", "Order", new { area = "User" }, FormMethod.Post))
+                        {
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span class="control-label fw-bold">查詢條件：</span>
+                                    </td>
+                                    <td class="pr-2">
+                                        <input id="SearchText" name="SearchText" type="text"
+                                            class="form-control data-list-search-text" placeholder="請輸入查詢條件..."
+                                            value="@ViewBag.SearchText" style="width:200px;" />
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="查詢" class="btn btn-primary" />
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
             <table class="table table-bordered">
                 <thead class="table-secondary">
                     <tr>
@@ -70,11 +106,11 @@
                         <tr>
                             <td>
                                 @Html.ActionLink("明細", "Detail", "Order", new { area = "User", id = item.Id },
-                                new { @class = "btn btn-primary"})
-                                @Html.ActionLink("狀態","Status", "Order", new { area = "User",id = item.Id}, 
-                                new{ @class = "btn btn-success" })
+                                         new { @class = "btn btn-primary" })
+                                @Html.ActionLink("狀態", "Status", "Order", new { area = "User", id = item.Id },
+                                         new { @class = "btn btn-success" })
                                 @Html.ActionLink("取消", "Cancel", "Order", new { area = "User", id = item.Id },
-                                new { @class = "btn btn-danger", onclick = "return confirm('是否確定要取消?');" })
+                                         new { @class = "btn btn-danger", onclick = "return confirm('是否確定要取消?');" })
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.IsClosed)
@@ -122,7 +158,7 @@
                                 @Html.DisplayFor(modelItem => item.TotalAmount)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem   => item.Remark)
+                                @Html.DisplayFor(modelItem => item.Remark)
                             </td>
                         </tr>
                     }

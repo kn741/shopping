@@ -4065,7 +4065,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:shopping.Areas.User.Controllers.OrderController.Index">
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Index(System.Int32,System.Int32)">
             <summary>
             會員未結訂單列表
             </summary>
@@ -4101,6 +4101,60 @@
         <member name="M:shopping.Areas.User.Controllers.OrderController.Cancel(System.Int32)">
             <summary>
             取消訂單
+            </summary>
+            <param name="id">訂單Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderController.Search">
+            <summary>
+            查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Init">
+            <summary>
+            init
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Index(System.Int32,System.Int32)">
+            <summary>
+            會員未結訂單列表
+            </summary>
+            <param name="page">目前頁數</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.OrderAll">
+            <summary>
+            會員訂單列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Detail(System.Int32)">
+            <summary>
+            會員訂單明細
+            </summary>
+            <param name="id">訂單表頭ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Status(System.Int32)">
+            <summary>
+            會員訂單狀態變更
+            </summary>
+            <param name="id">訂單表頭ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Status(shopping.Models.Orders)">
+            <summary>
+            會員訂單狀態變更
+            </summary>
+            <param name="model">訂單狀態模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Return(System.Int32)">
+            <summary>
+            會員訂單退貨
             </summary>
             <param name="id">訂單Id</param>
             <returns></returns>
@@ -4325,6 +4379,12 @@
             取消訂單
             </summary>
             <param name="orderId">訂單Id</param>
+        </member>
+        <member name="M:shopping.Models.z_sqlOrders.ReturnOrder(System.Int32)">
+            <summary>
+            退貨訂單
+            </summary>
+            <param name="orderId">訂單編號</param>
         </member>
         <member name="M:shopping.Models.z_sqlOrders.GetOrder(System.Int32)">
             <summary>
