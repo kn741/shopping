@@ -32,9 +32,17 @@ namespace shopping.Controllers
         [HttpGet]
         public IActionResult AddCart(string id, string prodSpec = "",int qty = 1)
         {
+
             using var cart = new z_sqlCarts();
             cart.AddCart(id, prodSpec, qty);
-            return RedirectToAction("Index", "Cart", new { area = "" });
+            
+            string str_action = SessionService.StringValue1;
+            SessionService.StringValue1 = "";
+
+            if(str_action == "add")return RedirectToAction("Index", "Cart", new { area = "" });
+            if(str_action == "buy")return RedirectToAction("Payment", "Cart", new { area = "" });
+
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
 
         /// <summary>
@@ -111,6 +119,20 @@ namespace shopping.Controllers
         [HttpPost]
         public IActionResult AddCart()
         {
+            string str_button = "";
+            object obj_add = Request.Form["add"];
+            object obj_buy = Request.Form["buy"];
+            string str_add = (obj_add == null) ? string.Empty : obj_add.ToString();
+            string str_buy = (obj_buy == null) ? string.Empty : obj_buy.ToString();
+
+            if(str_add== "加入購物車")str_button = "add";
+            if(str_buy== "立即結帳")str_button = "buy";
+            
+            if(str_button != "add"&&str_button != "buy")return RedirectToAction("Index", "Home", new { area = "" });
+            SessionService.StringValue1 = str_button;
+
+            if (str_button == "buy" && !SessionService.IsLogin) return RedirectToAction("Login", "User", new { area = "" });
+
             string str_prod_spec = "";
             object obj_text = Request.Form["qtybutton"];
             string str_qty = (obj_text == null) ? "1" : obj_text.ToString();

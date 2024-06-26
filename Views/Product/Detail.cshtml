@@ -136,14 +136,15 @@
                             <!-- 加入購物車/立即結帳 btn -->
                             <div>
                                 <div class="float-start ms-4 me-2">
-                                    <input type="submit" value="加入購物車 " class="btn btn-outline-secondary">
+                                    <input type="submit" id="add" name="add" value="加入購物車" class="btn btn-outline-secondary">
                                     @* <a href="#" id="addCart" data-tooltip="加入購物車"
                                     @Url.Action("AddCart", "Cart", new {area="",id = Model.ProdNo,qty=1})
                                         class="add-cart add-cart-text btnmy" data-placement="left"
                                         tabindex="0">加入購物車<i class="fa fa-cart-plus"></i></a> *@
                                 </div>
                                 <div class="float-start">
-                                    <a href="@Url.Action("Checkout","Cart",new {area="", id=Model.ProdNo})" data-tooltip="立即結帳" class="btn btn-outline-secondary">立即結帳</a>
+                                    <input type="submit" id="buy" name="buy" value="立即結帳" class="btn btn-outline-secondary">
+                                    @* <a href="@Url.Action("Checkout","Cart",new {area="", id=Model.ProdNo})" data-tooltip="立即結帳" class="btn btn-outline-secondary">立即結帳</a> *@
                                 </div>
                             </div>
                             }
