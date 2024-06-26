@@ -52,6 +52,7 @@ public class z_metaUsers
     [Display(Name = "職稱代號")]
     public string? TitleNo { get; set; }
     [Display(Name = "出生日期")]
+    [DataType(DataType.Text)]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
     public DateTime? Birthday { get; set; }
     [Display(Name = "到職日期")]

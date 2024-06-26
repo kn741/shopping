@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using X.PagedList;
 
@@ -39,7 +40,7 @@ namespace shopping.Areas.User.Controllers
         }
 
         /// <summary>
-        /// 會員未結訂單列表
+        /// 會員列表
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -47,13 +48,63 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult Index(int page = 1, int pageSize = 5)
         {
-            using var order = new z_sqlUsers();
-            var model = order.GetRoleUserList("Member").ToPagedList(page, pageSize);
+            using var user = new z_sqlUsers();
+            var model = user.GetRoleUserList("Member").ToPagedList(page, pageSize);
             ViewBag.PageInfo = $"第 {page} 頁，共 {model.PageCount}頁";
             ViewBag.SearchText = SessionService.SearchText;
             SessionService.SetProgramInfo("", "會員資料維護");
             ActionService.SetActionName(enAction.Index);
             return View(model);
-        } 
+        }
+
+        /// <summary>
+        /// 會員新增/修改
+        /// </summary>
+        /// <param name="id">會員id</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult CreateEdit(int id=0)
+        {
+            using var user = new z_sqlUsers();
+            var model = new Users();
+            if (id == 0){
+                //新增時的預設值
+                model.Id=0;
+                model.RoleNo="Member";
+                model.GenderCode="M";
+                model.Birthday=DateTime.Today;
+                SessionService.SetProgramInfo("", "新增會員資料");
+            }
+            else{
+                model = user.GetData(id);
+                SessionService.SetProgramInfo("", "修改會員資料");
+            }
+            
+            return View(model);
+        }
+
+        /// <summary>
+        /// 會員新增/修改
+        /// </summary>
+        /// <param name="model">會員資料</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult CreateEdit(Users model)
+        {
+            if(!ModelState.IsValid)return View(model);
+            var user = new z_sqlUsers();
+            if(!user.CheckCreateEditValidation(model)){
+                ModelState.AddModelError("UserNo", "會員帳號或電子信箱重覆建檔!");
+                return View(model);
+            }
+            user.CreateEdit(model,model.Id);
+
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
+        }
+
     }
 }

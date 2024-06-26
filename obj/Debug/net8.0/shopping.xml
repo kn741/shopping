@@ -4067,8 +4067,22 @@
         </member>
         <member name="M:shopping.Areas.User.Controllers.MemberController.Index(System.Int32,System.Int32)">
             <summary>
-            會員未結訂單列表
+            會員列表
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.CreateEdit(System.Int32)">
+            <summary>
+            會員新增/修改
+            </summary>
+            <param name="id">會員id</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.CreateEdit(shopping.Models.Users)">
+            <summary>
+            會員新增/修改
+            </summary>
+            <param name="model">會員資料</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
@@ -4653,6 +4667,13 @@
             取得指定角色的使用者列表
             </summary>
             <param name="roleNo">角色代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.CheckCreateEditValidation(shopping.Models.Users)">
+            <summary>
+            檢查新增及修改時，會員編號或電子信箱是否重覆，沒有重複=true
+            </summary>
+            <param name="model">輸入資料</param>
             <returns></returns>
         </member>
         <member name="T:dmCartTotal">

@@ -464,6 +464,22 @@ VALUES
             model = dpr.ReadAll<Users>(sql_query, parm); 
             return model;
         }
+        /// <summary>
+        /// 檢查新增及修改時，會員編號或電子信箱是否重覆，沒有重複=true
+        /// </summary>
+        /// <param name="model">輸入資料</param>
+        /// <returns></returns>
+        public bool CheckCreateEditValidation(Users model){
+            bool bln_value = true;
+            string sql_query = "SELECT Id FROM Users WHERE (Id<>@Id) AND (UserNo = @UserNo OR ContactEmail = @ContactEmail)";
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("Id", model.Id);
+            parm.Add("UserNo", model.UserNo);
+            parm.Add("ContactEmail", model.ContactEmail);
+            var data = dpr.ReadSingle<Users>(sql_query, parm);
+            if(data != null)bln_value = false;
+            return bln_value;
+        }
 
     }
 }

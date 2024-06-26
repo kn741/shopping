@@ -70,12 +70,12 @@
                         <th>
                             @Html.ColumnSort("Users.UserName", @Html.DisplayNameFor(model => model.UserName))
                         </th>
-                        <th>
-                            @Html.ColumnSort("vi_CodeUser.CodeName", @Html.DisplayNameFor(model => model.CodeName))
+                        @* <th>
+                        @Html.ColumnSort("vi_CodeUser.CodeName", @Html.DisplayNameFor(model => model.CodeName))
                         </th>
                         <th>
-                            @Html.ColumnSort("Roles.RoleName", @Html.DisplayNameFor(model => model.RoleName))
-                        </th>
+                        @Html.ColumnSort("Roles.RoleName", @Html.DisplayNameFor(model => model.RoleName))
+                        </th> *@
                         <th>
                             @Html.ColumnSort("vi_CodeGender.CodeName", @Html.DisplayNameFor(model => model.GenderName))
                         </th>
@@ -89,7 +89,8 @@
                             @Html.ColumnSort("Users.ContactTel", @Html.DisplayNameFor(model => model.ContactTel))
                         </th>
                         <th>
-                            @Html.ColumnSort("Users.ContactAddress", @Html.DisplayNameFor(model => model.ContactAddress))
+                            @Html.ColumnSort("Users.ContactAddress", @Html.DisplayNameFor(model =>
+                                     model.ContactAddress))
                         </th>
                         <th>
                             @Html.ColumnSort("Users.Remark", @Html.DisplayNameFor(model => model.Remark))
@@ -111,6 +112,11 @@
                                         area = ActionService.Area,
                                         id = item.Id
                                     }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("重設密碼", "RestPassword", ActionService.Controller, new
+                                    {
+                                        area = ActionService.Area,
+                                        id = item.Id
+                                    }, new { @class = "btn btn-warning" })
                             </td>
 
                             <td>
@@ -122,12 +128,12 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.UserName)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CodeName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.RoleName)
-                            </td>
+                            @* <td>
+                        @Html.DisplayFor(modelItem => item.CodeName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                        </td> *@
                             <td>
                                 @Html.DisplayFor(modelItem => item.GenderName)
                             </td>

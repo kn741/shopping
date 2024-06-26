@@ -1,0 +1,123 @@
+@model shopping.Models.Users
+
+@{
+    string str_action = (Model.Id == 0) ? "新增" : "修改";
+    ViewData["Title"] = $"會員資料{str_action}";
+    Layout = "_LayoutAdmin";
+    List<SelectListItem> GenderList = new List<SelectListItem>();
+    using var sqlData = new z_sqlCodeDatas();
+    GenderList = sqlData.GetDropDownList("Gender", false);
+}
+
+<div class="card card-size-medium mt-5">
+    <div class="card header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@str_action</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Password)
+                @Html.HiddenFor(model => model.CodeNo)
+                @Html.HiddenFor(model => model.RoleNo)
+                @Html.HiddenFor(model => model.DeptNo)
+                @Html.HiddenFor(model => model.TitleNo)
+                @Html.HiddenFor(model => model.OnboardDate)
+                @Html.HiddenFor(model => model.LeaveDate)
+                @Html.HiddenFor(model => model.ValidateCode)
+                @Html.HiddenFor(model => model.NotifyPassword)
+
+
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.IsValid, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.CheckBoxFor(model => model.IsValid, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.IsValid, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.UserNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.UserNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.GenderCode, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.GenderCode,GenderList, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.GenderCode, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                        @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.ContactTel, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ContactTel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ContactTel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.ContactAddress, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ContactAddress, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ContactAddress, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                        <hr>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div class="float-start">
+                                    <input type="submit" value="資料存檔" class="btn btn-primary" />
+                                </div>
+                                <div class="float-end">
+                                    @Html.ActionLink("返回列表", "Index", ActionService.Controller, new
+                                        {
+                                            area =
+                                             ActionService.Area
+                                        },
+                                             new { @class = "btn btn-primary" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
