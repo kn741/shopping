@@ -1,0 +1,155 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IEnumerable<shopping.Models.Users>
+
+@{
+    ViewData["Title"] = "會員基本資料維護";
+    Layout = "_LayoutAdmin";
+}
+<div class="card card-size-max border-secondary">
+    <div class="card-header bg-secondary text-white">
+        <div class="pt-2 px-2">
+            <div class="float-start">
+                <h4>@SessionService.ActionName</h4>
+            </div>
+            <div class="float-end">
+                <h4>@SessionService.PrgInfo</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="overflow-scroll">
+            <div class="row mx-1">
+                <div class="col-md-12">
+                    <div class="float-start">
+                        @Html.PagedListPager((IPagedList)Model, x => Url.Action("Index", ActionService.Controller, new
+                            {
+                                area = ActionService.Area,
+                                page = x
+                            }))
+                    </div>
+                    <div class="float-start page-info">
+                        @ViewBag.PageInfo
+                    </div>
+                    <div class="float-end">
+                        @using (Html.BeginForm("Search", ActionService.Controller, new { area = ActionService.Area },
+                        FormMethod.Post))
+                        {
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span class="control-label fw-bold">查詢條件：</span>
+                                    </td>
+                                    <td class="pr-2">
+                                        <input id="SearchText" name="SearchText" type="text"
+                                            class="form-control data-list-search-text" placeholder="請輸入查詢條件..."
+                                            value="@ViewBag.SearchText" style="width:200px;" />
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="查詢" class="btn btn-primary" />
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>
+                            @Html.ActionLink("新增", "CreateEdit", ActionService.Controller, new
+                                { area = ActionService.Area, id = 0 }, new { @class = "btn btn-primary" })
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.IsValid", @Html.DisplayNameFor(model => model.IsValid))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.UserNo", @Html.DisplayNameFor(model => model.UserNo))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.UserName", @Html.DisplayNameFor(model => model.UserName))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("vi_CodeUser.CodeName", @Html.DisplayNameFor(model => model.CodeName))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Roles.RoleName", @Html.DisplayNameFor(model => model.RoleName))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("vi_CodeGender.CodeName", @Html.DisplayNameFor(model => model.GenderName))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.Birthday", @Html.DisplayNameFor(model => model.Birthday))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.ContactEmail", @Html.DisplayNameFor(model => model.ContactEmail))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.ContactTel", @Html.DisplayNameFor(model => model.ContactTel))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.ContactAddress", @Html.DisplayNameFor(model => model.ContactAddress))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.Remark", @Html.DisplayNameFor(model => model.Remark))
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink("修改", "CreateEdit", ActionService.Controller, new
+                                    {
+                                        area = ActionService.Area,
+                                        id = item.Id
+                                    }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("刪除", "Delete", ActionService.Controller, new
+                                    {
+                                        area = ActionService.Area,
+                                        id = item.Id
+                                    }, new { @class = "btn btn-danger" })
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsValid)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CodeName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoleName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GenderName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Birthday)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContactEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContactTel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContactAddress)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Remark)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

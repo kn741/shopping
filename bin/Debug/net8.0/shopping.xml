@@ -4052,6 +4052,25 @@
             <param name="prodNo"></param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
+            <summary>
+            控制器建構子
+            </summary>
+            <param name="configuration">環境設定物件</param>
+            <param name="entities">EF資料管理物件</param>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.Init">
+            <summary>
+            init
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.Index(System.Int32,System.Int32)">
+            <summary>
+            會員未結訂單列表
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
             <summary>
             控制器建構子
@@ -4182,6 +4201,12 @@
             欄位排序
             </summary>
             <param name="id">指定排序的欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Return(System.Int32)">
+            <summary>
+            退貨
+            </summary>
             <returns></returns>
         </member>
         <member name="M:shopping.Controllers.CartController.Index">
@@ -4621,6 +4646,13 @@
             <summary>
             傳回付款結帳用會員資料
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.GetRoleUserList(System.String)">
+            <summary>
+            取得指定角色的使用者列表
+            </summary>
+            <param name="roleNo">角色代號</param>
             <returns></returns>
         </member>
         <member name="T:dmCartTotal">

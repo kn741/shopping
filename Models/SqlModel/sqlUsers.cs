@@ -442,6 +442,28 @@ VALUES
             
             return model;
         } 
+        /// <summary>
+        /// 取得指定角色的使用者列表
+        /// </summary>
+        /// <param name="roleNo">角色代號</param>
+        /// <returns></returns>
+        public List<Users> GetRoleUserList(string roleNo){
+            var searchColumn = GetSearchColumns();
+            string sql_where = " WHERE Users.RoleNo = @RoleNo";
+            string sql_query = GetSQLSelect();
+            var model = new List<Users>();
+            
+            sql_query += sql_where;
+            if(!string.IsNullOrEmpty(SessionService.SearchText)){
+                sql_query+=dpr.GetSQLWhereBySearchColumn(EntityObject,searchColumn,sql_where,SessionService.SearchText);
+            }
+            sql_query+=GetSQLOrderBy();
+            
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("RoleNo", roleNo);
+            model = dpr.ReadAll<Users>(sql_query, parm); 
+            return model;
+        }
 
     }
 }

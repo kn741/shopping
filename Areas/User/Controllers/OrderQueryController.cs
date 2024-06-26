@@ -172,5 +172,19 @@ namespace shopping.Areas.User.Controllers
             }
             return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
+
+        /// <summary>
+        /// 退貨
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult Return(int id=0)
+        {
+            using var order = new z_sqlOrders();
+            order.ReturnOrder(id);
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
+        }
     }
 }
