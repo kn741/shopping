@@ -37,7 +37,7 @@ namespace shopping.Areas.User.Controllers
             SessionService.SearchText = "";
             SessionService.SortColumn = "";
             SessionService.SortDirection = "";
-            return RedirectToAction("Index", "Order", new { area = "User" });
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace shopping.Areas.User.Controllers
         {
             using var order = new z_sqlOrders();
             order.ChangeStatus(model.Id, model.StatusCode);
-            return RedirectToAction("Index", "Order", new { area = "User" });
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
         /// <summary>
         /// 取消訂單
@@ -135,7 +135,7 @@ namespace shopping.Areas.User.Controllers
         {
             using var order = new z_sqlOrders();
             order.CancelOrder(id);
-            return RedirectToAction("Index", "Order", new { area = "User" });
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
         /// <summary>
         /// 查詢
@@ -170,7 +170,7 @@ namespace shopping.Areas.User.Controllers
                 SessionService.SortColumn = id;
                 SessionService.SortDirection = "asc";
             }
-            return RedirectToAction("Index", "Order", new { area = "User" });
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
     }
 }

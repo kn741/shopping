@@ -4118,6 +4118,13 @@
             <param name="id">指定排序的欄位</param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
+            <summary>
+            控制器建構子
+            </summary>
+            <param name="configuration">環境設定物件</param>
+            <param name="entities">EF資料管理物件</param>
+        </member>
         <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Init">
             <summary>
             init
@@ -4128,8 +4135,6 @@
             <summary>
             會員未結訂單列表
             </summary>
-            <param name="page">目前頁數</param>
-            <param name="pageSize">每頁筆數</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderQueryController.OrderAll">
@@ -4147,23 +4152,36 @@
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Status(System.Int32)">
             <summary>
-            會員訂單狀態變更
+            會員訂單明細
             </summary>
             <param name="id">訂單表頭ID</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Status(shopping.Models.Orders)">
             <summary>
-            會員訂單狀態變更
+            會員訂單明細
             </summary>
             <param name="model">訂單狀態模型</param>
             <returns></returns>
         </member>
-        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Return(System.Int32)">
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Cancel(System.Int32)">
             <summary>
-            會員訂單退貨
+            取消訂單
             </summary>
             <param name="id">訂單Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Search">
+            <summary>
+            查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.OrderQueryController.Sort(System.String)">
+            <summary>
+            欄位排序
+            </summary>
+            <param name="id">指定排序的欄位</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Controllers.CartController.Index">

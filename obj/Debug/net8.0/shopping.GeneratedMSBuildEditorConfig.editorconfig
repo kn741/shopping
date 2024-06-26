@@ -30,6 +30,22 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/OrderQuery/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xPcmRlclF1ZXJ5XERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/OrderQuery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xPcmRlclF1ZXJ5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/OrderQuery/OrderAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xPcmRlclF1ZXJ5XE9yZGVyQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/OrderQuery/Status.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xPcmRlclF1ZXJ5XFN0YXR1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kanza/OneDrive/Desktop/workspace/dotnet/project/shopping/Areas/User/Views/Order/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xPcmRlclxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
