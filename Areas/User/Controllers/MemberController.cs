@@ -112,16 +112,18 @@ namespace shopping.Areas.User.Controllers
         /// </summary>
         /// <param name="id">會員ID</param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost]
         [Area("User")]
         [Login(RoleList = "User,Mis")]
-        public IActionResult Delete(int id = 0)
+        public JsonResult Delete(int id = 0)
         {
             using var user = new z_sqlUsers();
             var model = user.GetData(id);   
             user.Delete(id);
-            TempData["SuccessMessage"] = $"{model.UserNo}{model.UserName}會員已成功刪除!";
-            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
+            var result = new dmJsonMessage();
+            result.Mode = true;
+            result.Message = $"{model.UserNo} {model.UserName} 會員已成功刪除!";
+            return Json(result);
         }
 
     }

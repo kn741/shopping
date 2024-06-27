@@ -100,6 +100,7 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
+                        string str_data = $"{item.UserNo} {item.UserName}";
                         <tr>
                             <td>
                                 @Html.ActionLink("修改", "CreateEdit", ActionService.Controller, new
@@ -107,11 +108,13 @@
                                         area = ActionService.Area,
                                         id = item.Id
                                     }, new { @class = "btn btn-success" })
-                                @Html.ActionLink("刪除", "Delete", ActionService.Controller, new
+                                @* @Html.ActionLink("刪除", "Delete", ActionService.Controller, new
                                     {
                                         area = ActionService.Area,
                                         id = item.Id
-                                    }, new { @class = "btn btn-danger",onclick = "return confirm('是否確定要刪除?');"})
+                                    }, new { @class = "btn btn-danger",onclick = "return confirm('是否確定要刪除?');"}) *@
+                                <input type="button" id="delete" value="刪除" class="btn btn-danger"
+                                onclick="DeleteData(@item.Id,'@str_data')" />
                                 @Html.ActionLink("重設密碼", "RestPassword", ActionService.Controller, new
                                     {
                                         area = ActionService.Area,

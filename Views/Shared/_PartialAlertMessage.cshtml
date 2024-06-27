@@ -53,7 +53,7 @@
         }).then(function (result) {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "@ActionService.CurrentActionLinkUrl("DeleteRow")",
+                    url: "@Url.Action("Delete", ActionService.Controller, new { area = ActionService.Area })",
                     data: { "id": id },
                     type: "POST",
                     dataType: "json",
