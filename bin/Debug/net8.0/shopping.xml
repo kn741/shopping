@@ -4073,16 +4073,23 @@
         </member>
         <member name="M:shopping.Areas.User.Controllers.MemberController.CreateEdit(System.Int32)">
             <summary>
-            會員新增/修改
+            會員新增/修改(GET)
             </summary>
             <param name="id">會員id</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.MemberController.CreateEdit(shopping.Models.Users)">
             <summary>
-            會員新增/修改
+            會員新增/修改(POST)
             </summary>
             <param name="model">會員資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.Delete(System.Int32)">
+            <summary>
+            會員刪除
+            </summary>
+            <param name="id">會員ID</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">

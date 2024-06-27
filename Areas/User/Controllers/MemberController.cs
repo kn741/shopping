@@ -58,7 +58,7 @@ namespace shopping.Areas.User.Controllers
         }
 
         /// <summary>
-        /// 會員新增/修改
+        /// 會員新增/修改(GET)
         /// </summary>
         /// <param name="id">會員id</param>
         /// <returns></returns>
@@ -86,7 +86,7 @@ namespace shopping.Areas.User.Controllers
         }
 
         /// <summary>
-        /// 會員新增/修改
+        /// 會員新增/修改(POST)
         /// </summary>
         /// <param name="model">會員資料</param>
         /// <returns></returns>
@@ -99,10 +99,28 @@ namespace shopping.Areas.User.Controllers
             var user = new z_sqlUsers();
             if(!user.CheckCreateEditValidation(model)){
                 ModelState.AddModelError("UserNo", "會員帳號或電子信箱重覆建檔!");
+                // TempData["ErrorMessage"] = $"{model.UserNo},{model.ContactEmail}會員帳號或電子信箱重覆建檔!";
                 return View(model);
             }
             user.CreateEdit(model,model.Id);
 
+            return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
+        }
+
+        /// <summary>
+        /// 會員刪除
+        /// </summary>
+        /// <param name="id">會員ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Area("User")]
+        [Login(RoleList = "User,Mis")]
+        public IActionResult Delete(int id = 0)
+        {
+            using var user = new z_sqlUsers();
+            var model = user.GetData(id);   
+            user.Delete(id);
+            TempData["SuccessMessage"] = $"{model.UserNo}{model.UserName}會員已成功刪除!";
             return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }
 

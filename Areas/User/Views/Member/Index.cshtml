@@ -111,12 +111,12 @@
                                     {
                                         area = ActionService.Area,
                                         id = item.Id
-                                    }, new { @class = "btn btn-danger" })
+                                    }, new { @class = "btn btn-danger",onclick = "return confirm('是否確定要刪除?');"})
                                 @Html.ActionLink("重設密碼", "RestPassword", ActionService.Controller, new
                                     {
                                         area = ActionService.Area,
                                         id = item.Id
-                                    }, new { @class = "btn btn-warning" })
+                                    }, new { @class = "btn btn-warning ",onclick = "return confirm('是否確定要重設密碼');" })
                             </td>
 
                             <td>

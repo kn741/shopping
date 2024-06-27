@@ -30,14 +30,7 @@
         })
     </script>                                 
 }
-@if (TempData["ErrorMessage"] != null)
-{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            toastr.error('@TempData["ErrorMessage"]')
-        })
-    </script>                                 
-}
+
 <script>
     function DeleteData(id, data) {
         var message = '確認要刪除';
