@@ -3686,6 +3686,13 @@
             <param name="mailObject">電子郵件物件</param>
             <returns></returns>
         </member>
+        <member name="M:SendMailService.MemberResetPassword(MailObject)">
+            <summary>
+            帳號重設密碼寄發驗證的電子郵件
+            </summary>
+            <param name="mailObject">電子郵件物件</param>
+            <returns></returns>
+        </member>
         <member name="M:SendMailService.ContactUs(MailObject)">
              <summary>
             連絡我們的電子郵件
@@ -4052,6 +4059,59 @@
             <param name="prodNo"></param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
+            <summary>
+            控制器建構子
+            </summary>
+            <param name="configuration">環境設定物件</param>
+            <param name="entities">EF資料管理物件</param>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.Init">
+            <summary>
+            init
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.Index(System.Int32,System.Int32)">
+            <summary>
+            會員列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.CreateEdit(System.Int32)">
+            <summary>
+            分類新增/修改(GET)
+            </summary>
+            <param name="id">會員id</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.CreateEdit(shopping.Models.Categorys)">
+            <summary>
+            會員新增/修改(POST)
+            </summary>
+            <param name="model">會員資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.Delete(System.Int32)">
+            <summary>
+            會員刪除
+            </summary>
+            <param name="id">會員ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.Search">
+            <summary>
+            查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.CategoryController.Sort(System.String)">
+            <summary>
+            欄位排序
+            </summary>
+            <param name="id">指定排序的欄位</param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Areas.User.Controllers.MemberController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
             <summary>
             控制器建構子
@@ -4090,6 +4150,19 @@
             會員刪除
             </summary>
             <param name="id">會員ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.Search">
+            <summary>
+            查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Areas.User.Controllers.MemberController.Sort(System.String)">
+            <summary>
+            欄位排序
+            </summary>
+            <param name="id">指定排序的欄位</param>
             <returns></returns>
         </member>
         <member name="M:shopping.Areas.User.Controllers.OrderController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,shopping.Models.dbEntities)">
@@ -4399,6 +4472,13 @@
             <param name="categoryNo">分類代號</param>
             <returns></returns>
         </member>
+        <member name="M:shopping.Models.z_sqlCategorys.GetDataList(System.String)">
+            <summary>
+            取得指定父階下的所有子階分類資料
+            </summary>
+            <param name="parentNo"></param>
+            <returns></returns>
+        </member>
         <member name="M:shopping.Models.z_sqlOrderDetails.CreateNewOrderDetail(System.String)">
             <summary>
             購物車資訊新增到訂單明細
@@ -4654,6 +4734,13 @@
             重設密碼設定變更狀態為未審核,存入新密碼
             </summary>
             <param name="model">重設密碼資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:shopping.Models.z_sqlUsers.ResetPassword(System.Int32)">
+            <summary>
+            使用者重設密碼(無驗證)
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:shopping.Models.z_sqlUsers.ResetPasswordConfirm(System.String)">

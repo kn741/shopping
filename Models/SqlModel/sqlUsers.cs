@@ -390,6 +390,33 @@ VALUES
             return str_code;
         }
         /// <summary>
+        /// 使用者重設密碼(無驗證)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string ResetPassword(int id){
+            using var user = new z_sqlUsers();
+            using var cryp = new CryptographyService();
+            string str_password = "";
+
+            var userData = user.GetData(id);
+            if(userData == null) return "";
+
+            //設定新密碼
+            string str_guid = Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0,10);
+            str_password = cryp.StringToSHA256(str_guid);
+            
+            //更新資料
+            DynamicParameters parm1 = new DynamicParameters();
+            string sql_query = "UPDATE Users SET Password = @Password WHERE UserNo = @UserNo";
+            parm1.Add("Password", str_password);
+            parm1.Add("UserNo", userData.UserNo);
+            dpr.Execute(sql_query, parm1);
+
+            return str_guid;
+        }
+
+        /// <summary>
         /// 重設密碼設定新密碼並變更狀態為已審核
         /// </summary>
         /// <param name="validateCode">驗證碼</param>

@@ -11,8 +11,8 @@ namespace shopping.Models
         {
             OrderByColumn = SessionService.SortColumn;
             OrderByDirection = SessionService.SortDirection;
-            DefaultOrderByColumn = "ParentNo ASC, SortNo ASC, CategoryNo ASC";
-            DefaultOrderByDirection = "";
+            DefaultOrderByColumn = "ParentNo, SortNo, CategoryNo";
+            DefaultOrderByDirection = "ASC,ASC,ASC";
             if (string.IsNullOrEmpty(OrderByColumn)) OrderByColumn = DefaultOrderByColumn;
             if (string.IsNullOrEmpty(OrderByDirection)) OrderByDirection = DefaultOrderByDirection;
         }
@@ -48,7 +48,7 @@ FROM Categorys WHERE ParentNo = '' ORDER BY SortNo , CategoryNo
         ";
             return dpr.ReadAll<Categorys>(str_query);
         }
-        
+
         public List<Categorys> GetDetailCategoryList(string parentNo)
         {
             using var dpr = new DapperRepository();
@@ -126,6 +126,22 @@ FROM Categorys WHERE ParentNo = @ParentNo ORDER BY SortNo , CategoryNo
                 parm.Add("CategoryNo", categoryNo);
             }
             model = dpr.ReadSingle<Categorys>(sql_query, parm);
+            return model;
+        }
+        /// <summary>
+        /// 取得指定父階下的所有子階分類資料
+        /// </summary>
+        /// <param name="parentNo"></param>
+        /// <returns></returns>
+        public List<Categorys> GetDataList(string parentNo = "")
+        {
+            string sql_query = GetSQLSelect();
+            string sql_where = "WHERE ParentNo = @ParentNo ";
+            sql_query += sql_where;
+            sql_query += GetSQLOrderBy();
+            DynamicParameters parm = new DynamicParameters();
+            parm.Add("ParentNo", parentNo);
+            var model = dpr.ReadAll<Categorys>(sql_query, parm);
             return model;
         }
 

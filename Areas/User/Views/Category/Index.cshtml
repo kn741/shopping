@@ -1,9 +1,9 @@
 @using X.PagedList.Mvc.Core;
 @using X.PagedList;
-@model IEnumerable<shopping.Models.Users>
+@model IEnumerable<shopping.Models.Categorys>
 
 @{
-    ViewData["Title"] = "會員基本資料維護";
+    ViewData["Title"] = "分類基本資料維護";
     Layout = "_LayoutAdmin";
 }
 <div class="card card-size-max border-secondary">
@@ -62,45 +62,26 @@
                                 { area = ActionService.Area, id = 0 }, new { @class = "btn btn-primary" })
                         </th>
                         <th>
-                            @Html.ColumnSort("Users.IsValid", @Html.DisplayNameFor(model => model.IsValid))
+                            @Html.ColumnSort("Categorys.IsEnabled", @Html.DisplayNameFor(model => model.IsEnabled))
                         </th>
                         <th>
-                            @Html.ColumnSort("Users.UserNo", @Html.DisplayNameFor(model => model.UserNo))
+                            @Html.ColumnSort("Categorys.SortNo", @Html.DisplayNameFor(model => model.SortNo))
                         </th>
                         <th>
-                            @Html.ColumnSort("Users.UserName", @Html.DisplayNameFor(model => model.UserName))
-                        </th>
-                        @* <th>
-                        @Html.ColumnSort("vi_CodeUser.CodeName", @Html.DisplayNameFor(model => model.CodeName))
+                            @Html.ColumnSort("Categorys.CategoryNo", @Html.DisplayNameFor(model => model.CategoryNo))
                         </th>
                         <th>
-                        @Html.ColumnSort("Roles.RoleName", @Html.DisplayNameFor(model => model.RoleName))
-                        </th> *@
-                        <th>
-                            @Html.ColumnSort("vi_CodeGender.CodeName", @Html.DisplayNameFor(model => model.GenderName))
+                            @Html.ColumnSort("Categorys.CategoryName", @Html.DisplayNameFor(model => model.CategoryName))
                         </th>
                         <th>
-                            @Html.ColumnSort("Users.Birthday", @Html.DisplayNameFor(model => model.Birthday))
-                        </th>
-                        <th>
-                            @Html.ColumnSort("Users.ContactEmail", @Html.DisplayNameFor(model => model.ContactEmail))
-                        </th>
-                        <th>
-                            @Html.ColumnSort("Users.ContactTel", @Html.DisplayNameFor(model => model.ContactTel))
-                        </th>
-                        <th>
-                            @Html.ColumnSort("Users.ContactAddress", @Html.DisplayNameFor(model =>
-                                     model.ContactAddress))
-                        </th>
-                        <th>
-                            @Html.ColumnSort("Users.Remark", @Html.DisplayNameFor(model => model.Remark))
+                            @Html.ColumnSort("Categorys.Remark", @Html.DisplayNameFor(model => model.Remark))
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        string str_data = $"{item.UserNo} {item.UserName}";
+                        string str_data = $"{item.CategoryNo} {item.CategoryName}";
                         <tr>
                             <td>
                                 @Html.ActionLink("修改", "CreateEdit", ActionService.Controller, new
@@ -123,34 +104,16 @@
                             </td>
 
                             <td>
-                                @Html.DisplayFor(modelItem => item.IsValid)
+                                @Html.DisplayFor(modelItem => item.IsEnabled)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.UserNo)
+                                @Html.DisplayFor(modelItem => item.SortNo)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.UserName)
-                            </td>
-                            @* <td>
-                        @Html.DisplayFor(modelItem => item.CodeName)
-                        </td>
-                        <td>
-                        @Html.DisplayFor(modelItem => item.RoleName)
-                        </td> *@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.GenderName)
+                                @Html.DisplayFor(modelItem => item.CategoryNo)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Birthday)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ContactEmail)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ContactTel)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ContactAddress)
+                                @Html.DisplayFor(modelItem => item.CategoryName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Remark)

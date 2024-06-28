@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using X.PagedList;
 
 namespace shopping.Areas.User.Controllers
-{    public class MemberController : Controller
+{    public class CategoryController : Controller
     {
         private readonly dbEntities db;
         private readonly IConfiguration Configuration;
@@ -18,7 +18,7 @@ namespace shopping.Areas.User.Controllers
         /// </summary>
         /// <param name="configuration">環境設定物件</param>
         /// <param name="entities">EF資料管理物件</param>
-        public MemberController(IConfiguration configuration, dbEntities entities)
+        public CategoryController(IConfiguration configuration, dbEntities entities)
         {
             db = entities;
             Configuration = configuration;
@@ -32,7 +32,9 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult Init()
         {
-            //初始化Session
+            //初始化Session 
+            SessionService.StringValue1 = ""; //主檔分類父階編號
+            SessionService.StringValue2 = ""; //主檔分類父階名稱
             SessionService.SearchText = "";
             SessionService.SortColumn = "";
             SessionService.SortDirection = "";
@@ -48,17 +50,24 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult Index(int page = 1, int pageSize = 5)
         {
-            using var user = new z_sqlUsers();
-            var model = user.GetRoleUserList("Member").ToPagedList(page, pageSize);
+            using var categorys = new z_sqlCategorys();
+            var model = categorys.GetDataList(SessionService.StringValue1).ToPagedList(page, pageSize);
             ViewBag.PageInfo = $"第 {page} 頁，共 {model.PageCount}頁";
             ViewBag.SearchText = SessionService.SearchText;
-            SessionService.SetProgramInfo("", "會員資料維護");
+            string str_title = "分類資料維護";
+            if(!string.IsNullOrEmpty(SessionService.StringValue1)){
+                str_title += $" ({SessionService.StringValue1} {SessionService.StringValue2})";
+            }
+            else{
+                str_title += " (最上層分類)";
+            }
+            SessionService.SetProgramInfo("", "分類資料維護");
             ActionService.SetActionName(enAction.Index);
             return View(model);
         }
 
         /// <summary>
-        /// 會員新增/修改(GET)
+        /// 分類新增/修改(GET)
         /// </summary>
         /// <param name="id">會員id</param>
         /// <returns></returns>
@@ -67,19 +76,17 @@ namespace shopping.Areas.User.Controllers
         [Login(RoleList = "User,Mis")]
         public IActionResult CreateEdit(int id=0)
         {
-            using var user = new z_sqlUsers();
-            var model = new Users();
+            using var category = new z_sqlCategorys();
+            var model = new Categorys();
             if (id == 0){
                 //新增時的預設值
                 model.Id=0;
-                model.RoleNo="Member";
-                model.GenderCode="M";
-                model.Birthday=DateTime.Today;
+                model.IsEnabled = true;
+                model.ParentNo = SessionService.StringValue1;
                 SessionService.SetProgramInfo("", "新增會員資料");
             }
             else{
-                model = user.GetData(id);
-                SessionService.SetProgramInfo("", "修改會員資料");
+                model = category.GetData(id);
             }
             
             return View(model);
@@ -93,16 +100,11 @@ namespace shopping.Areas.User.Controllers
         [HttpPost]
         [Area("User")]
         [Login(RoleList = "User,Mis")]
-        public IActionResult CreateEdit(Users model)
+        public IActionResult CreateEdit(Categorys model)
         {
             if(!ModelState.IsValid)return View(model);
-            var user = new z_sqlUsers();
-            if(!user.CheckCreateEditValidation(model)){
-                ModelState.AddModelError("UserNo", "會員帳號或電子信箱重覆建檔!");
-                // TempData["ErrorMessage"] = $"{model.UserNo},{model.ContactEmail}會員帳號或電子信箱重覆建檔!";
-                return View(model);
-            }
-            user.CreateEdit(model,model.Id);
+            var category = new z_sqlCategorys(); 
+            category.CreateEdit(model,model.Id);
 
             return RedirectToAction("Index", ActionService.Controller, new { area = ActionService.Area });
         }

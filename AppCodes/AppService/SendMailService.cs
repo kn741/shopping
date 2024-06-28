@@ -99,6 +99,39 @@ public class SendMailService : BaseClass
         return gmail.MessageText;
     }
 
+
+    /// <summary>
+    /// 帳號重設密碼寄發驗證的電子郵件
+    /// </summary>
+    /// <param name="mailObject">電子郵件物件</param>
+    /// <returns></returns>
+    public string MemberResetPassword(MailObject mailObject)
+    {
+        using var gmail = new GmailService();
+        using var dpr = new DapperRepository();
+
+        //變數
+        string str_reg_date = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
+
+        //信件內容
+        gmail.MessageText = "";
+        gmail.ReceiverName = mailObject.UserName;
+        gmail.ReceiverEmail = mailObject.ToEmail;
+        gmail.Subject = string.Format("{0} 帳號重設密碼重新設定通知信", AppService.AppName);
+        gmail.Body = string.Format("敬愛的會員 {0} 您好!! <br /><br />", mailObject.UserName);
+        gmail.Body += string.Format("老子協助您執行了重設密碼的功能，<br /><br />", str_reg_date);
+        gmail.Body += string.Format("您的密碼以更變為<span style='Color:Red;'>{0}</span><br /><br />",mailObject.Password);
+        gmail.Body += string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a><br /><br />", mailObject.ReturnUrl, mailObject.ReturnUrl);
+        gmail.Body += "本信件為系統自動寄出,請勿回覆!!<br /><br />";
+        gmail.Body += "-------------------------------------------<br />";
+        gmail.Body += string.Format("{0} {1}<br />", AppService.AppName, AppService.AppVersion);
+        gmail.Body += string.Format("{0}<br />", ActionService.HttpHost);
+        gmail.Body += "-------------------------------------------<br />";
+        //寄信
+        gmail.Send();
+        return gmail.MessageText;
+    }
+
     /// <summary>
     ///連絡我們的電子郵件
     /// </summary>
