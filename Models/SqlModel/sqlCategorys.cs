@@ -133,7 +133,7 @@ FROM Categorys WHERE ParentNo = @ParentNo ORDER BY SortNo , CategoryNo
         /// </summary>
         /// <param name="parentNo"></param>
         /// <returns></returns>
-        public List<Categorys> GetDataList(string parentNo = "")
+        public override List<Categorys> GetDataList(string parentNo = "")
         {
             string sql_query = GetSQLSelect();
             string sql_where = "WHERE ParentNo = @ParentNo ";
