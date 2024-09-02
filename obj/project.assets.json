@@ -12115,11 +12115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
+      "projectUniqueName": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
       "projectName": "shopping",
-      "projectPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
+      "projectPath": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\shopping.csproj",
       "packagesPath": "C:\\Users\\kanza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\obj\\",
+      "outputPath": "c:\\Users\\kanza\\OneDrive\\Desktop\\workspace\\dotnet\\project\\shopping\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
@@ -12135,6 +12135,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12306,7 +12307,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
